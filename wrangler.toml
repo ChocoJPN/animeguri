@@ -1,5 +1,7 @@
 #:schema node_modules/wrangler/config-schema.json
 name = "animeguri"
-compatibility_date = "2024-04-03"
+main = ".open-next/worker.js"
+compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
-pages_build_output_dir = ".vercel/output"
+
+assets = { directory = ".open-next/assets", binding = "ASSETS" }

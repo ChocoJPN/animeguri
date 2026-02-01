@@ -7,9 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "pages:build": "npx @cloudflare/next-on-pages",
-    "pages:deploy": "npm run pages:build && wrangler pages deploy",
-    "preview": "npm run pages:build && wrangler pages dev"
+    "deploy": "npx opennextjs-cloudflare && wrangler deploy",
+    "preview": "npx opennextjs-cloudflare && wrangler dev"
   },
   "dependencies": {
     "next": "^15.0.0",
@@ -17,7 +16,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.13.16",
+    "@opennextjs/cloudflare": "^1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -26,6 +25,6 @@
     "eslint-config-next": "^15.0.0",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "wrangler": "^4.61.1"
+    "wrangler": "^4"
   }
 }
