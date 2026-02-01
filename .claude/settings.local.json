@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run pages:build:*)"
+      "Bash(npm run pages:build:*)",
+      "WebFetch(domain:opennext.js.org)"
     ]
   }
 }
