@@ -8,36 +8,36 @@ export default function AnimeCard({ anime }: { anime: Anime }) {
   return (
     <Link
       href={`/anime/${anime.slug}`}
-      className="group block overflow-hidden rounded-lg border border-gray-200 transition-shadow hover:shadow-md dark:border-gray-800"
+      className="group block overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow hover:shadow-md dark:border-gray-800 dark:bg-gray-900"
     >
-      {/* サムネイル画像 */}
-      <div className="relative h-32 w-full">
+      {/* ポスター画像（3:4 縦長） */}
+      <div className="relative aspect-[3/4] w-full">
         {anime.image ? (
           <Image
             src={anime.image}
             alt={anime.title}
             fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 400px"
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-indigo-400 to-purple-500">
-            <span className="text-3xl font-bold text-white/80">{initial}</span>
+            <span className="text-5xl font-bold text-white/80">{initial}</span>
           </div>
         )}
       </div>
 
-      <div className="p-4">
-        <h3 className="font-semibold text-gray-900 group-hover:text-primary dark:text-gray-100">
+      <div className="p-3">
+        <h3 className="truncate font-semibold text-gray-900 group-hover:text-primary dark:text-gray-100">
           {anime.title}
         </h3>
         {anime.year && (
-          <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+          <p className="mt-0.5 text-xs text-gray-500 dark:text-gray-400">
             {anime.year}年
           </p>
         )}
         {anime.description && (
-          <p className="mt-2 line-clamp-2 text-sm text-gray-600 dark:text-gray-400">
+          <p className="mt-1.5 line-clamp-2 text-sm leading-snug text-gray-600 dark:text-gray-400">
             {anime.description}
           </p>
         )}
