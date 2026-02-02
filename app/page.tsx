@@ -3,6 +3,8 @@ import type { PrefectureAnimeCount } from "@/lib/types";
 import JapanMap from "./components/JapanMap";
 import PrefectureList from "./components/PrefectureList";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const db = await getDB();
   const rows = await db
