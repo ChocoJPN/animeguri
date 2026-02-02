@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "アニメグリ - アニメ聖地巡礼ガイド",
+  title: "Animeguri - アニメ聖地巡礼ガイド",
   description:
     "日本全国のアニメ聖地巡礼スポットを都道府県別に探せるガイドサイト。インタラクティブ地図で聖地を見つけよう。",
 };

@@ -6,6 +6,7 @@ export interface Anime {
   xurl: string | null;
   officialurl: string | null;
   description: string | null;
+  image: string | null;
 }
 
 export interface Location {

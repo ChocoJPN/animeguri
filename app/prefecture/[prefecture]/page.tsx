@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const pref = prefectureBySlug.get(prefecture);
   if (!pref) return { title: "見つかりません" };
   return {
-    title: `${pref.nameJa}のアニメ聖地 - アニメグリ`,
+    title: `${pref.nameJa}のアニメ聖地 - Animeguri`,
     description: `${pref.nameJa}を舞台にしたアニメ作品と聖地巡礼スポットの一覧`,
   };
 }
@@ -28,7 +28,7 @@ export default async function PrefecturePage({ params }: Props) {
   const db = await getDB();
   const rows = await db
     .prepare(
-      `SELECT DISTINCT a.id, a.title, a.slug, a.year, a.description
+      `SELECT DISTINCT a.id, a.title, a.slug, a.year, a.description, a.image
        FROM anime a
        JOIN location l ON a.id = l.anime_id
        WHERE l.prefecture = ?

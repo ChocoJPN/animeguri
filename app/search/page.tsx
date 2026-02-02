@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SearchInput from "@/app/components/SearchInput";
 
 export const metadata: Metadata = {
-  title: "検索 - アニメグリ",
+  title: "検索 - Animeguri",
   description: "アニメ名で聖地巡礼スポットを検索",
 };
 

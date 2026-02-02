@@ -8,7 +8,8 @@ CREATE TABLE anime (
   year INTEGER,
   xurl TEXT,
   officialurl TEXT,
-  description TEXT
+  description TEXT,
+  image TEXT
 );
 
 CREATE TABLE location (

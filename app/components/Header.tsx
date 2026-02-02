@@ -5,7 +5,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur dark:border-gray-800 dark:bg-gray-950/80">
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4">
         <Link href="/" className="text-xl font-bold text-primary">
-          アニメグリ
+          Animeguri
         </Link>
         <nav className="flex items-center gap-4 text-sm">
           <Link

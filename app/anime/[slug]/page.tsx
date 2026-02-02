@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { getDB } from "@/lib/db";
 import { prefectureBySlug } from "@/lib/prefectures";
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .first<Anime>();
   if (!anime) return { title: "見つかりません" };
   return {
-    title: `${anime.title} - アニメグリ`,
+    title: `${anime.title} - Animeguri`,
     description: anime.description || `${anime.title}の聖地巡礼情報`,
   };
 }
@@ -48,6 +49,8 @@ export default async function AnimePage({ params }: Props) {
     locationsByPrefecture.set(loc.prefecture, existing);
   }
 
+  const initial = anime.title.charAt(0);
+
   return (
     <div>
       <div className="mb-6">
@@ -59,39 +62,64 @@ export default async function AnimePage({ params }: Props) {
         </Link>
       </div>
 
-      <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 sm:text-3xl">
-        {anime.title}
-      </h1>
+      <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900">
+        {/* 画像エリア */}
+        <div className="relative h-48 w-full sm:h-64">
+          {anime.image ? (
+            <Image
+              src={anime.image}
+              alt={anime.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 800px"
+              priority
+            />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-indigo-400 to-purple-500">
+              <span className="text-6xl font-bold text-white/80">
+                {initial}
+              </span>
+            </div>
+          )}
+        </div>
 
-      <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
-        {anime.year && <span>{anime.year}年</span>}
-        {anime.officialurl && (
-          <a
-            href={anime.officialurl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary hover:underline"
-          >
-            公式サイト
-          </a>
-        )}
-        {anime.xurl && (
-          <a
-            href={anime.xurl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary hover:underline"
-          >
-            X (Twitter)
-          </a>
-        )}
+        {/* コンテンツエリア */}
+        <div className="p-5 sm:p-6">
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 sm:text-3xl">
+            {anime.title}
+          </h1>
+
+          <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
+            {anime.year && <span>{anime.year}年</span>}
+            {anime.officialurl && (
+              <a
+                href={anime.officialurl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                公式サイト
+              </a>
+            )}
+            {anime.xurl && (
+              <a
+                href={anime.xurl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                X (Twitter)
+              </a>
+            )}
+          </div>
+
+          {anime.description && (
+            <p className="mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+              {anime.description}
+            </p>
+          )}
+        </div>
       </div>
-
-      {anime.description && (
-        <p className="mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
-          {anime.description}
-        </p>
-      )}
 
       <section className="mt-8">
         <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-gray-100">
