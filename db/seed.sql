@@ -96,7 +96,7 @@ INSERT INTO anime (title, slug, year, xurl, officialurl, description, image) VAL
 ('ちはやふる', 'chihayafuru', 2011, NULL, 'https://www.ntv.co.jp/chihayafuru/', '競技かるたを題材にした青春アニメ。主要キャラ綿谷新の故郷として福井県あわら市が描かれ、聖地として有名。', '/images/chihayafuru.jpg'),
 ('八十亀ちゃんかんさつにっき', 'yatogame-chan', 2019, NULL, 'https://yatogame.nagoya/', '名古屋の文化やあるあるをテーマにしたご当地アニメ。名古屋城、大須商店街、熱田神宮など名古屋の名所が多数登場する。', '/images/yatogame-chan.jpeg'),
 ('涼宮ハルヒの憂鬱', 'haruhi', 2006, NULL, 'https://www.haruhi.tv/', '兵庫県西宮市を舞台にした学園SF。西宮北口駅や甲陽園駅周辺など西宮の街並みが忠実に描かれる。', '/images/haruhi.jpg'),
-('サマータイムレンダ', 'summertime-render', 2022, NULL, 'https://summertime-rendering.com/', '和歌山県の離島を舞台にしたサスペンスアニメ。友ヶ島や加太の風景がモデルとなっている。', '/images/summertime-render.jpg'),
+('サマータイムレンダ', 'summertime-render', 2022, NULL, 'https://summertime-rendering.com/', '和歌山県の離島を舞台にしたサスペンスアニメ。友ヶ島や加太の風景がモデルとなっている。', '/images/summertime-render.png'),
 ('Free!', 'free', 2013, NULL, 'https://iwatobi-sc.com/', '鳥取県岩美町をモデルにした水泳アニメ。岩美海岸や浦富海岸の美しい風景が描かれ、聖地巡礼で盛り上がった。', '/images/free.jpg'),
 ('結城友奈は勇者である', 'yuki-yuna', 2014, NULL, 'https://yuyuyu.tv/', '香川県観音寺市を舞台にした魔法少女アニメ。銭形砂絵や琴弾公園など実在の風景が登場する。', '/images/yuki-yuna.jpg'),
 ('ゾンビランドサガ', 'zombie-land-saga', 2018, 'https://x.com/zombielandsaga', 'https://zombielandsaga.com/', '佐賀県を舞台にしたゾンビアイドルアニメ。唐津城、嬉野温泉、佐賀城など佐賀の名所が多数登場し、佐賀県の知名度向上に貢献した。', '/images/zombie-land-saga.jpg'),
