@@ -379,4 +379,4 @@ INSERT INTO location (prefecture, anime_id, name) VALUES
 ('kochi', 85, '高知市・はりまや橋'),
 ('kochi', 85, '高知市・帯屋町商店街'),
 -- 政宗くんのリベンジ(ID=86) 高知
-('kochi', 86, '高知市・高知小津高校');
+('kochi', 85, '高知市・高知小津高校');
