@@ -312,7 +312,7 @@ INSERT INTO anime (title, slug, year, xurl, officialurl, description, image) VAL
 ('おへんろ。', 'ohenro', 2014, NULL, 'http://www.ufotable.com/ohenro/', 'ufotable制作の四国八十八箇所巡りアニメ。女子高生3人がお遍路を巡る物語で、ufotableの拠点がある徳島市の風景が丁寧に描かれている。', '/images/ohenro.jpg'),
 ('竜とそばかすの姫', 'belle', 2021, NULL, 'https://ryu-to-sobakasu-no-hime.jp/', '細田守監督のアニメ映画。高知県の仁淀川流域が舞台で、主人公・すずが暮らす自然豊かな高知の集落が美しく描かれる。JR伊野駅や浅尾沈下橋が登場する。', '/images/belle.jpg'),
 ('海がきこえる', 'umi-ga-kikoeru', 1993, NULL, NULL, 'スタジオジブリ制作のアニメ。高知県高知市が主な舞台で、はりまや橋や帯屋町商店街など高知の街並みがリアルに描かれている。高知を代表するアニメ作品。', '/images/umi-ga-kikoeru.jpg'),
-('政宗くんのリベンジ', 'masamune-kun-no-revenge', 2017, 'https://x.com/masamune_tv', 'https://masamune-tv.com/1st/', '8年前に令嬢・安達垣愛姫に「豚足」と罵られ振られたデブで冴えない少年・真壁政宗が、激痩せ・イケメン化して帰国し、愛姫を惚れさせてから振る「デッド・オア・ラブ作戦」を実行する復讐ラブコメディ', '/images/masamune-kun-no-revenge');
+('政宗くんのリベンジ', 'masamune-kun-no-revenge', 2017, 'https://x.com/masamune_tv', 'https://masamune-tv.com/1st/', '8年前に令嬢・安達垣愛姫に「豚足」と罵られ振られたデブで冴えない少年・真壁政宗が、激痩せ・イケメン化して帰国し、愛姫を惚れさせてから振る「デッド・オア・ラブ作戦」を実行する復讐ラブコメディ', '/images/masamune-kun-no-revenge.jpg');
 -- 追加聖地データ4
 INSERT INTO location (prefecture, anime_id, name) VALUES
 -- 既存アニメへの岩手・大阪聖地追加
