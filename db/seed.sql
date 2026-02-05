@@ -380,3 +380,13 @@ INSERT INTO location (prefecture, anime_id, name) VALUES
 ('kochi', 85, '高知市・帯屋町商店街'),
 -- 政宗くんのリベンジ(ID=86) 高知
 ('kochi', 86, '高知市・高知小津高校');
+
+-- 追加アニメデータ5
+INSERT INTO anime (title, slug, year, xurl, officialurl, description, image) VALUES
+('沖縄で好きになった子が方言すぎてツラすぎる', 'okitsura', 2025, 'https://x.com/okitsura', 'https://okitsura.com/', '沖縄県うるま市を舞台にした方言ラブコメアニメ。東京から沖縄に引っ越してきた高校生が、方言がきつすぎるヒロインに恋をする物語。うるま市の風景やビーチが美しく描かれる。', '/images/okitsura.jpg');
+
+-- 追加聖地データ5
+INSERT INTO location (prefecture, anime_id, name) VALUES
+-- 沖縄で好きになった子が方言すぎてツラすぎる (ID=87)
+('okinawa', 87, 'うるま市・具志川ビーチ'),
+('okinawa', 87, 'うるま市・具志川公民館');
