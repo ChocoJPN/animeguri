@@ -20,6 +20,12 @@ export default function Header() {
           >
             検索
           </Link>
+          <Link
+            href="/feedback"
+            className="text-gray-600 transition-colors hover:text-primary dark:text-gray-400 dark:hover:text-primary"
+          >
+            ご意見等
+          </Link>
         </nav>
       </div>
     </header>
