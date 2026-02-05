@@ -291,3 +291,92 @@ INSERT INTO location (prefecture, anime_id, name) VALUES
 -- 放課後ていぼう日誌 (ID=67)
 ('kumamoto', 67, '芦北町'),
 ('kumamoto', 67, '芦北海岸');
+
+-- 追加アニメデータ4（岩手・秋田・山形・福島・新潟・大阪・岡山・島根・山口・徳島・高知）
+INSERT INTO anime (title, slug, year, xurl, officialurl, description, image) VALUES
+('ルックバック', 'lookback', 2024, 'https://x.com/lookback_anime', 'https://lookback-anime.com/', '藤本タツキ原作の劇場アニメ。作者の出身地である秋田県にかほ市が舞台のモデルとなっており、田園風景や町並みが忠実に描かれている。', '/images/lookback.jpg'),
+('好きでも嫌いなあまのじゃく', 'amanojaku', 2024, NULL, 'https://www.amanojaku-movie.com/', 'スタジオコロリド制作の劇場アニメ。山形県米沢市を舞台に、高校生と鬼の少女が母親を探す旅に出る物語。山寺など山形の名所が美しく描かれる。', '/images/amanojaku.jpg'),
+('レベルE', 'level-e', 2011, NULL, NULL, '冨樫義博原作のSFコメディアニメ。山形県山形市を舞台に、野球少年と宇宙人王子の奇妙な同居生活を描く。山形市内の街並みが登場する。', '/images/level-e.jpg'),
+('未確認で進行形', 'mikakunin', 2014, 'https://x.com/mikakunin_anime', 'https://mikakunin.jp/', '荒井チェリー原作のラブコメアニメ。福島県郡山市がモデルで、原作者も福島県出身。雪景色の美しい東北の街並みが描かれる。', '/images/mikakunin.jpg'),
+('ざつ旅 -That''s Journey-', 'zatsu-tabi', 2025, NULL, 'https://zatsutabi.com/', '石坂ケンタ原作の旅アニメ。第1話の旅先が福島県会津若松市で、鶴ヶ城や七日町通りなど歴史ある街並みが丁寧に描かれている。', '/images/zatsu-tabi.jpg'),
+('Do It Yourself!!', 'do-it-yourself', 2022, 'https://x.com/diy_anime', 'https://diy-anime.com/', '新潟県三条市を舞台にしたオリジナルアニメ。ものづくりの町として知られる三条市で、女子高生たちがDIYに励む日常を描く。', '/images/do-it-yourself.jpg'),
+('アイの歌声を聴かせて', 'ai-no-utagoe', 2021, NULL, 'https://ainouta.jp/', '吉浦康裕監督のオリジナル劇場アニメ。新潟県の風景をモデルにした架空都市を舞台に、AIの少女と高校生たちの青春を描く。', '/images/ai-no-utagoe.jpg'),
+('ジョゼと虎と魚たち', 'jose-tora', 2020, 'https://x.com/joseetora_movie', 'https://joseetora.jp/', '田辺聖子の名作を劇場アニメ化。大阪を舞台に、車椅子の少女ジョゼと大学生の恋を描く。天保山や通天閣など大阪の街並みが美しく描かれる。', '/images/jose-tora.jpg'),
+('推しが武道館いってくれたら死ぬ', 'oshibudo', 2020, 'https://x.com/anime_oshibudo', 'https://oshibudo.com/', '平尾アウリ原作のアイドルアニメ。岡山市を舞台に地下アイドルとファンの物語を描く。岡山駅や表町商店街など岡山各地がモデルとして登場する。', '/images/oshibudo.jpg'),
+('RE-MAIN', 're-main', 2021, NULL, 'https://re-main.net/', 'MAPPA制作の水球アニメ。岡山県倉敷市を舞台に、記憶を失った天才水球少年が廃部寸前の水球部で再び青春を歩む物語。倉敷美観地区が聖地として人気。', '/images/re-main.jpg'),
+('神在月のこども', 'kamiari-kodomo', 2021, NULL, 'https://kamiari-kodomo.jp/', '旧暦10月に神々が出雲に集う伝承を題材にした劇場アニメ。母を亡くした少女が神話の地・出雲を目指す成長物語。島根県出雲市の風景が美しく描かれる。', '/images/kamiari-kodomo.jpg'),
+('SHAMAN KING', 'shaman-king', 2021, NULL, 'https://shamanking-project.com/', '武井宏之原作のシャーマンバトルアニメ（2021年リメイク版）。主人公・麻倉葉の出身地のモデルが島根県出雲市で、出雲の神話的な世界観が作品と深く結びついている。', '/images/shaman-king.jpg'),
+('シン・エヴァンゲリオン劇場版', 'shin-evangelion', 2021, 'https://x.com/evangelion_co', 'https://www.evangelion.co.jp/', '庵野秀明監督のエヴァンゲリオン完結編。監督の出身地・山口県宇部市がラストシーンに登場し、宇部新川駅は聖地として大人気。宇部市とのコラボイベントも開催されている。', '/images/shin-evangelion.jpg'),
+('マイマイ新子と千年の魔法', 'maimai-shinko', 2009, NULL, 'https://www.mai-mai.jp/', '片渕須直監督のアニメ映画。昭和30年代の山口県防府市を舞台に、お転婆な少女・新子と転校生の友情を描く。防府市の国衙跡周辺が物語の重要な舞台。', '/images/maimai-shinko.jpg'),
+('蟲師 続章', 'mushishi-zokushou', 2014, NULL, 'https://www.mushishi-anime.com/', '漆原友紀原作の幻想アニメ第2期。山深い日本の原風景が描かれ、徳島県三好市の祖谷のかずら橋が作中の橋のモデルとして聖地になっている。', '/images/mushishi-zokushou.jpg'),
+('おへんろ。', 'ohenro', 2014, NULL, 'http://www.ufotable.com/ohenro/', 'ufotable制作の四国八十八箇所巡りアニメ。女子高生3人がお遍路を巡る物語で、ufotableの拠点がある徳島市の風景が丁寧に描かれている。', '/images/ohenro.jpg'),
+('竜とそばかすの姫', 'belle', 2021, NULL, 'https://ryu-to-sobakasu-no-hime.jp/', '細田守監督のアニメ映画。高知県の仁淀川流域が舞台で、主人公・すずが暮らす自然豊かな高知の集落が美しく描かれる。JR伊野駅や浅尾沈下橋が登場する。', '/images/belle.jpg'),
+('海がきこえる', 'umi-ga-kikoeru', 1993, NULL, NULL, 'スタジオジブリ制作のアニメ。高知県高知市が主な舞台で、はりまや橋や帯屋町商店街など高知の街並みがリアルに描かれている。高知を代表するアニメ作品。', '/images/umi-ga-kikoeru.jpg'),
+('政宗くんのリベンジ', 'masamune-kun-no-revenge', 2017, 'https://x.com/masamune_tv', 'https://masamune-tv.com/1st/', '8年前に令嬢・安達垣愛姫に「豚足」と罵られ振られたデブで冴えない少年・真壁政宗が、激痩せ・イケメン化して帰国し、愛姫を惚れさせてから振る「デッド・オア・ラブ作戦」を実行する復讐ラブコメディ', '/images/masamune-kun-no-revenge');
+-- 追加聖地データ4
+INSERT INTO location (prefecture, anime_id, name) VALUES
+-- 既存アニメへの岩手・大阪聖地追加
+-- すずめの戸締まり (ID=41) 岩手
+('iwate', 41, '山田町・織笠駅'),
+('iwate', 41, '山田湾展望広場'),
+-- 呪術廻戦 (ID=37) 岩手
+('iwate', 37, '盛岡駅'),
+-- 名探偵コナン (ID=62) 大阪
+('osaka', 62, '通天閣（服部平次の舞台）'),
+('osaka', 62, '大阪城'),
+-- ルックバック (ID=68) 秋田
+('akita', 68, 'にかほ市・文林堂書店'),
+('akita', 68, '仁賀保駅'),
+-- 好きでも嫌いなあまのじゃく (ID=69) 山形
+('yamagata', 69, '米沢市（主人公の住む町）'),
+('yamagata', 69, '山寺（宝珠山立石寺）'),
+-- レベルE (ID=70) 山形
+('yamagata', 70, '山形市内'),
+('yamagata', 70, '山形駅周辺'),
+-- 未確認で進行形 (ID=71) 福島
+('fukushima', 71, '郡山市・安積歴史博物館'),
+('fukushima', 71, '郡山市内'),
+-- ざつ旅 (ID=72) 福島
+('fukushima', 72, '会津若松市・鶴ヶ城'),
+('fukushima', 72, '会津若松市・七日町通り'),
+-- Do It Yourself!! (ID=73) 新潟
+('niigata', 73, '三条市・一ノ木戸商店街'),
+('niigata', 73, '三条市・三条鍛冶道場'),
+-- アイの歌声を聴かせて (ID=74) 新潟
+('niigata', 74, '長岡市（街並みのモデル）'),
+('niigata', 74, '新潟市周辺'),
+-- ジョゼと虎と魚たち (ID=75) 大阪
+('osaka', 75, '大阪市・天保山（海遊館周辺）'),
+('osaka', 75, '大阪市・通天閣周辺'),
+-- 推しが武道館いってくれたら死ぬ (ID=76) 岡山
+('okayama', 76, '岡山市・表町商店街'),
+('okayama', 76, '岡山市・岡山城周辺'),
+-- RE-MAIN (ID=77) 岡山
+('okayama', 77, '倉敷市・倉敷美観地区'),
+('okayama', 77, '倉敷市・倉敷駅前'),
+-- 神在月のこども (ID=78) 島根
+('shimane', 78, '出雲市・出雲大社'),
+('shimane', 78, '出雲市・稲佐の浜'),
+-- SHAMAN KING (ID=79) 島根
+('shimane', 79, '出雲市・出雲大社周辺'),
+('shimane', 79, '出雲市（旧大社町）'),
+-- シン・エヴァンゲリオン劇場版 (ID=80) 山口
+('yamaguchi', 80, '宇部市・宇部新川駅'),
+('yamaguchi', 80, '宇部市・琴芝駅周辺'),
+-- マイマイ新子と千年の魔法 (ID=81) 山口
+('yamaguchi', 81, '防府市・国衙跡（周防国衙跡）'),
+('yamaguchi', 81, '防府市・佐波川'),
+-- 蟲師 続章 (ID=82) 徳島
+('tokushima', 82, '三好市・祖谷のかずら橋'),
+('tokushima', 82, '三好市・大歩危峡'),
+-- おへんろ。 (ID=83) 徳島
+('tokushima', 83, '徳島市・眉山'),
+('tokushima', 83, '徳島市・新町川沿い'),
+-- 竜とそばかすの姫 (ID=84) 高知
+('kochi', 84, 'いの町・JR伊野駅'),
+('kochi', 84, '仁淀川町・浅尾沈下橋'),
+-- 海がきこえる (ID=85) 高知
+('kochi', 85, '高知市・はりまや橋'),
+('kochi', 85, '高知市・帯屋町商店街'),
+-- 政宗くんのリベンジ(ID=86) 高知
+('kochi', 86, '高知市・高知小津高校');
