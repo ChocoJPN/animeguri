@@ -390,3 +390,112 @@ INSERT INTO location (prefecture, anime_id, name) VALUES
 -- 沖縄で好きになった子が方言すぎてツラすぎる (ID=87)
 ('okinawa', 87, 'うるま市・具志川ビーチ'),
 ('okinawa', 87, 'うるま市・具志川公民館');
+
+-- 追加アニメデータ6（恋愛アニメ追加）
+INSERT INTO anime (title, slug, year, xurl, officialurl, description, image) VALUES
+('かぐや様は告らせたい～天才たちの恋愛頭脳戦～', 'kaguya-sama', 2019, 'https://x.com/anime_kaguya', 'https://kaguya.love/', '秀知院学園の生徒会を舞台にした頭脳戦ラブコメ。天才同士の生徒会長・白銀御行と副会長・四宮かぐやが、プライドをかけて相手に告白させようとする恋愛バトルを繰り広げる。', '/images/kaguya-sama.jpg'),
+('君に届け', 'kimi-ni-todoke', 2009, 'https://x.com/kimitodo_pr', 'https://kimitodo.com/', '北海道を舞台にした純愛青春アニメ。陰気な見た目から「貞子」と呼ばれる黒沼爽子が、爽やかなクラスメイト・風早翔太との出会いをきっかけに成長していく物語。', '/images/kimi-ni-todoke.jpg'),
+('五等分の花嫁', 'gotoubun-no-hanayome', 2019, 'https://x.com/5Hanayome_anime', 'https://www.tbs.co.jp/anime/5hanayome/', '貧乏な高校生・上杉風太郎が、大富豪の五つ子姉妹の家庭教師となるラブコメ。中野区を中心に東京の街並みが多数登場し、修学旅行編では京都も舞台となる。', '/images/gotoubun-no-hanayome.jpg'),
+('とらドラ！', 'toradora', 2008, NULL, 'https://www.tv-tokyo.co.jp/anime/toradora/', '目つきの悪さから不良と誤解される高須竜児と、小柄だが凶暴な「手乗りタイガー」逢坂大河のドタバタラブコメ。東京都の西東京エリアがモデルとなっている。', '/images/toradora.jpg');
+
+-- 追加聖地データ6
+INSERT INTO location (prefecture, anime_id, name) VALUES
+-- かぐや様は告らせたい (ID=88)
+('tokyo', 88, '港区周辺（秀知院学園のイメージモデル）'),
+('tokyo', 88, '六本木・赤坂エリア'),
+-- 君に届け (ID=89)
+('hokkaido', 89, '札幌市内'),
+('hokkaido', 89, '北海道の高校（モデル校周辺）'),
+-- 五等分の花嫁 (ID=90)
+('tokyo', 90, '中野区・中野サンプラザ周辺'),
+('tokyo', 90, '太田市場'),
+('kyoto', 90, '清水寺（修学旅行編）'),
+('kyoto', 90, '嵐山（修学旅行編）'),
+-- とらドラ！ (ID=91)
+('tokyo', 91, '西東京市・保谷駅周辺'),
+('tokyo', 91, '練馬区・石神井公園');
+
+-- 追加アニメデータ7
+INSERT INTO anime (title, slug, year, xurl, officialurl, description, image) VALUES
+('おそ松さん', 'osomatsu-san', 2015, 'https://x.com/osomatsu_PR', 'https://osomatsusan.com/', '赤塚不二夫の名作「おそ松くん」の六つ子たちが大人になった姿を描くギャグアニメ。ニートになった松野家の六つ子が繰り広げるカオスな日常が社会現象を巻き起こした。', '/images/osomatsu-san.jpg'),
+('女子高生の無駄づかい', 'joshikousei-no-mudazukai', 2019, 'https://x.com/jyoshimuda', 'https://jyoshimuda.com/', '個性豊かな女子高生たちの「無駄」な日常を描くギャグアニメ。埼玉県の高校を舞台に、「バカ」「ヲタ」「ロボ」などあだ名で呼び合う少女たちの笑える毎日が繰り広げられる。', '/images/joshikousei-no-mudazukai.jpg'),
+('日常', 'nichijou', 2011, NULL, 'https://shinonome-lab.com/', 'あらゐけいいち原作のシュールギャグアニメ。群馬県伊勢崎市をモデルにした時定高校を舞台に、ありえないほど壮大な「日常」が繰り広げられる。京都アニメーション制作。', '/images/nichijou.jpg'),
+('ブルーロック', 'blue-lock', 2022, 'https://x.com/BlueLock_PR', 'https://bluelock-pr.com/', 'サッカー日本代表の世界一のストライカーを育成するため、全国から300人のFWを集めた過酷な選抜プログラム「ブルーロック」を描くサッカーアニメ。エゴイズムをテーマにした斬新な内容が話題に。', '/images/blue-lock.png'),
+('CLANNAD', 'clannad', 2007, NULL, 'https://www.tbs.co.jp/clannad/clannad1/', 'Key原作の恋愛アドベンチャーを京都アニメーションがアニメ化。不良少年・岡崎朋也と病弱な少女・古河渚の出会いから始まる、家族の絆を描いた感動の物語。AFTER STORYでは涙なしには見られない展開が待つ。', '/images/clannad.jpg');
+
+-- 追加聖地データ7
+INSERT INTO location (prefecture, anime_id, name) VALUES
+-- おそ松さん (ID=92)
+('tokyo', 92, '中野ブロードウェイ（赤塚不二夫ゆかりの地）'),
+('tokyo', 92, '青梅市・赤塚不二夫会館跡'),
+-- 女子高生の無駄づかい (ID=93)
+('saitama', 93, '所沢市周辺（舞台モデル）'),
+('saitama', 93, '東村山駅周辺'),
+-- 日常 (ID=94)
+('gunma', 94, '伊勢崎市（時定市のモデル）'),
+('gunma', 94, '伊勢崎市・華蔵寺公園'),
+-- ブルーロック (ID=95)
+('saitama', 95, '埼玉スタジアム2002'),
+-- CLANNAD (ID=96)
+('tokyo', 96, '東京都羽村市周辺');
+
+-- 追加アニメデータ8（恋愛アニメ追加2）
+INSERT INTO anime (title, slug, year, xurl, officialurl, description, image) VALUES
+('君の膵臓をたべたい', 'kimisui', 2018, 'https://x.com/kimisui_anime', 'https://kimisui-anime.com/', '住野よる原作の感動アニメ映画。膵臓の病気を抱える山内桜良と、クラスメイトの「僕」が秘密を共有しながら過ごす日々を描く。物語の舞台は福岡県がモデルとされている。', '/images/kimisui.jpg'),
+('時々ボソッとロシア語でデレる隣のアーリャさん', 'roshidere', 2024, 'https://x.com/roshidere', 'https://roshidere.com/', 'ロシア人と日本人のハーフの美少女・アーリャが、隣の席の久世政近にロシア語でこっそりデレる学園ラブコメ。実は政近はロシア語が分かるという秘密が面白い。', '/images/roshidere.jpg'),
+('彼女、お借りします', 'kanokari', 2020, 'https://x.com/kanokari_anime', 'https://kanokari-official.com/', 'レンタル彼女サービスをきっかけに始まるラブコメ。東京都新宿区や板橋区周辺が舞台で、主人公・木ノ下和也と水原千鶴の関係が少しずつ変化していく。', '/images/kanokari.jpg'),
+('僕の心のヤバイやつ', 'bokuyaba', 2023, 'https://x.com/bokuyaba_anime', 'https://bokuyaba-anime.com/', '中二病の陰キャ男子・市川京太郎と学校一の美少女・山田杏奈の不器用な恋を描く青春ラブコメ。東京都の秋川周辺がモデルとなっている。', '/images/bokuyaba.jpg'),
+('ホリミヤ', 'horimiya', 2021, 'https://x.com/horimiya_anime', 'https://horimiya-anime.com/', '学校では派手な美少女・堀京子と地味なクラスメイト・宮村伊澄。放課後の意外な素顔をきっかけに距離が縮まっていく青春ラブコメ。', '/images/horimiya.jpg'),
+('冴えない彼女の育てかた', 'saekano', 2015, 'https://x.com/saenai_heroine', 'https://saenai.tv/', 'オタク高校生・安芸倫也が、坂道で出会った少女・加藤恵をヒロインにギャルゲー制作を目指す物語。東京都豊島区や練馬区の風景が多数登場する。', '/images/saekano.jpg'),
+('中二病でも恋がしたい！', 'chuunibyou', 2012, 'https://x.com/anime_chu_2', 'https://www.anime-chu-2.com/', '元中二病の富樫勇太と現役中二病の小鳥遊六花が繰り広げる学園ラブコメ。滋賀県大津市を舞台に、京阪電車の石山坂本線沿線の風景が美しく描かれる。京都アニメーション制作。', '/images/chuunibyou.jpg'),
+('ニセコイ', 'nisekoi', 2014, 'https://x.com/nisekoi_k', 'https://www.nisekoi.jp/', 'ヤクザの息子・一条楽とギャングの娘・桐崎千棘が、両組織の抗争を止めるため恋人のふりをするラブコメ。東京都の下町エリアが舞台のモデルとなっている。', '/images/nisekoi.png');
+
+-- 追加聖地データ8
+INSERT INTO location (prefecture, anime_id, name) VALUES
+-- 君の膵臓をたべたい (ID=97)
+('fukuoka', 97, '福岡市内（舞台モデル）'),
+('fukuoka', 97, '太宰府天満宮'),
+-- 時々ボソッとロシア語でデレる隣のアーリャさん (ID=98)
+('tokyo', 98, '東京都内（学園モデル周辺）'),
+-- 彼女、お借りします (ID=99)
+('tokyo', 99, '新宿区・歌舞伎町周辺'),
+('tokyo', 99, '板橋区周辺'),
+-- 僕の心のヤバイやつ (ID=100)
+('tokyo', 100, 'あきる野市・秋川駅周辺'),
+('tokyo', 100, '秋川渓谷'),
+-- ホリミヤ (ID=101)
+('tokyo', 101, '東京都内（舞台モデル周辺）'),
+-- 冴えない彼女の育てかた (ID=102)
+('tokyo', 102, '豊島区・池袋周辺'),
+('tokyo', 102, '練馬区周辺'),
+-- 中二病でも恋がしたい！ (ID=103)
+('shiga', 103, '大津市・石山駅周辺'),
+('shiga', 103, '大津市・膳所城跡公園'),
+('shiga', 103, '京阪石山坂本線沿線'),
+-- ニセコイ (ID=104)
+('tokyo', 104, '中野区鷺宮６丁目歩道橋（武蔵台小前）'),
+('tokyo', 104, '代々木公園'),
+('tokyo', 104, '江戸川区・古川親水公園');
+
+-- 追加アニメデータ9
+INSERT INTO anime (title, slug, year, xurl, officialurl, description, image) VALUES
+('みなみけ', 'minami-ke', 2007, NULL, 'https://www.tv-tokyo.co.jp/anime/minami-ke/', '南家の三姉妹・春香、夏奈、千秋の日常を描くコメディアニメ。「この物語はみなみけ3姉妹の平凡な日常を淡々と描くものです」のナレーションが象徴的な日常系の名作。', '/images/minami-ke.jpg'),
+('僕は友達が少ない', 'haganai', 2011, 'https://x.com/haganai_anime', 'https://www.tbs.co.jp/anime/haganai/', '友達がいない少年少女が「隣人部」を結成し友達作りに奮闘する学園ラブコメ。金髪ハーフの三日月夜空と残念系美少女・柏崎星奈を中心にドタバタが繰り広げられる。', '/images/haganai.jpg'),
+('俺の妹がこんなに可愛いわけがない', 'oreimo', 2010, 'https://x.com/oreimo_eromanga/media', 'https://www.oreimo-anime.com/', '平凡な兄・高坂京介と隠れオタクの妹・桐乃の関係を描くラブコメ。千葉市を舞台に千葉モノレールや千葉公園が登場し、秋葉原のオタク文化も作品の重要な要素。', '/images/oreimo.jpg'),
+('干物妹！うまるちゃん', 'himouto-umaru-chan', 2015, 'https://x.com/umr_official', 'https://umaru-ani.me/', '学校では完璧な美少女だが家ではグータラなオタク妹・うまるの二面性を描くギャグコメディ。東京都八王子市周辺がモデルとされ、駅前の風景などが登場する。', '/images/himouto-umaru-chan.jpg'),
+('エロマンガ先生', 'eromanga-sensei', 2017, 'https://x.com/oreimo_eromanga/media', 'https://eromanga-sensei.com/', '「俺の妹」の伏見つかさ原作のラブコメ。ラノベ作家の兄と引きこもりイラストレーターの妹が実は仕事上のパートナーだったという物語。東京都内が舞台。', '/images/eromanga-sensei.jpg'),
+('聲の形', 'koe-no-katachi', 2016, 'https://x.com/koenokatachi_M', 'https://koenokatachi-movie.com/', '京都アニメーション制作の劇場アニメ。かつていじめの加害者だった少年と聴覚障害を持つ少女の再会と贖罪の物語。岐阜県大垣市が聖地として有名で、美登鯉橋や大垣公園など多数の実在スポットが登場する。', '/images/koe-no-katachi.jpg');
+
+-- 追加聖地データ9
+INSERT INTO location (prefecture, anime_id, name) VALUES
+-- 俺の妹がこんなに可愛いわけがない (ID=107)
+('chiba', 107, '千葉モノレール沿線'),
+('chiba', 107, '千葉公園'),
+('tokyo', 107, '秋葉原'),
+-- 干物妹！うまるちゃん (ID=108)
+('tokyo', 108, '八王子駅周辺（舞台モデル）'),
+-- 聲の形 (ID=110)
+('gifu', 110, '大垣市・美登鯉橋'),
+('gifu', 110, '大垣市・四季の森公園'),
+('gifu', 110, '大垣市・大垣公園'),
+('gifu', 110, '養老町・養老天命反転地');
