@@ -1,3 +1,7 @@
+-- 既存データをクリア（locationはanimeに依存しているので先に削除）
+DELETE FROM location;
+DELETE FROM anime;
+
 -- アニメデータ
 INSERT INTO anime (title, slug, year, xurl, officialurl, description, image) VALUES
 ('ゆるキャン△', 'yurucamp', 2018, 'https://x.com/yurucamp_anime', 'https://yurucamp.jp/', '女子高生たちがキャンプを楽しむアウトドア系アニメ。山梨県を中心に静岡県など実在のキャンプ場が多数登場する。', '/images/yurucamp.jpg'),
@@ -113,9 +117,11 @@ INSERT INTO location (prefecture, anime_id, name) VALUES
 ('hokkaido', 20, '小樽運河'),
 ('hokkaido', 20, '旭川第七師団跡'),
 ('hokkaido', 20, '網走監獄'),
+('hokkaido', 20, '北海道開拓の村'),
 -- ふらいんぐうぃっち (ID=21)
-('aomori', 21, '弘前城'),
-('aomori', 21, '岩木山'),
+('aomori', 21, '弘前公園'),
+('aomori', 21, '岩木山神社'),
+('aomori', 21, 'ミズバショウ沼公園'),
 -- ハイキュー!! (ID=22)
 ('miyagi', 22, '仙台市体育館'),
 ('miyagi', 22, '仙台駅'),
@@ -169,7 +175,9 @@ INSERT INTO location (prefecture, anime_id, name) VALUES
 -- 呪術廻戦 (ID=37)
 ('tokyo', 37, '渋谷駅周辺'),
 ('tokyo', 37, '渋谷ヒカリエ'),
-('miyagi', 37, '仙台市内');
+('tokyo', 37, '吉祥寺プラザ'),
+('tokyo', 37, 'ボートレース多摩川'),
+('iwate', 37, '正法寺');
 
 -- 追加アニメデータ3
 INSERT INTO anime (title, slug, year, xurl, officialurl, description, image) VALUES
@@ -221,7 +229,7 @@ INSERT INTO location (prefecture, anime_id, name) VALUES
 -- すずめの戸締まり (ID=41)
 ('miyazaki', 41, '日南市油津'),
 ('ehime', 41, '八幡浜港'),
-('hyogo', 41, '神戸市'),
+('hyogo', 41, '二宮商店街'),
 -- STEINS;GATE (ID=42)
 ('tokyo', 42, '秋葉原ラジオ会館'),
 ('tokyo', 42, '柳森神社'),
@@ -241,7 +249,8 @@ INSERT INTO location (prefecture, anime_id, name) VALUES
 ('kagawa', 47, '小豆島土庄港'),
 ('kagawa', 47, 'エンジェルロード'),
 -- 僕だけがいない街 (ID=48)
-('hokkaido', 48, '苫小牧市'),
+('hokkaido', 48, '苫小牧市立美園小学校'),
+('hokkaido', 48, '苫小牧市科学センター '),
 -- 青春ブタ野郎はバニーガール先輩の夢を見ない (ID=49)
 ('kanagawa', 49, '藤沢駅'),
 ('kanagawa', 49, '七里ヶ浜'),
@@ -327,6 +336,7 @@ INSERT INTO location (prefecture, anime_id, name) VALUES
 -- ルックバック (ID=68) 秋田
 ('akita', 68, 'にかほ市・文林堂書店'),
 ('akita', 68, '仁賀保駅'),
+('akita', 68, '仁賀保大橋'),
 -- 好きでも嫌いなあまのじゃく (ID=69) 山形
 ('yamagata', 69, '米沢市（主人公の住む町）'),
 ('yamagata', 69, '山寺（宝珠山立石寺）'),
@@ -404,8 +414,11 @@ INSERT INTO location (prefecture, anime_id, name) VALUES
 ('tokyo', 88, '港区周辺（秀知院学園のイメージモデル）'),
 ('tokyo', 88, '六本木・赤坂エリア'),
 -- 君に届け (ID=89)
-('hokkaido', 89, '札幌市内'),
-('hokkaido', 89, '北海道の高校（モデル校周辺）'),
+('hokkaido', 89, '羽幌神社'),
+('hokkaido', 89, '羽幌高校'),
+('hokkaido', 89, '羽幌橋'),
+('hokkaido', 89, '羽幌港'),
+('hokkaido', 89, '朝日大橋'),
 -- 五等分の花嫁 (ID=90)
 ('tokyo', 90, '中野区・中野サンプラザ周辺'),
 ('tokyo', 90, '太田市場'),
