@@ -371,8 +371,8 @@ INSERT INTO anime (title, slug, year, xurl, officialurl, description, image) VAL
 -- ------------------------------------------------------------
 -- 鹿児島県
 -- ------------------------------------------------------------
-INSERT INTO anime (title, slug, year, xurl, officialurl, description, image) VALUES
-('秒速5センチメートル', 'byousoku-5cm', 2007, NULL, 'https://www.cwfilms.jp/5cm/', '新海誠監督のアニメ映画。第一話は栃木県岩舟駅での再会、第三話は鹿児島県種子島が舞台。各地の風景が美しく描かれる。', '/images/byousoku-5cm.jpg'),
+-- ※鹿児島県が舞台のアニメは栃木県で登録済み（秒速5センチメートル：聖地のみ登録）
+
 -- ------------------------------------------------------------
 -- 沖縄県
 -- ------------------------------------------------------------
@@ -445,8 +445,9 @@ INSERT INTO location (prefecture, anime_id, name) VALUES
 -- ------------------------------------------------------------
 INSERT INTO location (prefecture, anime_id, name) VALUES
 -- ハイキュー!!
-('miyagi', (SELECT id FROM anime WHERE slug = 'haikyu'), '仙台市体育館'),
-('miyagi', (SELECT id FROM anime WHERE slug = 'haikyu'), '仙台駅');
+('miyagi', (SELECT id FROM anime WHERE slug = 'haikyu'), '岩手県立軽米町高等学校'),
+('miyagi', (SELECT id FROM anime WHERE slug = 'haikyu'), '軽米町町民体育館'),
+('miyagi', (SELECT id FROM anime WHERE slug = 'haikyu'), 'カメイアリーナ仙台');
 
 -- ------------------------------------------------------------
 -- 秋田県
@@ -462,22 +463,24 @@ INSERT INTO location (prefecture, anime_id, name) VALUES
 -- ------------------------------------------------------------
 INSERT INTO location (prefecture, anime_id, name) VALUES
 -- 好きでも嫌いなあまのじゃく
-('yamagata', (SELECT id FROM anime WHERE slug = 'amanojaku'), '米沢市（主人公の住む町）'),
-('yamagata', (SELECT id FROM anime WHERE slug = 'amanojaku'), '山寺（宝珠山立石寺）'),
+('yamagata', (SELECT id FROM anime WHERE slug = 'amanojaku'), '小野川温泉 宝寿の湯/米沢市'),
+('yamagata', (SELECT id FROM anime WHERE slug = 'amanojaku'), '米沢市米沢駅'),
+('yamagata', (SELECT id FROM anime WHERE slug = 'amanojaku'), '笹野観音/米沢市'),
 -- レベルE
-('yamagata', (SELECT id FROM anime WHERE slug = 'level-e'), '山形市内'),
-('yamagata', (SELECT id FROM anime WHERE slug = 'level-e'), '山形駅周辺');
+('yamagata', (SELECT id FROM anime WHERE slug = 'level-e'), '山形県立上山明新館高等学校'),
+('yamagata', (SELECT id FROM anime WHERE slug = 'level-e'), '山形駅');
 
 -- ------------------------------------------------------------
 -- 福島県
 -- ------------------------------------------------------------
 INSERT INTO location (prefecture, anime_id, name) VALUES
 -- 未確認で進行形
-('fukushima', (SELECT id FROM anime WHERE slug = 'mikakunin'), '郡山市・安積歴史博物館'),
-('fukushima', (SELECT id FROM anime WHERE slug = 'mikakunin'), '郡山市内'),
+('fukushima', (SELECT id FROM anime WHERE slug = 'mikakunin'), '郡山駅'),
+('fukushima', (SELECT id FROM anime WHERE slug = 'mikakunin'), '酒蓋公園'),
+('fukushima', (SELECT id FROM anime WHERE slug = 'mikakunin'), '福島県立安積高校'),
 -- ざつ旅
-('fukushima', (SELECT id FROM anime WHERE slug = 'zatsu-tabi'), '会津若松市・鶴ヶ城'),
-('fukushima', (SELECT id FROM anime WHERE slug = 'zatsu-tabi'), '会津若松市・七日町通り');
+('fukushima', (SELECT id FROM anime WHERE slug = 'zatsu-tabi'), '会津若松市'),
+('fukushima', (SELECT id FROM anime WHERE slug = 'zatsu-tabi'), '会津若松市飯盛山');
 
 -- ************************************************************
 -- 関東地方
@@ -490,13 +493,14 @@ INSERT INTO location (prefecture, anime_id, name) VALUES
 -- ガールズ＆パンツァー
 ('ibaraki', (SELECT id FROM anime WHERE slug = 'girls-und-panzer'), '大洗磯前神社'),
 ('ibaraki', (SELECT id FROM anime WHERE slug = 'girls-und-panzer'), '大洗マリンタワー'),
-('ibaraki', (SELECT id FROM anime WHERE slug = 'girls-und-panzer'), '大洗町商店街');
+('ibaraki', (SELECT id FROM anime WHERE slug = 'girls-und-panzer'), '大洗まいわい市場');
 
 -- ------------------------------------------------------------
 -- 栃木県
 -- ------------------------------------------------------------
 INSERT INTO location (prefecture, anime_id, name) VALUES
 -- 秒速5センチメートル
+('tochigi', (SELECT id FROM anime WHERE slug = 'byousoku-5cm'), '小山駅'),
 ('tochigi', (SELECT id FROM anime WHERE slug = 'byousoku-5cm'), '岩舟駅');
 
 -- ------------------------------------------------------------
@@ -510,9 +514,11 @@ INSERT INTO location (prefecture, anime_id, name) VALUES
 -- 宇宙よりも遠い場所
 ('gunma', (SELECT id FROM anime WHERE slug = 'yorimoi'), '館林駅'),
 ('gunma', (SELECT id FROM anime WHERE slug = 'yorimoi'), 'つつじが岡公園'),
+('gunma', (SELECT id FROM anime WHERE slug = 'yorimoi'), 'LA MANON'),
 -- 日常
-('gunma', (SELECT id FROM anime WHERE slug = 'nichijou'), '伊勢崎市（時定市のモデル）'),
-('gunma', (SELECT id FROM anime WHERE slug = 'nichijou'), '伊勢崎市・華蔵寺公園');
+('gunma', (SELECT id FROM anime WHERE slug = 'nichijou'), '伊勢崎市伊勢崎駅東側'),
+('gunma', (SELECT id FROM anime WHERE slug = 'nichijou'), '伊勢崎大手町郵便局'),
+('gunma', (SELECT id FROM anime WHERE slug = 'nichijou'), '伊勢崎市柏川沿い');
 
 -- ------------------------------------------------------------
 -- 埼玉県
@@ -520,21 +526,33 @@ INSERT INTO location (prefecture, anime_id, name) VALUES
 INSERT INTO location (prefecture, anime_id, name) VALUES
 -- らき☆すた
 ('saitama', (SELECT id FROM anime WHERE slug = 'lucky-star'), '鷲宮神社'),
+('saitama', (SELECT id FROM anime WHERE slug = 'lucky-star'), '宮前橋'),
+('saitama', (SELECT id FROM anime WHERE slug = 'lucky-star'), '春日部共栄高等学校'),
+('saitama', (SELECT id FROM anime WHERE slug = 'lucky-star'), '春日部駅'),
 -- あの花
-('saitama', (SELECT id FROM anime WHERE slug = 'anohana'), '秩父橋'),
+('saitama', (SELECT id FROM anime WHERE slug = 'anohana'), '西武秩父駅'),
+('saitama', (SELECT id FROM anime WHERE slug = 'anohana'), '秩父神社'),
+('saitama', (SELECT id FROM anime WHERE slug = 'anohana'), '秩父まつり会館裏線路脇'),
 ('saitama', (SELECT id FROM anime WHERE slug = 'anohana'), '定林寺'),
 ('saitama', (SELECT id FROM anime WHERE slug = 'anohana'), '旧秩父橋'),
 -- ヤマノススメ
 ('saitama', (SELECT id FROM anime WHERE slug = 'yama-no-susume'), '天覧山'),
+('saitama', (SELECT id FROM anime WHERE slug = 'yama-no-susume'), '飯能銀座通り商店街'),
 ('saitama', (SELECT id FROM anime WHERE slug = 'yama-no-susume'), '飯能駅'),
+('saitama', (SELECT id FROM anime WHERE slug = 'yama-no-susume'), '東飯能駅'),
 -- 月がきれい
-('saitama', (SELECT id FROM anime WHERE slug = 'tsuki-ga-kirei'), '川越市蔵造りの町並み'),
-('saitama', (SELECT id FROM anime WHERE slug = 'tsuki-ga-kirei'), '川越氷川神社'),
+('saitama', (SELECT id FROM anime WHERE slug = 'tsuki-ga-kirei'), '本川越駅'),
+('saitama', (SELECT id FROM anime WHERE slug = 'tsuki-ga-kirei'), '入間川街道'),
+('saitama', (SELECT id FROM anime WHERE slug = 'tsuki-ga-kirei'), '大正浪漫夢通り'),
+('saitama', (SELECT id FROM anime WHERE slug = 'tsuki-ga-kirei'), '川越 熊野神社'),
+('saitama', (SELECT id FROM anime WHERE slug = 'tsuki-ga-kirei'), '川越 氷川神社'),
 -- のんのんびより
-('saitama', (SELECT id FROM anime WHERE slug = 'non-non-biyori'), '小川町'),
+('saitama', (SELECT id FROM anime WHERE slug = 'non-non-biyori'), '小川町立小川小学校 下里分校'),
+('saitama', (SELECT id FROM anime WHERE slug = 'non-non-biyori'), '小川町立小川小学校 下里分校カフェ Mozart'),
 -- 女子高生の無駄づかい
-('saitama', (SELECT id FROM anime WHERE slug = 'joshikousei-no-mudazukai'), '所沢市周辺（舞台モデル）'),
-('saitama', (SELECT id FROM anime WHERE slug = 'joshikousei-no-mudazukai'), '東村山駅周辺'),
+('saitama', (SELECT id FROM anime WHERE slug = 'joshikousei-no-mudazukai'), '東京都立東村山西高等学校'),
+('saitama', (SELECT id FROM anime WHERE slug = 'joshikousei-no-mudazukai'), '八坂駅'),
+('saitama', (SELECT id FROM anime WHERE slug = 'joshikousei-no-mudazukai'), '東村山中央公園'),
 -- ブルーロック
 ('saitama', (SELECT id FROM anime WHERE slug = 'blue-lock'), '埼玉スタジアム2002');
 
@@ -543,10 +561,15 @@ INSERT INTO location (prefecture, anime_id, name) VALUES
 -- ------------------------------------------------------------
 INSERT INTO location (prefecture, anime_id, name) VALUES
 -- やはり俺の青春ラブコメはまちがっている。
-('chiba', (SELECT id FROM anime WHERE slug = 'oregairu'), '千葉駅'),
+('chiba', (SELECT id FROM anime WHERE slug = 'oregairu'), '千葉市立稲毛高等学校・附属中学校'),
+('chiba', (SELECT id FROM anime WHERE slug = 'oregairu'), '千葉市 高洲コミュニティセンター'),
+('chiba', (SELECT id FROM anime WHERE slug = 'oregairu'), 'イオン マリンピア店'),
 ('chiba', (SELECT id FROM anime WHERE slug = 'oregairu'), '稲毛海浜公園'),
+('chiba', (SELECT id FROM anime WHERE slug = 'oregairu'), '稲毛陸橋'),
+('chiba', (SELECT id FROM anime WHERE slug = 'oregairu'), '稲毛浅間神社'),
 -- 俺の妹がこんなに可愛いわけがない
-('chiba', (SELECT id FROM anime WHERE slug = 'oreimo'), '千葉モノレール沿線'),
+('chiba', (SELECT id FROM anime WHERE slug = 'oreimo'), '千葉県立千葉商業高等学校'),
+('chiba', (SELECT id FROM anime WHERE slug = 'oreimo'), '千葉駅'),
 ('chiba', (SELECT id FROM anime WHERE slug = 'oreimo'), '千葉公園');
 
 -- ------------------------------------------------------------
