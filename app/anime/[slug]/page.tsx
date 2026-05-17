@@ -5,10 +5,15 @@ import Link from "next/link";
 import { getDB } from "@/lib/db";
 import { prefectureBySlug } from "@/lib/prefectures";
 import type { Anime, Location } from "@/lib/types";
+import SacredPlaceMap, {
+  type SacredPlaceMapLocation,
+} from "@/app/components/SacredPlaceMap";
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
+
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
@@ -41,6 +46,11 @@ export default async function AnimePage({ params }: Props) {
     .all<Location>();
 
   const locations = locationRows.results;
+  const mapLocations: SacredPlaceMapLocation[] = locations.map((loc) => ({
+    id: loc.id,
+    name: loc.name,
+    prefecture: loc.prefecture,
+  }));
 
   const locationsByPrefecture = new Map<string, Location[]>();
   for (const loc of locations) {
@@ -131,6 +141,8 @@ export default async function AnimePage({ params }: Props) {
           </div>
         </div>
       </div>
+
+      <SacredPlaceMap locations={mapLocations} />
 
       {/* 聖地一覧 */}
       <section className="mt-8">

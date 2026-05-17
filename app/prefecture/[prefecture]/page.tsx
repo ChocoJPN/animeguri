@@ -2,13 +2,17 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getDB } from "@/lib/db";
 import { prefectureBySlug } from "@/lib/prefectures";
-import type { Anime } from "@/lib/types";
-import AnimeCard from "@/app/components/AnimeCard";
+import type { Anime, Location } from "@/lib/types";
+import PrefectureAnimeSelector, {
+  type PrefectureAnime,
+} from "@/app/components/PrefectureAnimeSelector";
 import Link from "next/link";
 
 interface Props {
   params: Promise<{ prefecture: string }>;
 }
+
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { prefecture } = await params;
@@ -38,6 +42,32 @@ export default async function PrefecturePage({ params }: Props) {
     .all<Anime>();
 
   const animeList: Anime[] = rows.results;
+  let animeListWithLocations: PrefectureAnime[] = [];
+
+  if (animeList.length > 0) {
+    const locationRows = await db
+      .prepare(
+        `SELECT l.id, l.prefecture, l.anime_id, l.name
+         FROM location l
+         JOIN anime a ON a.id = l.anime_id
+         WHERE l.prefecture = ?
+         ORDER BY a.year DESC, l.id ASC`
+      )
+      .bind(prefecture)
+      .all<Location>();
+
+    const locationsByAnimeId = new Map<number, Location[]>();
+    for (const location of locationRows.results) {
+      const existing = locationsByAnimeId.get(location.anime_id) || [];
+      existing.push(location);
+      locationsByAnimeId.set(location.anime_id, existing);
+    }
+
+    animeListWithLocations = animeList.map((anime) => ({
+      ...anime,
+      locations: locationsByAnimeId.get(anime.id) || [],
+    }));
+  }
 
   return (
     <div>
@@ -62,11 +92,7 @@ export default async function PrefecturePage({ params }: Props) {
           この都道府県にはまだアニメ聖地が登録されていません。
         </p>
       ) : (
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          {animeList.map((anime) => (
-            <AnimeCard key={anime.id} anime={anime} />
-          ))}
-        </div>
+        <PrefectureAnimeSelector animeList={animeListWithLocations} />
       )}
     </div>
   );
