@@ -92,7 +92,10 @@ export default async function PrefecturePage({ params }: Props) {
           この都道府県にはまだアニメ聖地が登録されていません。
         </p>
       ) : (
-        <PrefectureAnimeSelector animeList={animeListWithLocations} />
+        <PrefectureAnimeSelector
+          animeList={animeListWithLocations}
+          prefecture={prefecture}
+        />
       )}
     </div>
   );
