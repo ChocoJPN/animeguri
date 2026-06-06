@@ -10,7 +10,6 @@ export default function AnimeCard({ anime }: { anime: Anime }) {
       href={`/anime/${anime.slug}`}
       className="group block overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow hover:shadow-md dark:border-gray-800 dark:bg-gray-900"
     >
-      {/* ポスター画像（3:4 縦長） */}
       <div className="relative aspect-[3/4] w-full">
         {anime.image ? (
           <Image

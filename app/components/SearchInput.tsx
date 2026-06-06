@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import Link from "next/link";
-import { prefectureBySlug } from "@/lib/prefectures";
+import AnimeCard from "./AnimeCard";
 import type { AnimeWithLocations } from "@/lib/types";
 
 export default function SearchInput() {
@@ -12,13 +11,13 @@ export default function SearchInput() {
   const timerRef = useRef<ReturnType<typeof setTimeout>>(null);
 
   const search = useCallback(async (q: string) => {
-    if (!q.trim()) {
-      setResults([]);
-      return;
-    }
+    const trimmedQuery = q.trim();
     setLoading(true);
     try {
-      const res = await fetch(`/api/search?q=${encodeURIComponent(q)}`);
+      const url = trimmedQuery
+        ? `/api/search?q=${encodeURIComponent(trimmedQuery)}`
+        : "/api/search";
+      const res = await fetch(url);
       const data: AnimeWithLocations[] = await res.json();
       setResults(data);
     } catch {
@@ -47,9 +46,7 @@ export default function SearchInput() {
         autoFocus
       />
 
-      {loading && (
-        <p className="mt-4 text-sm text-gray-500">検索中...</p>
-      )}
+      {loading && <p className="mt-4 text-sm text-gray-500">検索中...</p>}
 
       {!loading && query.trim() && results.length === 0 && (
         <p className="mt-4 text-sm text-gray-500">
@@ -58,45 +55,9 @@ export default function SearchInput() {
       )}
 
       {results.length > 0 && (
-        <div className="mt-4 space-y-4">
+        <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {results.map((anime) => (
-            <div
-              key={anime.id}
-              className="rounded-lg border border-gray-200 p-4 dark:border-gray-800"
-            >
-              <Link
-                href={`/anime/${anime.slug}`}
-                className="text-lg font-semibold text-gray-900 hover:text-primary dark:text-gray-100"
-              >
-                {anime.title}
-              </Link>
-              {anime.year && (
-                <span className="ml-2 text-sm text-gray-500">{anime.year}年</span>
-              )}
-              {anime.description && (
-                <p className="mt-1 line-clamp-2 text-sm text-gray-600 dark:text-gray-400">
-                  {anime.description}
-                </p>
-              )}
-              {anime.locations.length > 0 && (
-                <div className="mt-2 flex flex-wrap gap-1">
-                  {[...new Set(anime.locations.map((l) => l.prefecture))].map(
-                    (slug) => {
-                      const pref = prefectureBySlug.get(slug);
-                      return (
-                        <Link
-                          key={slug}
-                          href={`/prefecture/${slug}`}
-                          className="rounded-full bg-gray-100 px-2 py-0.5 text-xs text-gray-700 hover:bg-primary/10 hover:text-primary dark:bg-gray-800 dark:text-gray-300"
-                        >
-                          {pref?.nameJa || slug}
-                        </Link>
-                      );
-                    }
-                  )}
-                </div>
-              )}
-            </div>
+            <AnimeCard key={anime.id} anime={anime} />
           ))}
         </div>
       )}
