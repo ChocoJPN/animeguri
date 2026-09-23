@@ -173,7 +173,12 @@ export default async function AnimePage({ params }: Props) {
                         key={loc.id}
                         className="text-gray-700 dark:text-gray-300"
                       >
-                        {loc.name}
+                        <a
+                          href={`#map-location-${loc.id}`}
+                          className="transition-colors hover:text-primary"
+                        >
+                          {loc.name}
+                        </a>
                       </li>
                     ))}
                   </ul>

@@ -48,8 +48,9 @@ export default function SacredPlaceMap({
 
           return (
             <article
+              id={`map-location-${location.id}`}
               key={location.id}
-              className="overflow-hidden rounded-lg border border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900"
+              className="scroll-mt-20 overflow-hidden rounded-lg border border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900"
             >
               <div className="aspect-[4/3] w-full bg-gray-100 dark:bg-gray-800">
                 <iframe

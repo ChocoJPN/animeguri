@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { getDB } from "@/lib/db";
 import { prefectureBySlug } from "@/lib/prefectures";
@@ -74,6 +75,7 @@ export default async function PrefectureAnimeMapPage({ params }: Props) {
     name: location.name,
     prefecture: location.prefecture,
   }));
+  const initial = anime.title.charAt(0);
 
   return (
     <div>
@@ -94,14 +96,42 @@ export default async function PrefectureAnimeMapPage({ params }: Props) {
       </div>
 
       <p className="text-sm font-medium text-primary">{pref.nameJa}の聖地</p>
-      <h1 className="mt-1 text-2xl font-bold text-gray-900 dark:text-gray-100 sm:text-3xl">
-        {anime.title}
-      </h1>
-      {anime.description && (
-        <p className="mt-4 max-w-3xl leading-relaxed text-gray-700 dark:text-gray-300">
-          {anime.description}
-        </p>
-      )}
+      <div className="mb-6 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900 sm:flex">
+        <div className="relative aspect-[3/4] w-full shrink-0 bg-gray-100 dark:bg-gray-800 sm:w-56 md:w-64">
+          {anime.image ? (
+            <Image
+              src={anime.image}
+              alt={anime.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 640px) 100vw, 256px"
+              priority
+            />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-indigo-400 to-purple-500">
+              <span className="text-7xl font-bold text-white/80">
+                {initial}
+              </span>
+            </div>
+          )}
+        </div>
+
+        <div className="flex flex-1 flex-col justify-center p-5 sm:p-6">
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 sm:text-3xl">
+            {anime.title}
+          </h1>
+          {anime.year && (
+            <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+              {anime.year}年
+            </p>
+          )}
+          {anime.description && (
+            <p className="mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
+              {anime.description}
+            </p>
+          )}
+        </div>
+      </div>
 
       <section className="mt-8">
         <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-gray-100">
@@ -111,9 +141,14 @@ export default async function PrefectureAnimeMapPage({ params }: Props) {
           {locations.map((location) => (
             <li
               key={location.id}
-              className="rounded-md bg-gray-50 px-3 py-2 text-gray-700 dark:bg-gray-800 dark:text-gray-300"
+              className="rounded-md bg-gray-50 dark:bg-gray-800"
             >
-              {location.name}
+              <a
+                href={`#map-location-${location.id}`}
+                className="block px-3 py-2 text-gray-700 transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-primary"
+              >
+                {location.name}
+              </a>
             </li>
           ))}
         </ul>
