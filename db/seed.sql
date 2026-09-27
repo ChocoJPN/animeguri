@@ -1169,7 +1169,7 @@ INSERT INTO anime (title, slug, year, xurl, officialurl, description, image) VAL
 ('輪廻のラグランジェ', 'rinne-no-lagrange', 2012, NULL, 'https://lag-rin.com/', '千葉県鴨川市を舞台にしたロボットアニメ。鴨川の海岸や学校、街並みが作中に多く登場する。', '/images/rinne-no-lagrange.jpg'),
 ('弱虫ペダル', 'yowamushi-pedal', 2013, 'https://x.com/yowapeda_anime', 'https://yowapeda.com/', '千葉県の総北高校自転車競技部を中心に、坂道たちがインターハイを目指す大人気ロードレースアニメ。', '/images/yowamushi-pedal.jpg'),
 ('きんいろモザイク', 'kin-iro-mosaic', 2013, NULL, 'https://www.kinmosa.com/', '千葉県習志野市周辺をモデルにした学校生活と、イギリスから来た少女との交流を描く日常系アニメ。', '/images/kin-iro-mosaic.jpg'),
-('文豪ストレイドッグス', 'bungo-stray-dogs', 2016, 'https://x.com/bungosd_anime', 'https://bungosd.com/', '神奈川県横浜市を主な舞台にした異能力バトルアニメ。赤レンガ倉庫や山下公園など、港町横浜の風景が作品世界に溶け込んでいる。', NULL),
+('文豪ストレイドッグス', 'bungo-stray-dogs', 2016, 'https://x.com/bungosd_anime', 'https://bungosd.com/', '神奈川県横浜市を主な舞台にした異能力バトルアニメ。赤レンガ倉庫や山下公園など、港町横浜の風景が作品世界に溶け込んでいる。', '/images/bungo-stray-dogs.jpg'),
 ('ハイスコアガール', 'high-score-girl', 2018, 'https://x.com/hi_score_girl', 'http://hi-score-girl.com/', '1990年代のゲームセンター文化を背景にしたラブコメ。神奈川県川崎市周辺をモデルに、アーケードゲームに熱中する少年少女を描く。', '/images/high-score-girl.jpg'),
 ('ゆるゆり', 'yuru-yuri', 2011, 'https://x.com/anime_yuruyuri', 'https://yuruyuri.com/', '富山県高岡市をモデルにした日常系コメディ。七森中ごらく部のゆるい日々と、富山の街並みを思わせる背景が特徴。', '/images/yuru-yuri.jpg'),
 ('クロムクロ', 'kuromukuro', 2016, NULL, 'https://kuromukuro.com/', '富山県黒部市や立山連峰を背景にしたP.A.WORKS制作のロボットアニメ。研究所と古代から蘇った侍が物語を動かす。', '/images/kuromukuro.jpg'),
@@ -1236,6 +1236,29 @@ INSERT INTO anime (title, slug, year, xurl, officialurl, description, image) VAL
 ('もののけ姫', 'mononoke-hime', 1997, NULL, 'https://www.ghibli.jp/works/mononoke/', '屋久島の森など日本各地の自然から着想を得たジブリ作品。鹿児島県屋久島は作品世界を想起させる聖地として知られる。', '/images/mononoke-hime.jpg'),
 ('あそびにいくヨ！', 'asobi-ni-iku-yo', 2010, NULL, NULL, '沖縄県を舞台に、猫耳宇宙人と高校生の騒動を描くSFラブコメ。沖縄の街や海辺の風景が多く登場する。', '/images/asobi-ni-iku-yo.jpg'),
 ('スティッチ！', 'stitch', 2008, NULL, NULL, 'ディズニー作品「リロ・アンド・スティッチ」をもとに、沖縄の架空の島を舞台にしたテレビアニメ。南国らしい島の風景が特徴。', '/images/stitch.jpg');
+
+-- ============================================================
+-- 2020年以降の人気・話題アニメデータ
+-- ============================================================
+INSERT INTO anime (title, slug, year, xurl, officialurl, description, image) VALUES
+('その着せ替え人形は恋をする', 'kisekoi', 2022, 'https://x.com/kisekoi_anime', 'https://bisquedoll-anime.com/', '雛人形の顔を作る「頭師」を目指す男子高校生・五条新菜と、コスプレ好きのギャル・喜多川海夢が衣装作りを通して惹かれ合うラブコメ。埼玉県さいたま市岩槻区の人形の街並みや、千葉市の稲毛海浜公園などが美しく描かれる。', '/images/kisekoi.png'),
+('東京リベンジャーズ', 'tokyo-revengers', 2021, 'https://x.com/anime_toman', 'https://tokyo-revengers-anime.com/', '人生どん底のダメフリーター花垣武道が、中学時代にタイムリープしてかつての恋人を救うため暴走族チームで成り上がるサスペンスアクション。渋谷スクランブル交差点や宮下公園など、渋谷の街並みが物語の舞台となる。', '/images/tokyo-revengers.jpg'),
+('チェンソーマン', 'chainsaw-man', 2022, 'https://x.com/CHAINSAWMAN_PR', 'https://chainsawman.dog/', '悪魔を身に宿した少年デンジが公安対魔特異4課のデビルハンターとして悪魔を狩るダークファンタジー。新宿や池袋、練馬、渋谷など、東京都内の実在のストリートや建造物がリアルに描かれている。', '/images/chainsaw-man.jpg'),
+('怪獣8号', 'kaiju-no-8', 2024, 'https://x.com/KaijuNo8_anime', 'https://kaiju-no8.net/', '怪獣が日常を脅かす日本で、怪獣に変身する能力を得てしまった日比野カフカが防衛隊員を目指すバトルアクション。防衛隊の立川基地がある東京都立川市や、第1話の怪獣清掃現場・戦闘地である神奈川県横浜市が舞台として登場する。', '/images/kaiju-no-8.png'),
+('ガールズバンドクライ', 'girls-band-cry', 2024, 'https://x.com/girlsbandcry', 'https://girls-band-cry.com/', '高校を中退して上京した少女・井芹仁菜が川崎で仲間と出会い、ガールズバンド「トゲナシトゲアリ」を結成して世の中に抗う青春音楽アニメ。JR川崎駅東口やラ チッタデッラ、武蔵小杉など川崎市内の風景が精緻に描かれ、街をあげたタイアップも話題に。', '/images/girls-band-cry.png'),
+('BanG Dream! It''s MyGO!!!!!', 'mygo', 2023, 'https://x.com/bang_dream_mygo', 'https://anime.bang-dream.com/mygo/', 'それぞれに迷いや葛藤を抱えた少女たちが「迷子でもいい、迷子でも進め」と叫びながら結成するガールズバンドの葛藤と成長を描く熱狂的人気アニメ。池袋サンシャインシティや都電荒川線沿線（学習院下、面影橋）、飛鳥山公園など豊島区・北区の風景が象徴的に登場する。', '/images/mygo.jpg'),
+('ラブライブ！虹ヶ咲学園スクールアイドル同好会', 'lovelive-nijigasaki', 2020, 'https://x.com/LoveLive_staff', 'https://www.lovelive-anime.jp/nijigasaki/', '東京・お台場にある巨大学園「虹ヶ咲学園」を舞台に、ソロ活動を中心に個性を磨き合うスクールアイドルたちの青春を描く。東京ビッグサイトをモデルにした校舎をはじめ、お台場海浜公園、デックス東京ビーチ、ダイバーシティ東京など臨海副都心全体が聖地となっている。', '/images/lovelive-nijigasaki.jpg'),
+('ラブライブ！スーパースター!!', 'lovelive-superstar', 2021, 'https://x.com/LoveLive_staff', 'https://www.lovelive-anime.jp/yuigaoka/', '表参道と原宿と青山という3つの街のはざまに新設された「結ヶ丘女子高等学校」を舞台に、澁谷かのん達の少女たちがスクールアイドル「Liella!」を結成する物語。原宿の竹下通りや神宮前交差点、代々木公園などトレンドの発信地の風景が多数描かれる。', '/images/lovelive-superstar.jpg'),
+('小市民シリーズ', 'shoshimin', 2024, 'https://x.com/shoshimin_pr', 'https://shoshimin-anime.com/', '『氷菓』の米澤穂信による人気青春ミステリのアニメ化。慎ましく「小市民」として平穏に過ごしたい小鳩常悟と小佐内ゆきが、日常の謎に巻き込まれていく。JR岐阜駅前広場、長良川沿い、伊奈波神社、岐阜城下など岐阜市の情緒ある街並みやスイーツ店が忠実に描かれる。', '/images/shoshimin.png'),
+('道産子ギャルはなまらめんこい', 'dosanko-gyaru', 2024, 'https://x.com/dosankogal_pr', 'https://dosankogal-pr.com/', '東京から北海道北見市へと引っ越してきた四季翼が、氷点下の真冬でもミニスカートで元気いっぱいの「道産子ギャル」冬木美波と出会うラブコメディ。JR北見駅やハッカ記念館、美幌峠などオホーツク圏の実在の景色や北海道文化が満載。', '/images/dosanko-gyaru.png'),
+('江戸前エルフ', 'edomae-elf', 2023, 'https://x.com/edomae_elf', 'https://edomae-elf.com/', '東京・月島にある「高耳神社」を舞台に、異世界から召喚され400年引きこもってゲームやオタク趣味に興じるエルフの神様・エルダと、女子高生巫女・小金井小糸の下町日常コメディ。月島のもんじゃストリートや佃島、勝鬨橋など下町風情が生き生きと描かれる。', '/images/edomae-elf.jpg'),
+('であいもん', 'deaimon', 2022, 'https://x.com/deaimon_anime', 'https://deaimon.jp/', 'ミュージシャンを諦めて京都の実家・老舗和菓子屋「緑松」に戻ってきた青年・納野和と、看板娘として店で暮らす少女・雪平一果の心温まる交流を描くハートフルアニメ。上賀茂神社や鴨川デルタ、出町柳周辺など古都・京都の情緒豊かな名所が季節感たっぷりに登場する。', '/images/deaimon.jpg'),
+('アオのハコ', 'ao-no-hako', 2024, 'https://x.com/aonohako_PR', 'https://aonohako-anime.com/', '中高一貫のスポーツ強豪校を舞台に、バドミントン部に所属する猪股大喜と、女子バスケ部の先輩・鹿野千夏がひとつ屋根の下で暮らすことになる青春部活ラブストーリー。練馬区や西武線沿線、武蔵野市周辺の学校や通学路、体育館がモデルとして描かれる。', '/images/ao-no-hako.jpg'),
+('忘却バッテリー', 'boukyaku-battery', 2024, 'https://x.com/boukyakubattery', 'https://boukyaku-battery.com/', 'かつて中学球界で恐れられた剛腕投手・清峰葉流火と、記憶喪失によって野球の腕も知識も失った天才捕手・要圭の黄金バッテリーが、都立小手指高校で再び野球を始める青春スポーツアニメ。都立小金井公園や武蔵野公園、西東京・小金井エリアの街並みが作中に登場する。', '/images/boukyaku-battery.jpg'),
+('夜のクラゲは泳げない', 'yorukura', 2024, 'https://x.com/yorukura_anime', 'https://yorukura-anime.com/', '自分の「好き」を見失った少女たちが夜の渋谷で出会い、匿名アーティストグループ「JELEE」を結成して自己表現を模索していくオリジナル青春群像劇。渋谷駅ハチ公前、スクランブル交差点、MIYASHITA PARK、神南エリアなど、現代の夜の渋谷の風景が鮮やかに描かれる。', '/images/yorukura.png'),
+('ウマ娘 プリティーダービー', 'umamusume', 2021, 'https://x.com/uma_musu_anime', 'https://anime-umamusume.jp/', '実在の競走馬の名と魂を受け継いだウマ娘たちが、トゥインクル・シリーズでの勝利を目指して駆け抜ける大ヒットアニメ。数々の名勝負が繰り広げられる東京競馬場（府中市）をはじめ、栗東トレーニングセンター（滋賀県）など各地の競馬ゆかりの地が聖地として親しまれている。', '/images/umamusume.jpg'),
+('逃げ上手の若君', 'nigejouzu-no-wakagimi', 2024, 'https://x.com/nigewaka_anime', 'https://nigewaka.run/', '鎌倉幕府滅亡の際、北条一族の生き残りとなった少年・北条時行が、「逃げる」「隠れる」ことで英雄への道を切り開いていく逃亡奇譚。長野県諏訪市の諏訪大社（上社・下社）や守矢史料館、神奈川県鎌倉市の鶴岡八幡宮など、歴史ある実在の名所が壮大な舞台として描かれる。', '/images/nigejouzu-no-wakagimi.jpg'),
+('メダリスト', 'medalist', 2025, 'https://x.com/medalist_PR', 'https://medalist-pr.com/', 'フィギュアスケートに情熱を燃やす少女・結束いのりと、指導者としての道を歩み始めた青年・明浦路司が、世界を目指して氷上で挑み続ける本格フィギュアスケートアニメ。愛知県名古屋市の大須スケートリンクや大須商店街など、名古屋の街並みが物語の拠点として描かれる。', '/images/medalist.jpg');
 
 -- ============================================================
 -- 追加聖地データ（都道府県ごとの候補拡充）
@@ -1407,3 +1430,82 @@ INSERT INTO location (prefecture, anime_id, name) VALUES
 ('okinawa', (SELECT id FROM anime WHERE slug = 'asobi-ni-iku-yo'), '那覇市'),
 ('okinawa', (SELECT id FROM anime WHERE slug = 'asobi-ni-iku-yo'), '沖縄本島中部'),
 ('okinawa', (SELECT id FROM anime WHERE slug = 'stitch'), '沖縄の離島モデル');
+
+-- ============================================================
+-- 2020年以降の人気・話題アニメ 聖地データ
+-- ============================================================
+INSERT INTO location (prefecture, anime_id, name) VALUES
+-- その着せ替え人形は恋をする
+('saitama', (SELECT id FROM anime WHERE slug = 'kisekoi'), 'さいたま市岩槻区（人形の街・岩槻駅周辺）'),
+('saitama', (SELECT id FROM anime WHERE slug = 'kisekoi'), '鈴木人形（五条雛人形店のモデル）'),
+('chiba', (SELECT id FROM anime WHERE slug = 'kisekoi'), 'いなげの浜（稲毛海浜公園）'),
+-- 東京リベンジャーズ
+('tokyo', (SELECT id FROM anime WHERE slug = 'tokyo-revengers'), '渋谷スクランブル交差点'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'tokyo-revengers'), '宮下公園（MIYASHITA PARK）'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'tokyo-revengers'), '王子神社（武蔵神社のモデル）'),
+-- チェンソーマン
+('tokyo', (SELECT id FROM anime WHERE slug = 'chainsaw-man'), '新宿駅東口周辺'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'chainsaw-man'), '池袋・サンシャイン通り周辺'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'chainsaw-man'), '練馬駅周辺'),
+-- 怪獣8号
+('tokyo', (SELECT id FROM anime WHERE slug = 'kaiju-no-8'), '立川駅周辺・陸上自衛隊立川駐屯地周辺'),
+('kanagawa', (SELECT id FROM anime WHERE slug = 'kaiju-no-8'), '横浜中華街・元町周辺'),
+('kanagawa', (SELECT id FROM anime WHERE slug = 'kaiju-no-8'), '横浜みなとみらい'),
+-- ガールズバンドクライ
+('kanagawa', (SELECT id FROM anime WHERE slug = 'girls-band-cry'), 'JR川崎駅東口・駅前広場'),
+('kanagawa', (SELECT id FROM anime WHERE slug = 'girls-band-cry'), 'ラ チッタデッラ（LA CITTADELLA）'),
+('kanagawa', (SELECT id FROM anime WHERE slug = 'girls-band-cry'), '武蔵小杉駅周辺・多摩川河川敷'),
+-- BanG Dream! It''s MyGO!!!!!
+('tokyo', (SELECT id FROM anime WHERE slug = 'mygo'), '池袋サンシャインシティ・展望台'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'mygo'), '都電荒川線（学習院下停留場・面影橋）'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'mygo'), '飛鳥山公園・跨線橋'),
+-- ラブライブ！虹ヶ咲学園スクールアイドル同好会
+('tokyo', (SELECT id FROM anime WHERE slug = 'lovelive-nijigasaki'), '東京ビッグサイト（虹ヶ咲学園モデル）'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'lovelive-nijigasaki'), 'お台場海浜公園・デックス東京ビーチ'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'lovelive-nijigasaki'), 'ダイバーシティ東京 プラザ'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'lovelive-nijigasaki'), '夢の大橋・有明エリア'),
+-- ラブライブ！スーパースター!!
+('tokyo', (SELECT id FROM anime WHERE slug = 'lovelive-superstar'), '原宿竹下通り'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'lovelive-superstar'), '神宮前歩道橋・明治神宮前駅周辺'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'lovelive-superstar'), '代々木公園野外ステージ'),
+-- 小市民シリーズ
+('gifu', (SELECT id FROM anime WHERE slug = 'shoshimin'), 'JR岐阜駅北口・黄金の織田信長公像'),
+('gifu', (SELECT id FROM anime WHERE slug = 'shoshimin'), '長良川鵜飼観覧船のりば周辺'),
+('gifu', (SELECT id FROM anime WHERE slug = 'shoshimin'), '伊奈波神社周辺'),
+-- 道産子ギャルはなまらめんこい
+('hokkaido', (SELECT id FROM anime WHERE slug = 'dosanko-gyaru'), 'JR北見駅前広場'),
+('hokkaido', (SELECT id FROM anime WHERE slug = 'dosanko-gyaru'), '北見ハッカ記念館'),
+('hokkaido', (SELECT id FROM anime WHERE slug = 'dosanko-gyaru'), '美幌峠展望台'),
+-- 江戸前エルフ
+('tokyo', (SELECT id FROM anime WHERE slug = 'edomae-elf'), '月島西仲通り商店街（月島もんじゃストリート）'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'edomae-elf'), '佃住吉神社'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'edomae-elf'), '勝鬨橋'),
+-- であいもん
+('kyoto', (SELECT id FROM anime WHERE slug = 'deaimon'), '上賀茂神社（賀茂別雷神社）'),
+('kyoto', (SELECT id FROM anime WHERE slug = 'deaimon'), '鴨川デルタ（出町柳）'),
+('kyoto', (SELECT id FROM anime WHERE slug = 'deaimon'), '出町桝形商店街周辺'),
+-- アオのハコ
+('tokyo', (SELECT id FROM anime WHERE slug = 'ao-no-hako'), '西武新宿線・上石神井駅周辺'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'ao-no-hako'), '練馬区立石神井公園周辺'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'ao-no-hako'), '武蔵野総合体育館周辺'),
+-- 忘却バッテリー
+('tokyo', (SELECT id FROM anime WHERE slug = 'boukyaku-battery'), '都立小金井公園'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'boukyaku-battery'), '都立武蔵野公園・野川河川敷'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'boukyaku-battery'), '西武新宿線・花小金井駅周辺'),
+-- 夜のクラゲは泳げない
+('tokyo', (SELECT id FROM anime WHERE slug = 'yorukura'), 'MIYASHITA PARK（宮下パーク）'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'yorukura'), '渋谷スクランブル交差点・ハチ公前広場'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'yorukura'), '渋谷神南エリア・宇田川町'),
+-- ウマ娘 プリティーダービー
+('tokyo', (SELECT id FROM anime WHERE slug = 'umamusume'), '東京競馬場（府中市）'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'umamusume'), '大國魂神社（府中市）'),
+('shiga', (SELECT id FROM anime WHERE slug = 'umamusume'), '栗東トレーニングセンター周辺（栗東市）'),
+-- 逃げ上手の若君
+('nagano', (SELECT id FROM anime WHERE slug = 'nigejouzu-no-wakagimi'), '諏訪大社 上社本宮・前宮（諏訪市・茅野市）'),
+('nagano', (SELECT id FROM anime WHERE slug = 'nigejouzu-no-wakagimi'), '諏訪市博物館・諏訪湖周辺'),
+('kanagawa', (SELECT id FROM anime WHERE slug = 'nigejouzu-no-wakagimi'), '鎌倉・鶴岡八幡宮周辺'),
+-- メダリスト
+('aichi', (SELECT id FROM anime WHERE slug = 'medalist'), '大須スケートリンク（名古屋スポーツセンター）'),
+('aichi', (SELECT id FROM anime WHERE slug = 'medalist'), '大須商店街・大須観音'),
+('aichi', (SELECT id FROM anime WHERE slug = 'medalist'), '久屋大通公園・中部電力 MIRAI TOWER周辺');
+
