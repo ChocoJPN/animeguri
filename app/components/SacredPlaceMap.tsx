@@ -6,17 +6,32 @@ export interface SacredPlaceMapLocation {
   prefecture: string;
 }
 
-const locationQueryHints: Record<string, string> = {
-  旭川第七師団跡: "旭川市 第七師団跡",
-  羽幌高校: "北海道羽幌高等学校",
-  羽幌橋: "北海道 羽幌町 羽幌橋",
-  朝日大橋: "北海道 羽幌町 朝日大橋",
+const overseasAreaLabels: Record<string, string> = {
+  italy: "イタリア",
+  greece: "ギリシャ",
+  germany: "ドイツ",
+  netherlands: "オランダ",
+  france: "フランス",
+  thailand: "タイ",
 };
 
+const locationQueryHints: Record<string, string> = {
+  "旭川第七師団跡": "旭川市 第七師団跡",
+  羽幌高校: "北海道 羽幌高校",
+  羽幌橋: "北海道 羽幌町 羽幌橋",
+  朝日大橋: "北海道 羽幌町 朝日大橋",
+  "ジェノヴァ（ライデンシャフトリヒの街のイメージ）": "Genoa Italy",
+  "サン・レオ（カリオストロ公国の城下町モデル）": "San Leo Italy",
+  "サン・レオ城": "Forte di San Leo Italy",
+};
+
+export function getAreaLabel(slug: string) {
+  return prefectureBySlug.get(slug)?.nameJa || overseasAreaLabels[slug] || slug;
+}
+
 function buildMapQuery(location: SacredPlaceMapLocation) {
-  const prefectureName =
-    prefectureBySlug.get(location.prefecture)?.nameJa || location.prefecture;
-  return locationQueryHints[location.name] || `${prefectureName} ${location.name}`;
+  const areaName = getAreaLabel(location.prefecture);
+  return locationQueryHints[location.name] || `${areaName} ${location.name}`;
 }
 
 export default function SacredPlaceMap({
@@ -63,6 +78,9 @@ export default function SacredPlaceMap({
                 />
               </div>
               <div className="p-4">
+                <p className="mb-1 text-xs font-medium text-gray-500 dark:text-gray-400">
+                  {getAreaLabel(location.prefecture)}
+                </p>
                 <h3 className="font-semibold text-gray-900 dark:text-gray-100">
                   {location.name}
                 </h3>

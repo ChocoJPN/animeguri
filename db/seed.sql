@@ -1244,7 +1244,7 @@ INSERT INTO anime (title, slug, year, xurl, officialurl, description, image) VAL
 ('その着せ替え人形は恋をする', 'kisekoi', 2022, 'https://x.com/kisekoi_anime', 'https://bisquedoll-anime.com/', '雛人形の顔を作る「頭師」を目指す男子高校生・五条新菜と、コスプレ好きのギャル・喜多川海夢が衣装作りを通して惹かれ合うラブコメ。埼玉県さいたま市岩槻区の人形の街並みや、千葉市の稲毛海浜公園などが美しく描かれる。', '/images/kisekoi.png'),
 ('東京リベンジャーズ', 'tokyo-revengers', 2021, 'https://x.com/anime_toman', 'https://tokyo-revengers-anime.com/', '人生どん底のダメフリーター花垣武道が、中学時代にタイムリープしてかつての恋人を救うため暴走族チームで成り上がるサスペンスアクション。渋谷スクランブル交差点や宮下公園など、渋谷の街並みが物語の舞台となる。', '/images/tokyo-revengers.jpg'),
 ('チェンソーマン', 'chainsaw-man', 2022, 'https://x.com/CHAINSAWMAN_PR', 'https://chainsawman.dog/', '悪魔を身に宿した少年デンジが公安対魔特異4課のデビルハンターとして悪魔を狩るダークファンタジー。新宿や池袋、練馬、渋谷など、東京都内の実在のストリートや建造物がリアルに描かれている。', '/images/chainsaw-man.jpg'),
-('怪獣8号', 'kaiju-no-8', 2024, 'https://x.com/KaijuNo8_anime', 'https://kaiju-no8.net/', '怪獣が日常を脅かす日本で、怪獣に変身する能力を得てしまった日比野カフカが防衛隊員を目指すバトルアクション。防衛隊の立川基地がある東京都立川市や、第1話の怪獣清掃現場・戦闘地である神奈川県横浜市が舞台として登場する。', '/images/kaiju-no-8.png'),
+('怪獣8号', 'kaiju-no-8', 2024, 'https://x.com/KaijuNo8_anime', 'https://kaiju-no8.net/', '怪獣が日常を脅かす日本で、怪獣に変身する能力を得てしまった日比野カフカが防衛隊員を目指すバトルアクション。防衛隊の立川基地がある東京都立川市や、第1話の怪獣清掃現場・戦闘地である神奈川県横浜市が舞台として登場する。', '/images/kaiju-no-8.jpg'),
 ('ガールズバンドクライ', 'girls-band-cry', 2024, 'https://x.com/girlsbandcry', 'https://girls-band-cry.com/', '高校を中退して上京した少女・井芹仁菜が川崎で仲間と出会い、ガールズバンド「トゲナシトゲアリ」を結成して世の中に抗う青春音楽アニメ。JR川崎駅東口やラ チッタデッラ、武蔵小杉など川崎市内の風景が精緻に描かれ、街をあげたタイアップも話題に。', '/images/girls-band-cry.png'),
 ('BanG Dream! It''s MyGO!!!!!', 'mygo', 2023, 'https://x.com/bang_dream_mygo', 'https://anime.bang-dream.com/mygo/', 'それぞれに迷いや葛藤を抱えた少女たちが「迷子でもいい、迷子でも進め」と叫びながら結成するガールズバンドの葛藤と成長を描く熱狂的人気アニメ。池袋サンシャインシティや都電荒川線沿線（学習院下、面影橋）、飛鳥山公園など豊島区・北区の風景が象徴的に登場する。', '/images/mygo.jpg'),
 ('ラブライブ！虹ヶ咲学園スクールアイドル同好会', 'lovelive-nijigasaki', 2020, 'https://x.com/LoveLive_staff', 'https://www.lovelive-anime.jp/nijigasaki/', '東京・お台場にある巨大学園「虹ヶ咲学園」を舞台に、ソロ活動を中心に個性を磨き合うスクールアイドルたちの青春を描く。東京ビッグサイトをモデルにした校舎をはじめ、お台場海浜公園、デックス東京ビーチ、ダイバーシティ東京など臨海副都心全体が聖地となっている。', '/images/lovelive-nijigasaki.jpg'),
@@ -1259,6 +1259,41 @@ INSERT INTO anime (title, slug, year, xurl, officialurl, description, image) VAL
 ('ウマ娘 プリティーダービー', 'umamusume', 2021, 'https://x.com/uma_musu_anime', 'https://anime-umamusume.jp/', '実在の競走馬の名と魂を受け継いだウマ娘たちが、トゥインクル・シリーズでの勝利を目指して駆け抜ける大ヒットアニメ。数々の名勝負が繰り広げられる東京競馬場（府中市）をはじめ、栗東トレーニングセンター（滋賀県）など各地の競馬ゆかりの地が聖地として親しまれている。', '/images/umamusume.jpg'),
 ('逃げ上手の若君', 'nigejouzu-no-wakagimi', 2024, 'https://x.com/nigewaka_anime', 'https://nigewaka.run/', '鎌倉幕府滅亡の際、北条一族の生き残りとなった少年・北条時行が、「逃げる」「隠れる」ことで英雄への道を切り開いていく逃亡奇譚。長野県諏訪市の諏訪大社（上社・下社）や守矢史料館、神奈川県鎌倉市の鶴岡八幡宮など、歴史ある実在の名所が壮大な舞台として描かれる。', '/images/nigejouzu-no-wakagimi.jpg'),
 ('メダリスト', 'medalist', 2025, 'https://x.com/medalist_PR', 'https://medalist-pr.com/', 'フィギュアスケートに情熱を燃やす少女・結束いのりと、指導者としての道を歩み始めた青年・明浦路司が、世界を目指して氷上で挑み続ける本格フィギュアスケートアニメ。愛知県名古屋市の大須スケートリンクや大須商店街など、名古屋の街並みが物語の拠点として描かれる。', '/images/medalist.jpg');
+
+-- ============================================================
+-- 神アニメランキング由来の未登録アニメデータ
+-- ============================================================
+INSERT INTO anime (title, slug, year, xurl, officialurl, description, image) VALUES
+('DEATH NOTE', 'death-note', 2006, NULL, NULL, '名前を書かれた人間が死ぬノートを手にした夜神月と、世界的名探偵Lの頭脳戦を描くサスペンス。東京都内を思わせる都市風景を背景に、正義と倫理をめぐる緊張感ある物語が展開する。', '/images/death-note.jpg'),
+('僕のヒーローアカデミア', 'boku-no-hero-academia', 2016, NULL, NULL, '人口の多くが「個性」と呼ばれる超常能力を持つ世界で、無個性だった少年・緑谷出久が最高のヒーローを目指すバトルアクション。架空都市を舞台に、学園とヒーロー社会の成長物語が描かれる。', '/images/boku-no-hero-academia.jpg'),
+('HUNTER×HUNTER', 'hunter-hunter-2011', 2011, NULL, NULL, '父を探す少年ゴンがハンター試験に挑み、仲間たちと出会いながら未知の世界へ踏み出していく冒険アニメ。緻密な能力バトルと多彩な舞台設定で長く支持されている。', '/images/hunter-hunter-2011.jpg'),
+('鋼の錬金術師 FULLMETAL ALCHEMIST', 'fullmetal-alchemist-brotherhood', 2009, NULL, NULL, '禁忌の人体錬成によって失った身体を取り戻すため、エルリック兄弟が賢者の石を追うダークファンタジー。重厚な世界観と家族、国家、命のテーマが高く評価されている。', '/images/fullmetal-alchemist-brotherhood.jpg'),
+('ヴァイオレット・エヴァーガーデン', 'violet-evergarden', 2018, NULL, NULL, '戦場で生きてきた少女ヴァイオレットが、自動手記人形として手紙を代筆しながら「愛してる」の意味を知っていく物語。京都アニメーションによる繊細な映像美で知られる。', '/images/violet-evergarden.jpg'),
+('コードギアス 反逆のルルーシュ', 'code-geass', 2006, NULL, NULL, '神聖ブリタニア帝国に占領された日本を舞台に、力を得た少年ルルーシュが反逆を仕掛けるSFロボットアニメ。東京租界など架空化された日本の都市が物語の重要な舞台となる。', '/images/code-geass.jpg'),
+('薬屋のひとりごと', 'kusuriya-no-hitorigoto', 2023, NULL, NULL, '薬師の少女・猫猫が後宮で起きる事件や謎を薬学の知識で解き明かしていくミステリー。中華風の架空宮廷を舞台に、毒と薬、権力と人間模様が丁寧に描かれる。', '/images/kusuriya-no-hitorigoto.jpg'),
+('暗殺教室', 'ansatsu-kyoushitsu', 2015, NULL, NULL, '月を破壊した超生物「殺せんせー」を暗殺する任務を負った落ちこぼれクラスの生徒たちを描く学園アクション。架空の椚ヶ丘中学校を中心に、笑いと成長の物語が展開する。', '/images/ansatsu-kyoushitsu.jpg'),
+('斉木楠雄のΨ難', 'saiki-kusuo-no-psi-nan', 2016, NULL, NULL, '万能の超能力を持ちながら普通に暮らしたい高校生・斉木楠雄の日常を描くギャグアニメ。学園や街中を舞台に、個性の強い同級生たちとの騒動がテンポよく繰り広げられる。', '/images/saiki-kusuo-no-psi-nan.jpeg'),
+('魔法少女まどか☆マギカ', 'madoka-magica', 2011, NULL, NULL, '願いと引き換えに魔法少女となる少女たちの運命を描くダークファンタジー。見滝原市という架空都市を舞台に、希望と絶望の構造を鮮烈な演出で描いた名作。', '/images/madoka-magica.jpg'),
+('NARUTO -ナルト- 疾風伝', 'naruto-shippuden', 2007, NULL, NULL, '忍者の少年うずまきナルトが仲間とともに成長し、忍界を揺るがす戦いへ挑む長編アニメ。架空の忍者世界を舞台に、友情、宿命、里を守る意志が描かれる。', '/images/naruto-shippuden.png'),
+('Dr.STONE', 'dr-stone', 2019, NULL, NULL, '全人類が石化した未来で、科学少年・石神千空が文明をゼロから復興していく科学冒険アニメ。日本を含む荒廃した地球を舞台に、知識と実験で道を切り開く展開が魅力。', '/images/dr-stone.jpg'),
+('銀魂', 'gintama', 2006, NULL, NULL, '宇宙人に開国された江戸を舞台に、万事屋を営む坂田銀時たちの日常と戦いを描くSF時代劇コメディ。かぶき町など江戸と現代東京を混ぜた街並みが作品世界を形づくる。', '/images/gintama.jpg'),
+('東京喰種トーキョーグール', 'tokyo-ghoul', 2014, NULL, NULL, '人を喰らう喰種が潜む東京で、半喰種となった青年・金木研の葛藤を描くダークファンタジー。新宿、渋谷、練馬など東京の都市イメージが濃く反映されている。', '/images/tokyo-ghoul.jpg'),
+('ドラゴンボール', 'dragon-ball', 1986, NULL, NULL, '孫悟空がドラゴンボールを探す旅に出て、仲間や強敵と出会いながら成長していく冒険アニメ。世界的に知られるバトル作品で、作者ゆかりの愛知県でも親しまれている。', '/images/dragon-ball.jpg'),
+('PSYCHO-PASS サイコパス', 'psycho-pass', 2012, NULL, NULL, '人間の心理状態が数値化される近未来社会で、公安局の刑事たちが犯罪と統治の矛盾に向き合うSFサスペンス。東京を思わせる都市空間が冷たい未来社会として描かれる。', '/images/psycho-pass.jpg'),
+('Angel Beats!', 'angel-beats', 2010, NULL, NULL, '死後の学園を舞台に、理不尽な人生を送った少年少女たちが運命に抗う青春群像劇。学園生活とバンド、戦い、別れが交差するKey原作のオリジナルアニメ。', '/images/angel-beats.jpg'),
+('Charlotte', 'charlotte', 2015, NULL, NULL, '思春期の一部の少年少女にだけ特殊能力が発現する世界で、能力者たちを守ろうとする生徒会の物語。学園都市的な風景を背景に、青春と喪失が描かれる。', NULL),
+('ようこそ実力至上主義の教室へ', 'youkoso-jitsuryoku-shijou-shugi', 2017, NULL, NULL, '完全実力主義の名門校で、生徒たちがクラス昇格をかけて策略を巡らせる学園サスペンス。東京湾岸を思わせる閉鎖的な人工キャンパスが舞台となる。', '/images/youkoso-jitsuryoku-shijou-shugi.jpg'),
+('ルパン三世 カリオストロの城', 'lupin-cagliostro', 1979, NULL, NULL, 'ルパン三世がヨーロッパの小国カリオストロ公国で陰謀に巻き込まれる劇場アニメ。宮崎駿監督の初監督映画として知られ、軽快な冒険活劇の名作として愛されている。', '/images/lupin-cagliostro.jpg'),
+('地獄楽', 'jigokuraku', 2023, NULL, NULL, '死罪人の忍・画眉丸が無罪放免を条件に、不老不死の仙薬を求めて謎の島へ向かうダークファンタジー。江戸時代を下敷きに、処刑人と罪人の極限の戦いを描く。', '/images/jigokuraku.jpg'),
+('ポケットモンスター めざせポケモンマスター', 'pokemon-mezase-pokemon-master', 2023, NULL, NULL, 'サトシとピカチュウの旅の集大成として描かれたテレビアニメシリーズ。ポケモンとの出会いや別れを重ねながら、ポケモンマスターとは何かを問い直す物語。', NULL),
+('となりのトトロ', 'tonari-no-totoro', 1988, NULL, NULL, '昭和の里山を舞台に、姉妹と森の不思議な生きものトトロとの出会いを描くスタジオジブリ作品。埼玉県所沢市周辺の狭山丘陵を思わせる自然が作品の象徴となっている。', '/images/tonari-no-totoro.jpg'),
+('カードキャプターさくら', 'cardcaptor-sakura', 1998, NULL, NULL, '木之本桜が封印を解かれたクロウカードを集めるため奮闘する魔法少女アニメ。友枝町という架空の街を舞台に、日常と魔法がやさしく重なっていく。', '/images/cardcaptor-sakura.jpg'),
+('SPY×FAMILY', 'spy-family', 2022, NULL, NULL, 'スパイの父、殺し屋の母、超能力者の娘が互いの正体を隠して仮初めの家族になるコメディアクション。架空の東西冷戦風国家を舞台に、家族の絆と任務が交差する。', '/images/spy-family.jpg'),
+('ARIA The ORIGINATION', 'aria-the-origination', 2008, NULL, NULL, '水の惑星アクアの観光都市ネオ・ヴェネツィアで、一人前のウンディーネを目指す少女たちを描く癒やし系アニメ。穏やかな日常と美しい街並みが魅力。', '/images/aria-the-origination.jpg'),
+('BLACK LAGOON', 'black-lagoon', 2006, NULL, NULL, '東南アジアの犯罪都市ロアナプラを拠点に、運び屋ラグーン商会の荒々しい日々を描くクライムアクション。銃撃戦とハードボイルドな台詞回しが人気を集めた。', '/images/black-lagoon.jpg'),
+('フルーツバスケット', 'fruits-basket-2019', 2019, NULL, NULL, '異性に抱きつかれると十二支の動物に変身してしまう草摩家と、少女・本田透の交流を描く物語。東京都内の住宅街や学校を思わせる日常空間を舞台に、家族と心の傷を描く。', '/images/fruits-basket-2019.jpg'),
+('モーレツ宇宙海賊', 'mouretsu-pirates', 2012, NULL, NULL, '女子高生の加藤茉莉香が宇宙海賊船の船長を継ぐことになるSFアニメ。宇宙を舞台にしつつ、港町や学園生活の空気を感じさせる明るい冒険劇。', '/images/mouretsu-pirates.jpg'),
+('天体のメソッド', 'sora-no-method', 2014, NULL, NULL, '空に円盤が浮かぶ北海道の町を舞台に、少女たちの再会と約束を描くオリジナルアニメ。洞爺湖周辺を思わせる湖畔の風景が印象的に描かれている。', '/images/sora-no-method.jpg');
 
 -- ============================================================
 -- 追加聖地データ（都道府県ごとの候補拡充）
@@ -1508,4 +1543,67 @@ INSERT INTO location (prefecture, anime_id, name) VALUES
 ('aichi', (SELECT id FROM anime WHERE slug = 'medalist'), '大須スケートリンク（名古屋スポーツセンター）'),
 ('aichi', (SELECT id FROM anime WHERE slug = 'medalist'), '大須商店街・大須観音'),
 ('aichi', (SELECT id FROM anime WHERE slug = 'medalist'), '久屋大通公園・中部電力 MIRAI TOWER周辺');
+
+-- ============================================================
+-- 神アニメランキング由来の未登録アニメ 聖地・ゆかりデータ
+-- ============================================================
+INSERT INTO location (prefecture, anime_id, name) VALUES
+-- DEATH NOTE
+('tokyo', (SELECT id FROM anime WHERE slug = 'death-note'), '東京都内モデル周辺'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'death-note'), '新宿・渋谷周辺'),
+-- 僕のヒーローアカデミア
+('shizuoka', (SELECT id FROM anime WHERE slug = 'boku-no-hero-academia'), '静岡県周辺（架空都市・結田付ゆかり）'),
+-- HUNTER×HUNTER
+('yamagata', (SELECT id FROM anime WHERE slug = 'hunter-hunter-2011'), '新庄市（冨樫義博ゆかり）'),
+-- 鋼の錬金術師 FULLMETAL ALCHEMIST
+('hokkaido', (SELECT id FROM anime WHERE slug = 'fullmetal-alchemist-brotherhood'), '十勝地方（荒川弘ゆかり）'),
+-- ヴァイオレット・エヴァーガーデン
+('italy', (SELECT id FROM anime WHERE slug = 'violet-evergarden'), 'ジェノヴァ（ライデンシャフトリヒの街のイメージ）'),
+-- コードギアス 反逆のルルーシュ
+('tokyo', (SELECT id FROM anime WHERE slug = 'code-geass'), '東京租界モデル周辺'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'code-geass'), '新宿ゲットーを思わせる都内エリア'),
+-- 暗殺教室
+('tokyo', (SELECT id FROM anime WHERE slug = 'ansatsu-kyoushitsu'), '椚ヶ丘中学校モデル周辺'),
+-- 斉木楠雄のΨ難
+('tokyo', (SELECT id FROM anime WHERE slug = 'saiki-kusuo-no-psi-nan'), 'PK学園周辺モデル'),
+-- 魔法少女まどか☆マギカ
+('gunma', (SELECT id FROM anime WHERE slug = 'madoka-magica'), '前橋市周辺・見滝原市モデル候補'),
+-- NARUTO -ナルト- 疾風伝
+('okayama', (SELECT id FROM anime WHERE slug = 'naruto-shippuden'), '奈義町（岸本斉史ゆかり）'),
+-- Dr.STONE
+('tokyo', (SELECT id FROM anime WHERE slug = 'dr-stone'), '東京周辺（石化前の舞台ゆかり）'),
+-- 銀魂
+('tokyo', (SELECT id FROM anime WHERE slug = 'gintama'), '新宿歌舞伎町・かぶき町モデル周辺'),
+-- 東京喰種トーキョーグール
+('tokyo', (SELECT id FROM anime WHERE slug = 'tokyo-ghoul'), '新宿・渋谷周辺'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'tokyo-ghoul'), '練馬区周辺'),
+-- ドラゴンボール
+('aichi', (SELECT id FROM anime WHERE slug = 'dragon-ball'), '清須市（鳥山明ゆかり）'),
+-- PSYCHO-PASS サイコパス
+('tokyo', (SELECT id FROM anime WHERE slug = 'psycho-pass'), '東京都心・湾岸エリアモデル周辺'),
+-- Angel Beats!
+('ishikawa', (SELECT id FROM anime WHERE slug = 'angel-beats'), '金沢大学角間キャンパス周辺'),
+-- Charlotte
+('tokyo', (SELECT id FROM anime WHERE slug = 'charlotte'), '多摩地域・学園都市モデル周辺'),
+-- ようこそ実力至上主義の教室へ
+('tokyo', (SELECT id FROM anime WHERE slug = 'youkoso-jitsuryoku-shijou-shugi'), '東京湾岸エリア・人工島モデル周辺'),
+-- ルパン三世 カリオストロの城
+('italy', (SELECT id FROM anime WHERE slug = 'lupin-cagliostro'), 'サン・レオ（カリオストロ公国の城下町モデル）'),
+('italy', (SELECT id FROM anime WHERE slug = 'lupin-cagliostro'), 'サン・レオ城'),
+-- 地獄楽
+('tokyo', (SELECT id FROM anime WHERE slug = 'jigokuraku'), '江戸・東京周辺'),
+-- ポケットモンスター めざせポケモンマスター
+('tokyo', (SELECT id FROM anime WHERE slug = 'pokemon-mezase-pokemon-master'), '町田市（田尻智ゆかり）'),
+-- となりのトトロ
+('saitama', (SELECT id FROM anime WHERE slug = 'tonari-no-totoro'), '所沢市・狭山丘陵'),
+('tokyo', (SELECT id FROM anime WHERE slug = 'tonari-no-totoro'), '東村山市・八国山緑地周辺'),
+-- カードキャプターさくら
+('tokyo', (SELECT id FROM anime WHERE slug = 'cardcaptor-sakura'), '友枝町モデル周辺'),
+-- フルーツバスケット
+('tokyo', (SELECT id FROM anime WHERE slug = 'fruits-basket-2019'), '東京都内住宅街モデル周辺'),
+-- モーレツ宇宙海賊
+('kanagawa', (SELECT id FROM anime WHERE slug = 'mouretsu-pirates'), '湘南・港町モデル周辺'),
+-- 天体のメソッド
+('hokkaido', (SELECT id FROM anime WHERE slug = 'sora-no-method'), '洞爺湖町・洞爺湖周辺'),
+('hokkaido', (SELECT id FROM anime WHERE slug = 'sora-no-method'), '壮瞥町周辺');
 
