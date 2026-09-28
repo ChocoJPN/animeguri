@@ -2,7 +2,6 @@ import { getDB } from "@/lib/db";
 import type { PrefectureAnimeCount } from "@/lib/types";
 import JapanMap from "./components/JapanMap";
 import PrefectureList from "./components/PrefectureList";
-import WorldMap from "./components/WorldMap";
 
 export const dynamic = "force-dynamic";
 
@@ -32,13 +31,6 @@ export default async function Home() {
 
       <section className="mb-12">
         <JapanMap animeCounts={animeCounts} />
-      </section>
-
-      <section className="mb-12">
-        <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-gray-100">
-          海外の聖地
-        </h2>
-        <WorldMap animeCounts={animeCounts} />
       </section>
 
       <section>
