@@ -1281,11 +1281,10 @@ INSERT INTO anime (title, slug, year, xurl, officialurl, description, image) VAL
 ('ドラゴンボール', 'dragon-ball', 1986, NULL, NULL, '孫悟空がドラゴンボールを探す旅に出て、仲間や強敵と出会いながら成長していく冒険アニメ。世界的に知られるバトル作品で、作者ゆかりの愛知県でも親しまれている。', '/images/dragon-ball.jpg'),
 ('PSYCHO-PASS サイコパス', 'psycho-pass', 2012, NULL, NULL, '人間の心理状態が数値化される近未来社会で、公安局の刑事たちが犯罪と統治の矛盾に向き合うSFサスペンス。東京を思わせる都市空間が冷たい未来社会として描かれる。', '/images/psycho-pass.jpg'),
 ('Angel Beats!', 'angel-beats', 2010, NULL, NULL, '死後の学園を舞台に、理不尽な人生を送った少年少女たちが運命に抗う青春群像劇。学園生活とバンド、戦い、別れが交差するKey原作のオリジナルアニメ。', '/images/angel-beats.jpg'),
-('Charlotte', 'charlotte', 2015, NULL, NULL, '思春期の一部の少年少女にだけ特殊能力が発現する世界で、能力者たちを守ろうとする生徒会の物語。学園都市的な風景を背景に、青春と喪失が描かれる。', NULL),
+('Charlotte', 'charlotte', 2015, NULL, NULL, '思春期の一部の少年少女にだけ特殊能力が発現する世界で、能力者たちを守ろうとする生徒会の物語。学園都市的な風景を背景に、青春と喪失が描かれる。', '/images/charlotte.png'),
 ('ようこそ実力至上主義の教室へ', 'youkoso-jitsuryoku-shijou-shugi', 2017, NULL, NULL, '完全実力主義の名門校で、生徒たちがクラス昇格をかけて策略を巡らせる学園サスペンス。東京湾岸を思わせる閉鎖的な人工キャンパスが舞台となる。', '/images/youkoso-jitsuryoku-shijou-shugi.jpg'),
 ('ルパン三世 カリオストロの城', 'lupin-cagliostro', 1979, NULL, NULL, 'ルパン三世がヨーロッパの小国カリオストロ公国で陰謀に巻き込まれる劇場アニメ。宮崎駿監督の初監督映画として知られ、軽快な冒険活劇の名作として愛されている。', '/images/lupin-cagliostro.jpg'),
 ('地獄楽', 'jigokuraku', 2023, NULL, NULL, '死罪人の忍・画眉丸が無罪放免を条件に、不老不死の仙薬を求めて謎の島へ向かうダークファンタジー。江戸時代を下敷きに、処刑人と罪人の極限の戦いを描く。', '/images/jigokuraku.jpg'),
-('ポケットモンスター めざせポケモンマスター', 'pokemon-mezase-pokemon-master', 2023, NULL, NULL, 'サトシとピカチュウの旅の集大成として描かれたテレビアニメシリーズ。ポケモンとの出会いや別れを重ねながら、ポケモンマスターとは何かを問い直す物語。', NULL),
 ('となりのトトロ', 'tonari-no-totoro', 1988, NULL, NULL, '昭和の里山を舞台に、姉妹と森の不思議な生きものトトロとの出会いを描くスタジオジブリ作品。埼玉県所沢市周辺の狭山丘陵を思わせる自然が作品の象徴となっている。', '/images/tonari-no-totoro.jpg'),
 ('カードキャプターさくら', 'cardcaptor-sakura', 1998, NULL, NULL, '木之本桜が封印を解かれたクロウカードを集めるため奮闘する魔法少女アニメ。友枝町という架空の街を舞台に、日常と魔法がやさしく重なっていく。', '/images/cardcaptor-sakura.jpg'),
 ('SPY×FAMILY', 'spy-family', 2022, NULL, NULL, 'スパイの父、殺し屋の母、超能力者の娘が互いの正体を隠して仮初めの家族になるコメディアクション。架空の東西冷戦風国家を舞台に、家族の絆と任務が交差する。', '/images/spy-family.jpg'),
@@ -1592,8 +1591,6 @@ INSERT INTO location (prefecture, anime_id, name) VALUES
 ('italy', (SELECT id FROM anime WHERE slug = 'lupin-cagliostro'), 'サン・レオ城'),
 -- 地獄楽
 ('tokyo', (SELECT id FROM anime WHERE slug = 'jigokuraku'), '江戸・東京周辺'),
--- ポケットモンスター めざせポケモンマスター
-('tokyo', (SELECT id FROM anime WHERE slug = 'pokemon-mezase-pokemon-master'), '町田市（田尻智ゆかり）'),
 -- となりのトトロ
 ('saitama', (SELECT id FROM anime WHERE slug = 'tonari-no-totoro'), '所沢市・狭山丘陵'),
 ('tokyo', (SELECT id FROM anime WHERE slug = 'tonari-no-totoro'), '東村山市・八国山緑地周辺'),
