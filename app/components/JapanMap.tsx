@@ -20,34 +20,34 @@ interface AnimeCallout {
 }
 
 const animeCallouts: AnimeCallout[] = [
-  { prefecture: "hokkaido", prefectureName: "北海道", title: "ゴールデンカムイ", x: 1012, y: 48, targetX: 790, targetY: 150, side: "right" },
-  { prefecture: "aomori", prefectureName: "青森県", title: "ふらいんぐうぃっち", x: 1012, y: 165, targetX: 755, targetY: 350, side: "right" },
-  { prefecture: "miyagi", prefectureName: "宮城県", title: "ハイキュー!!", x: 1012, y: 282, targetX: 775, targetY: 485, side: "right" },
-  { prefecture: "ibaraki", prefectureName: "茨城県", title: "ガールズ＆パンツァー", x: 1012, y: 399, targetX: 772, targetY: 620, side: "right" },
-  { prefecture: "saitama", prefectureName: "埼玉県", title: "らき☆すた", x: 1012, y: 516, targetX: 720, targetY: 650, side: "right" },
-  { prefecture: "tokyo", prefectureName: "東京都", title: "ラブライブ！", x: 1012, y: 633, targetX: 722, targetY: 672, side: "right" },
-  { prefecture: "kanagawa", prefectureName: "神奈川県", title: "SLAM DUNK", x: 1012, y: 750, targetX: 725, targetY: 695, side: "right" },
-  { prefecture: "shizuoka", prefectureName: "静岡県", title: "ちびまる子ちゃん", x: 1012, y: 867, targetX: 635, targetY: 720, side: "right" },
-  { prefecture: "okinawa", prefectureName: "沖縄県", title: "白い砂のアクアトープ", x: 8, y: 106, targetX: 365, targetY: 260, side: "left" },
-  { prefecture: "tottori", prefectureName: "鳥取県", title: "Free!", x: 8, y: 340, targetX: 405, targetY: 715, side: "left" },
-  { prefecture: "hiroshima", prefectureName: "広島県", title: "この世界の片隅に", x: 8, y: 457, targetX: 345, targetY: 755, side: "left" },
-  { prefecture: "kyoto", prefectureName: "京都府", title: "響け！ユーフォニアム", x: 8, y: 574, targetX: 520, targetY: 705, side: "left" },
-  { prefecture: "kagawa", prefectureName: "香川県", title: "うどんの国の金色毛鞠", x: 8, y: 691, targetX: 405, targetY: 810, side: "left" },
-  { prefecture: "fukuoka", prefectureName: "福岡県", title: "博多豚骨ラーメンズ", x: 8, y: 808, targetX: 300, targetY: 795, side: "left" },
-  { prefecture: "kumamoto", prefectureName: "熊本県", title: "蛍火の杜へ", x: 8, y: 867, targetX: 270, targetY: 865, side: "left" },
-  { prefecture: "kagoshima", prefectureName: "鹿児島県", title: "秒速5センチメートル", x: 8, y: 926, targetX: 235, targetY: 930, side: "left" },
+  { prefecture: "hokkaido", prefectureName: "北海道", title: "ゴールデンカムイ", x: 1005, y: 100, targetX: 925, targetY: 185, side: "right" },
+  { prefecture: "aomori", prefectureName: "青森県", title: "ふらいんぐうぃっち", x: 880, y: 310, targetX: 790, targetY: 350, side: "right" },
+  { prefecture: "miyagi", prefectureName: "宮城県", title: "ハイキュー!!", x: 880, y: 430, targetX: 775, targetY: 485, side: "right" },
+  { prefecture: "ibaraki", prefectureName: "茨城県", title: "ガールズ＆パンツァー", x: 860, y: 545, targetX: 772, targetY: 620, side: "right" },
+  { prefecture: "saitama", prefectureName: "埼玉県", title: "らき☆すた", x: 900, y: 625, targetX: 720, targetY: 650, side: "right" },
+  { prefecture: "tokyo", prefectureName: "東京都", title: "ラブライブ！", x: 880, y: 690, targetX: 722, targetY: 672, side: "right" },
+  { prefecture: "kanagawa", prefectureName: "神奈川県", title: "SLAM DUNK", x: 855, y: 755, targetX: 725, targetY: 695, side: "right" },
+  { prefecture: "shizuoka", prefectureName: "静岡県", title: "ちびまる子ちゃん", x: 760, y: 835, targetX: 635, targetY: 720, side: "right" },
+  { prefecture: "okinawa", prefectureName: "沖縄県", title: "白い砂のアクアトープ", x: 20, y: 130, targetX: 365, targetY: 260, side: "left" },
+  { prefecture: "tottori", prefectureName: "鳥取県", title: "Free!", x: 190, y: 570, targetX: 405, targetY: 715, side: "left" },
+  { prefecture: "hiroshima", prefectureName: "広島県", title: "この世界の片隅に", x: 55, y: 655, targetX: 345, targetY: 755, side: "left" },
+  { prefecture: "kyoto", prefectureName: "京都府", title: "響け！ユーフォニアム", x: 360, y: 525, targetX: 520, targetY: 705, side: "left" },
+  { prefecture: "kagawa", prefectureName: "香川県", title: "うどんの国の金色毛鞠", x: 430, y: 865, targetX: 405, targetY: 810, side: "left" },
+  { prefecture: "fukuoka", prefectureName: "福岡県", title: "博多豚骨ラーメンズ", x: 10, y: 740, targetX: 300, targetY: 795, side: "left" },
+  { prefecture: "kumamoto", prefectureName: "熊本県", title: "蛍火の杜へ", x: 20, y: 830, targetX: 270, targetY: 865, side: "left" },
+  { prefecture: "kagoshima", prefectureName: "鹿児島県", title: "秒速5センチメートル", x: 290, y: 935, targetX: 235, targetY: 930, side: "left" },
 ];
 
 const mobileAnimeCallouts: AnimeCallout[] = [
-  { prefecture: "hokkaido", prefectureName: "北海道", title: "ゴールデンカムイ", x: 950, y: 40, targetX: 790, targetY: 150, side: "right" },
-  { prefecture: "miyagi", prefectureName: "宮城県", title: "ハイキュー!!", x: 950, y: 245, targetX: 775, targetY: 485, side: "right" },
-  { prefecture: "ibaraki", prefectureName: "茨城県", title: "ガールズ＆パンツァー", x: 950, y: 400, targetX: 772, targetY: 620, side: "right" },
-  { prefecture: "tokyo", prefectureName: "東京都", title: "ラブライブ！", x: 950, y: 590, targetX: 722, targetY: 672, side: "right" },
-  { prefecture: "shizuoka", prefectureName: "静岡県", title: "ちびまる子ちゃん", x: 950, y: 800, targetX: 635, targetY: 720, side: "right" },
-  { prefecture: "okinawa", prefectureName: "沖縄県", title: "はるかなレシーブ", x: 5, y: 100, targetX: 365, targetY: 260, side: "left" },
-  { prefecture: "kyoto", prefectureName: "京都府", title: "響け！ユーフォニアム", x: 5, y: 450, targetX: 520, targetY: 705, side: "left" },
-  { prefecture: "fukuoka", prefectureName: "福岡県", title: "博多豚骨ラーメンズ", x: 5, y: 740, targetX: 300, targetY: 795, side: "left" },
-  { prefecture: "kagoshima", prefectureName: "鹿児島県", title: "秒速5センチメートル", x: 5, y: 915, targetX: 235, targetY: 930, side: "left" },
+  { prefecture: "hokkaido", prefectureName: "北海道", title: "ゴールデンカムイ", x: 950, y: 80, targetX: 925, targetY: 185, side: "right" },
+  { prefecture: "miyagi", prefectureName: "宮城県", title: "ハイキュー!!", x: 945, y: 335, targetX: 775, targetY: 485, side: "right" },
+  { prefecture: "ibaraki", prefectureName: "茨城県", title: "ガールズ＆パンツァー", x: 950, y: 530, targetX: 772, targetY: 620, side: "right" },
+  { prefecture: "tokyo", prefectureName: "東京都", title: "ラブライブ！", x: 950, y: 660, targetX: 722, targetY: 672, side: "right" },
+  { prefecture: "shizuoka", prefectureName: "静岡県", title: "ちびまる子ちゃん", x: 850, y: 830, targetX: 635, targetY: 720, side: "right" },
+  { prefecture: "okinawa", prefectureName: "沖縄県", title: "はるかなレシーブ", x: 10, y: 110, targetX: 365, targetY: 260, side: "left" },
+  { prefecture: "kyoto", prefectureName: "京都府", title: "響け！ユーフォニアム", x: 300, y: 500, targetX: 520, targetY: 705, side: "left" },
+  { prefecture: "fukuoka", prefectureName: "福岡県", title: "博多豚骨ラーメンズ", x: 5, y: 650, targetX: 300, targetY: 795, side: "left" },
+  { prefecture: "kagoshima", prefectureName: "鹿児島県", title: "秒速5センチメートル", x: 320, y: 915, targetX: 235, targetY: 930, side: "left" },
 ];
 
 export default function JapanMap({ animeCounts }: JapanMapProps) {
@@ -104,37 +104,63 @@ export default function JapanMap({ animeCounts }: JapanMapProps) {
             markerHeight="6"
             orient="auto-start-reverse"
           >
-            <path d="M 0 0 L 10 5 L 0 10 z" fill="#818cf8" />
+            <path
+              d="M 0 0 L 10 5 L 0 10 z"
+              fill="#fbbf24"
+              stroke="#111827"
+              strokeWidth="1.5"
+              paintOrder="stroke"
+            />
           </marker>
         </defs>
 
         <g aria-hidden="true" className="hidden sm:inline">
           {animeCallouts.map((callout) => (
-            <path
+            <g
               key={`line-${callout.prefecture}`}
-              d={`M ${callout.side === "left" ? callout.x + 180 : callout.x} ${callout.y + 24} L ${callout.targetX} ${callout.targetY}`}
-              fill="none"
-              stroke="#818cf8"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              markerEnd="url(#anime-callout-arrow)"
-              opacity="0.75"
-            />
+            >
+              <path
+                d={`M ${callout.side === "left" ? callout.x + 180 : callout.x} ${callout.y + 24} L ${callout.targetX} ${callout.targetY}`}
+                fill="none"
+                stroke="#111827"
+                strokeWidth="5"
+                strokeLinecap="round"
+                opacity="0.9"
+              />
+              <path
+                d={`M ${callout.side === "left" ? callout.x + 180 : callout.x} ${callout.y + 24} L ${callout.targetX} ${callout.targetY}`}
+                fill="none"
+                stroke="#fbbf24"
+                strokeWidth="2.25"
+                strokeLinecap="round"
+                markerEnd="url(#anime-callout-arrow)"
+              />
+            </g>
           ))}
         </g>
 
         <g aria-hidden="true" className="sm:hidden">
           {mobileAnimeCallouts.map((callout) => (
-            <path
+            <g
               key={`mobile-line-${callout.prefecture}`}
-              d={`M ${callout.side === "left" ? callout.x + 245 : callout.x} ${callout.y + 36} L ${callout.targetX} ${callout.targetY}`}
-              fill="none"
-              stroke="#818cf8"
-              strokeWidth="3"
-              strokeLinecap="round"
-              markerEnd="url(#anime-callout-arrow)"
-              opacity="0.8"
-            />
+            >
+              <path
+                d={`M ${callout.side === "left" ? callout.x + 245 : callout.x} ${callout.y + 36} L ${callout.targetX} ${callout.targetY}`}
+                fill="none"
+                stroke="#111827"
+                strokeWidth="8"
+                strokeLinecap="round"
+                opacity="0.9"
+              />
+              <path
+                d={`M ${callout.side === "left" ? callout.x + 245 : callout.x} ${callout.y + 36} L ${callout.targetX} ${callout.targetY}`}
+                fill="none"
+                stroke="#fbbf24"
+                strokeWidth="4"
+                strokeLinecap="round"
+                markerEnd="url(#anime-callout-arrow)"
+              />
+            </g>
           ))}
         </g>
 
@@ -893,7 +919,7 @@ export default function JapanMap({ animeCounts }: JapanMapProps) {
                 width="180"
                 height="48"
                 rx="6"
-                className="fill-white stroke-indigo-200 transition-colors group-hover:fill-indigo-50 group-focus:fill-indigo-50 dark:fill-gray-900 dark:stroke-indigo-700 dark:group-hover:fill-gray-800 dark:group-focus:fill-gray-800"
+                className="fill-white stroke-amber-400 transition-colors group-hover:fill-amber-50 group-focus:fill-amber-50 dark:fill-gray-900 dark:stroke-amber-400 dark:group-hover:fill-gray-800 dark:group-focus:fill-gray-800"
                 strokeWidth="1.5"
               />
               <text
@@ -936,7 +962,7 @@ export default function JapanMap({ animeCounts }: JapanMapProps) {
                 width="245"
                 height="72"
                 rx="8"
-                className="fill-white stroke-indigo-200 transition-colors group-hover:fill-indigo-50 group-focus:fill-indigo-50 dark:fill-gray-900 dark:stroke-indigo-700 dark:group-hover:fill-gray-800 dark:group-focus:fill-gray-800"
+                className="fill-white stroke-amber-400 transition-colors group-hover:fill-amber-50 group-focus:fill-amber-50 dark:fill-gray-900 dark:stroke-amber-400 dark:group-hover:fill-gray-800 dark:group-focus:fill-gray-800"
                 strokeWidth="3"
               />
               <text
