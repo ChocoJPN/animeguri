@@ -3,10 +3,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getDB } from "@/lib/db";
-import { prefectureBySlug } from "@/lib/prefectures";
+import { getAreaLabel, isPrefectureSlug } from "@/lib/areas";
 import type { Anime, Location } from "@/lib/types";
 import SacredPlaceMap, {
-  getAreaLabel,
   type SacredPlaceMapLocation,
 } from "@/app/components/SacredPlaceMap";
 
@@ -156,14 +155,14 @@ export default async function AnimePage({ params }: Props) {
         ) : (
           <div className="space-y-4">
             {[...locationsByPrefecture.entries()].map(([prefSlug, locs]) => {
-              const pref = prefectureBySlug.get(prefSlug);
               const areaLabel = getAreaLabel(prefSlug);
+              const isPrefecture = isPrefectureSlug(prefSlug);
               return (
                 <div
                   key={prefSlug}
                   className="rounded-lg border border-gray-200 p-4 dark:border-gray-800"
                 >
-                  {pref ? (
+                  {isPrefecture ? (
                     <Link
                       href={`/prefecture/${prefSlug}`}
                       className="text-sm font-semibold text-primary hover:underline"

@@ -1,19 +1,10 @@
-import { prefectureBySlug } from "@/lib/prefectures";
+import { getAreaLabel } from "@/lib/areas";
 
 export interface SacredPlaceMapLocation {
   id: number;
   name: string;
   prefecture: string;
 }
-
-const overseasAreaLabels: Record<string, string> = {
-  italy: "イタリア",
-  greece: "ギリシャ",
-  germany: "ドイツ",
-  netherlands: "オランダ",
-  france: "フランス",
-  thailand: "タイ",
-};
 
 const locationQueryHints: Record<string, string> = {
   "旭川第七師団跡": "旭川市 第七師団跡",
@@ -24,10 +15,6 @@ const locationQueryHints: Record<string, string> = {
   "サン・レオ（カリオストロ公国の城下町モデル）": "San Leo Italy",
   "サン・レオ城": "Forte di San Leo Italy",
 };
-
-export function getAreaLabel(slug: string) {
-  return prefectureBySlug.get(slug)?.nameJa || overseasAreaLabels[slug] || slug;
-}
 
 function buildMapQuery(location: SacredPlaceMapLocation) {
   const areaName = getAreaLabel(location.prefecture);

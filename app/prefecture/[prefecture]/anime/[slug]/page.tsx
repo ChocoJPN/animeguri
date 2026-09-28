@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getDB } from "@/lib/db";
-import { prefectureBySlug } from "@/lib/prefectures";
+import { getAreaBySlug } from "@/lib/areas";
 import type { Anime, Location } from "@/lib/types";
 import SacredPlaceMap, {
   type SacredPlaceMapLocation,
@@ -17,8 +17,8 @@ export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { prefecture, slug } = await params;
-  const pref = prefectureBySlug.get(prefecture);
-  if (!pref) return { title: "見つかりません" };
+  const area = getAreaBySlug(prefecture);
+  if (!area) return { title: "見つかりません" };
 
   const db = await getDB();
   const anime = await db
@@ -34,15 +34,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!anime) return { title: "見つかりません" };
 
   return {
-    title: `${anime.title}の${pref.nameJa}聖地マップ - Animeguri`,
-    description: `${anime.title}の${pref.nameJa}にある聖地とGoogleマップ`,
+    title: `${anime.title}の${area.nameJa}聖地マップ - Animeguri`,
+    description: `${anime.title}の${area.nameJa}にある聖地とGoogleマップ`,
   };
 }
 
 export default async function PrefectureAnimeMapPage({ params }: Props) {
   const { prefecture, slug } = await params;
-  const pref = prefectureBySlug.get(prefecture);
-  if (!pref) notFound();
+  const area = getAreaBySlug(prefecture);
+  if (!area) notFound();
 
   const db = await getDB();
   const anime = await db
@@ -84,7 +84,7 @@ export default async function PrefectureAnimeMapPage({ params }: Props) {
           href={`/prefecture/${prefecture}`}
           className="text-gray-500 hover:text-primary dark:text-gray-400"
         >
-          &larr; {pref.nameJa}のアニメ一覧に戻る
+          &larr; {area.nameJa}のアニメ一覧に戻る
         </Link>
         <span className="text-gray-300 dark:text-gray-700">/</span>
         <Link
@@ -95,7 +95,7 @@ export default async function PrefectureAnimeMapPage({ params }: Props) {
         </Link>
       </div>
 
-      <p className="text-sm font-medium text-primary">{pref.nameJa}の聖地</p>
+      <p className="text-sm font-medium text-primary">{area.nameJa}の聖地</p>
       <div className="mb-6 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900 sm:flex">
         <div className="relative aspect-[3/4] w-full shrink-0 bg-gray-100 dark:bg-gray-800 sm:w-56 md:w-64">
           {anime.image ? (

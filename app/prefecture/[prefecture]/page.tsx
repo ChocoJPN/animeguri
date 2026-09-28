@@ -1,12 +1,12 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { getDB } from "@/lib/db";
-import { prefectureBySlug } from "@/lib/prefectures";
+import { getAreaBySlug } from "@/lib/areas";
 import type { Anime, Location } from "@/lib/types";
 import PrefectureAnimeSelector, {
   type PrefectureAnime,
 } from "@/app/components/PrefectureAnimeSelector";
-import Link from "next/link";
 
 interface Props {
   params: Promise<{ prefecture: string }>;
@@ -16,18 +16,19 @@ export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { prefecture } = await params;
-  const pref = prefectureBySlug.get(prefecture);
-  if (!pref) return { title: "見つかりません" };
+  const area = getAreaBySlug(prefecture);
+  if (!area) return { title: "見つかりません" };
+
   return {
-    title: `${pref.nameJa}のアニメ聖地 - Animeguri`,
-    description: `${pref.nameJa}を舞台にしたアニメ作品と聖地巡礼スポットの一覧`,
+    title: `${area.nameJa}のアニメ聖地 - Animeguri`,
+    description: `${area.nameJa}を舞台にしたアニメ作品と聖地巡礼スポットの一覧`,
   };
 }
 
 export default async function PrefecturePage({ params }: Props) {
   const { prefecture } = await params;
-  const pref = prefectureBySlug.get(prefecture);
-  if (!pref) notFound();
+  const area = getAreaBySlug(prefecture);
+  if (!area) notFound();
 
   const db = await getDB();
   const rows = await db
@@ -81,7 +82,7 @@ export default async function PrefecturePage({ params }: Props) {
       </div>
 
       <h1 className="mb-2 text-2xl font-bold text-gray-900 dark:text-gray-100 sm:text-3xl">
-        {pref!.nameJa}のアニメ聖地
+        {area.nameJa}のアニメ聖地
       </h1>
       <p className="mb-8 text-gray-600 dark:text-gray-400">
         {animeList.length} 作品が見つかりました
@@ -89,7 +90,7 @@ export default async function PrefecturePage({ params }: Props) {
 
       {animeList.length === 0 ? (
         <p className="text-gray-500 dark:text-gray-400">
-          この都道府県にはまだアニメ聖地が登録されていません。
+          このエリアにはまだアニメ聖地が登録されていません。
         </p>
       ) : (
         <PrefectureAnimeSelector
