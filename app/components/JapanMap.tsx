@@ -8,6 +8,48 @@ interface JapanMapProps {
   animeCounts: Record<string, number>;
 }
 
+interface AnimeCallout {
+  prefecture: string;
+  prefectureName: string;
+  title: string;
+  x: number;
+  y: number;
+  targetX: number;
+  targetY: number;
+  side: "left" | "right";
+}
+
+const animeCallouts: AnimeCallout[] = [
+  { prefecture: "hokkaido", prefectureName: "北海道", title: "ゴールデンカムイ", x: 1012, y: 48, targetX: 790, targetY: 150, side: "right" },
+  { prefecture: "aomori", prefectureName: "青森県", title: "ふらいんぐうぃっち", x: 1012, y: 165, targetX: 755, targetY: 350, side: "right" },
+  { prefecture: "miyagi", prefectureName: "宮城県", title: "ハイキュー!!", x: 1012, y: 282, targetX: 775, targetY: 485, side: "right" },
+  { prefecture: "ibaraki", prefectureName: "茨城県", title: "ガールズ＆パンツァー", x: 1012, y: 399, targetX: 772, targetY: 620, side: "right" },
+  { prefecture: "saitama", prefectureName: "埼玉県", title: "らき☆すた", x: 1012, y: 516, targetX: 720, targetY: 650, side: "right" },
+  { prefecture: "tokyo", prefectureName: "東京都", title: "ラブライブ！", x: 1012, y: 633, targetX: 722, targetY: 672, side: "right" },
+  { prefecture: "kanagawa", prefectureName: "神奈川県", title: "SLAM DUNK", x: 1012, y: 750, targetX: 725, targetY: 695, side: "right" },
+  { prefecture: "shizuoka", prefectureName: "静岡県", title: "ちびまる子ちゃん", x: 1012, y: 867, targetX: 635, targetY: 720, side: "right" },
+  { prefecture: "okinawa", prefectureName: "沖縄県", title: "白い砂のアクアトープ", x: 8, y: 106, targetX: 365, targetY: 260, side: "left" },
+  { prefecture: "tottori", prefectureName: "鳥取県", title: "Free!", x: 8, y: 340, targetX: 405, targetY: 715, side: "left" },
+  { prefecture: "hiroshima", prefectureName: "広島県", title: "この世界の片隅に", x: 8, y: 457, targetX: 345, targetY: 755, side: "left" },
+  { prefecture: "kyoto", prefectureName: "京都府", title: "響け！ユーフォニアム", x: 8, y: 574, targetX: 520, targetY: 705, side: "left" },
+  { prefecture: "kagawa", prefectureName: "香川県", title: "うどんの国の金色毛鞠", x: 8, y: 691, targetX: 405, targetY: 810, side: "left" },
+  { prefecture: "fukuoka", prefectureName: "福岡県", title: "博多豚骨ラーメンズ", x: 8, y: 808, targetX: 300, targetY: 795, side: "left" },
+  { prefecture: "kumamoto", prefectureName: "熊本県", title: "蛍火の杜へ", x: 8, y: 867, targetX: 270, targetY: 865, side: "left" },
+  { prefecture: "kagoshima", prefectureName: "鹿児島県", title: "秒速5センチメートル", x: 8, y: 926, targetX: 235, targetY: 930, side: "left" },
+];
+
+const mobileAnimeCallouts: AnimeCallout[] = [
+  { prefecture: "hokkaido", prefectureName: "北海道", title: "ゴールデンカムイ", x: 950, y: 40, targetX: 790, targetY: 150, side: "right" },
+  { prefecture: "miyagi", prefectureName: "宮城県", title: "ハイキュー!!", x: 950, y: 245, targetX: 775, targetY: 485, side: "right" },
+  { prefecture: "ibaraki", prefectureName: "茨城県", title: "ガールズ＆パンツァー", x: 950, y: 400, targetX: 772, targetY: 620, side: "right" },
+  { prefecture: "tokyo", prefectureName: "東京都", title: "ラブライブ！", x: 950, y: 590, targetX: 722, targetY: 672, side: "right" },
+  { prefecture: "shizuoka", prefectureName: "静岡県", title: "ちびまる子ちゃん", x: 950, y: 800, targetX: 635, targetY: 720, side: "right" },
+  { prefecture: "okinawa", prefectureName: "沖縄県", title: "はるかなレシーブ", x: 5, y: 100, targetX: 365, targetY: 260, side: "left" },
+  { prefecture: "kyoto", prefectureName: "京都府", title: "響け！ユーフォニアム", x: 5, y: 450, targetX: 520, targetY: 705, side: "left" },
+  { prefecture: "fukuoka", prefectureName: "福岡県", title: "博多豚骨ラーメンズ", x: 5, y: 740, targetX: 300, targetY: 795, side: "left" },
+  { prefecture: "kagoshima", prefectureName: "鹿児島県", title: "秒速5センチメートル", x: 5, y: 915, targetX: 235, targetY: 930, side: "left" },
+];
+
 export default function JapanMap({ animeCounts }: JapanMapProps) {
   const router = useRouter();
   const [hoveredPrefecture, setHoveredPrefecture] = useState<string | null>(null);
@@ -47,10 +89,56 @@ export default function JapanMap({ animeCounts }: JapanMapProps) {
   return (
     <div className="relative">
       <svg
-        viewBox="0 0 1000 1000"
+        viewBox="0 0 1200 1000"
         className="w-full h-auto"
         onMouseMove={handleMouseMove}
+        aria-label="都道府県と代表的なアニメ作品を示した日本地図"
       >
+        <defs>
+          <marker
+            id="anime-callout-arrow"
+            viewBox="0 0 10 10"
+            refX="8"
+            refY="5"
+            markerWidth="6"
+            markerHeight="6"
+            orient="auto-start-reverse"
+          >
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#818cf8" />
+          </marker>
+        </defs>
+
+        <g aria-hidden="true" className="hidden sm:inline">
+          {animeCallouts.map((callout) => (
+            <path
+              key={`line-${callout.prefecture}`}
+              d={`M ${callout.side === "left" ? callout.x + 180 : callout.x} ${callout.y + 24} L ${callout.targetX} ${callout.targetY}`}
+              fill="none"
+              stroke="#818cf8"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              markerEnd="url(#anime-callout-arrow)"
+              opacity="0.75"
+            />
+          ))}
+        </g>
+
+        <g aria-hidden="true" className="sm:hidden">
+          {mobileAnimeCallouts.map((callout) => (
+            <path
+              key={`mobile-line-${callout.prefecture}`}
+              d={`M ${callout.side === "left" ? callout.x + 245 : callout.x} ${callout.y + 36} L ${callout.targetX} ${callout.targetY}`}
+              fill="none"
+              stroke="#818cf8"
+              strokeWidth="3"
+              strokeLinecap="round"
+              markerEnd="url(#anime-callout-arrow)"
+              opacity="0.8"
+            />
+          ))}
+        </g>
+
+        <g transform="translate(100 0)">
         <g transform="matrix(1.028807, 0, 0, 1.028807, -47.544239, -28.806583)">
           <g transform="matrix(1, 0, 0, 1, 6, 18)" id="prefectures">
             {/* Hokkaido */}
@@ -780,6 +868,93 @@ export default function JapanMap({ animeCounts }: JapanMapProps) {
               <polygon points="293 11 294 13 292 12" />
             </g>
           </g>
+        </g>
+        </g>
+
+        <g aria-label="都道府県の代表アニメ" className="hidden sm:inline">
+          {animeCallouts.map((callout) => (
+            <g
+              key={callout.prefecture}
+              role="link"
+              tabIndex={0}
+              aria-label={`${callout.prefectureName}の代表アニメ、${callout.title}`}
+              onClick={() => handlePrefectureClick(callout.prefecture)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  handlePrefectureClick(callout.prefecture);
+                }
+              }}
+              className="group cursor-pointer outline-none"
+            >
+              <rect
+                x={callout.x}
+                y={callout.y}
+                width="180"
+                height="48"
+                rx="6"
+                className="fill-white stroke-indigo-200 transition-colors group-hover:fill-indigo-50 group-focus:fill-indigo-50 dark:fill-gray-900 dark:stroke-indigo-700 dark:group-hover:fill-gray-800 dark:group-focus:fill-gray-800"
+                strokeWidth="1.5"
+              />
+              <text
+                x={callout.x + 12}
+                y={callout.y + 17}
+                className="fill-gray-500 text-[11px] font-semibold dark:fill-gray-400"
+              >
+                {callout.prefectureName}
+              </text>
+              <text
+                x={callout.x + 12}
+                y={callout.y + 37}
+                className="fill-gray-900 text-[14px] font-bold dark:fill-gray-100"
+              >
+                {callout.title}
+              </text>
+            </g>
+          ))}
+        </g>
+
+        <g aria-label="都道府県の代表アニメ" className="sm:hidden">
+          {mobileAnimeCallouts.map((callout) => (
+            <g
+              key={`mobile-${callout.prefecture}`}
+              role="link"
+              tabIndex={0}
+              aria-label={`${callout.prefectureName}の代表アニメ、${callout.title}`}
+              onClick={() => handlePrefectureClick(callout.prefecture)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  handlePrefectureClick(callout.prefecture);
+                }
+              }}
+              className="group cursor-pointer outline-none"
+            >
+              <rect
+                x={callout.x}
+                y={callout.y}
+                width="245"
+                height="72"
+                rx="8"
+                className="fill-white stroke-indigo-200 transition-colors group-hover:fill-indigo-50 group-focus:fill-indigo-50 dark:fill-gray-900 dark:stroke-indigo-700 dark:group-hover:fill-gray-800 dark:group-focus:fill-gray-800"
+                strokeWidth="3"
+              />
+              <text
+                x={callout.x + 16}
+                y={callout.y + 24}
+                className="fill-gray-500 text-[17px] font-semibold dark:fill-gray-400"
+              >
+                {callout.prefectureName}
+              </text>
+              <text
+                x={callout.x + 16}
+                y={callout.y + 55}
+                className="fill-gray-900 text-[22px] font-bold dark:fill-gray-100"
+              >
+                {callout.title}
+              </text>
+            </g>
+          ))}
         </g>
       </svg>
 
