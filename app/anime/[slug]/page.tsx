@@ -180,12 +180,12 @@ export default async function AnimePage({ params }: Props) {
                         key={loc.id}
                         className="text-gray-700 dark:text-gray-300"
                       >
-                        <a
-                          href={`#map-location-${loc.id}`}
+                        <Link
+                          href={`/locations/${loc.id}`}
                           className="transition-colors hover:text-primary"
                         >
                           {loc.name}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>

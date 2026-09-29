@@ -1,24 +1,11 @@
 import { getAreaLabel } from "@/lib/areas";
+import Link from "next/link";
+import { buildGoogleMapsUrls } from "@/lib/location-map";
 
 export interface SacredPlaceMapLocation {
   id: number;
   name: string;
   prefecture: string;
-}
-
-const locationQueryHints: Record<string, string> = {
-  "旭川第七師団跡": "旭川市 第七師団跡",
-  羽幌高校: "北海道 羽幌高校",
-  羽幌橋: "北海道 羽幌町 羽幌橋",
-  朝日大橋: "北海道 羽幌町 朝日大橋",
-  "ジェノヴァ（ライデンシャフトリヒの街のイメージ）": "Genoa Italy",
-  "サン・レオ（カリオストロ公国の城下町モデル）": "San Leo Italy",
-  "サン・レオ城": "Forte di San Leo Italy",
-};
-
-function buildMapQuery(location: SacredPlaceMapLocation) {
-  const areaName = getAreaLabel(location.prefecture);
-  return locationQueryHints[location.name] || `${areaName} ${location.name}`;
 }
 
 export default function SacredPlaceMap({
@@ -43,10 +30,7 @@ export default function SacredPlaceMap({
 
       <div className="grid gap-4 md:grid-cols-2">
         {locations.map((location) => {
-          const query = buildMapQuery(location);
-          const encodedQuery = encodeURIComponent(query);
-          const embedUrl = `https://www.google.com/maps?q=${encodedQuery}&z=15&output=embed`;
-          const openUrl = `https://www.google.com/maps/search/?api=1&query=${encodedQuery}`;
+          const { embedUrl, openUrl } = buildGoogleMapsUrls(location);
 
           return (
             <article
@@ -68,9 +52,12 @@ export default function SacredPlaceMap({
                 <p className="mb-1 text-xs font-medium text-gray-500 dark:text-gray-400">
                   {getAreaLabel(location.prefecture)}
                 </p>
-                <h3 className="font-semibold text-gray-900 dark:text-gray-100">
+                <Link
+                  href={`/locations/${location.id}`}
+                  className="block font-semibold text-gray-900 transition-colors hover:text-primary dark:text-gray-100"
+                >
                   {location.name}
-                </h3>
+                </Link>
                 <a
                   href={openUrl}
                   target="_blank"

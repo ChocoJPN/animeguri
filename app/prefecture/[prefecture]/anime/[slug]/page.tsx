@@ -143,12 +143,12 @@ export default async function PrefectureAnimeMapPage({ params }: Props) {
               key={location.id}
               className="rounded-md bg-gray-50 dark:bg-gray-800"
             >
-              <a
-                href={`#map-location-${location.id}`}
+              <Link
+                href={`/locations/${location.id}`}
                 className="block px-3 py-2 text-gray-700 transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-primary"
               >
                 {location.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
