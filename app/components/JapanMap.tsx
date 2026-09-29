@@ -12,6 +12,7 @@ interface AnimeCallout {
   prefecture: string;
   prefectureName: string;
   title: string;
+  animeSlug: string;
   x: number;
   y: number;
   targetX: number;
@@ -20,34 +21,34 @@ interface AnimeCallout {
 }
 
 const animeCallouts: AnimeCallout[] = [
-  { prefecture: "hokkaido", prefectureName: "北海道", title: "ゴールデンカムイ", x: 1005, y: 100, targetX: 925, targetY: 185, side: "right" },
-  { prefecture: "aomori", prefectureName: "青森県", title: "ふらいんぐうぃっち", x: 880, y: 310, targetX: 790, targetY: 350, side: "right" },
-  { prefecture: "miyagi", prefectureName: "宮城県", title: "ハイキュー!!", x: 880, y: 430, targetX: 775, targetY: 485, side: "right" },
-  { prefecture: "ibaraki", prefectureName: "茨城県", title: "ガールズ＆パンツァー", x: 860, y: 545, targetX: 772, targetY: 620, side: "right" },
-  { prefecture: "saitama", prefectureName: "埼玉県", title: "らき☆すた", x: 900, y: 625, targetX: 720, targetY: 650, side: "right" },
-  { prefecture: "tokyo", prefectureName: "東京都", title: "ラブライブ！", x: 880, y: 690, targetX: 722, targetY: 672, side: "right" },
-  { prefecture: "kanagawa", prefectureName: "神奈川県", title: "SLAM DUNK", x: 855, y: 755, targetX: 725, targetY: 695, side: "right" },
-  { prefecture: "shizuoka", prefectureName: "静岡県", title: "ちびまる子ちゃん", x: 760, y: 835, targetX: 635, targetY: 720, side: "right" },
-  { prefecture: "okinawa", prefectureName: "沖縄県", title: "白い砂のアクアトープ", x: 20, y: 130, targetX: 365, targetY: 260, side: "left" },
-  { prefecture: "tottori", prefectureName: "鳥取県", title: "Free!", x: 190, y: 570, targetX: 405, targetY: 715, side: "left" },
-  { prefecture: "hiroshima", prefectureName: "広島県", title: "この世界の片隅に", x: 55, y: 655, targetX: 345, targetY: 755, side: "left" },
-  { prefecture: "kyoto", prefectureName: "京都府", title: "響け！ユーフォニアム", x: 360, y: 525, targetX: 520, targetY: 705, side: "left" },
-  { prefecture: "kagawa", prefectureName: "香川県", title: "うどんの国の金色毛鞠", x: 430, y: 865, targetX: 405, targetY: 810, side: "left" },
-  { prefecture: "fukuoka", prefectureName: "福岡県", title: "博多豚骨ラーメンズ", x: 10, y: 740, targetX: 300, targetY: 795, side: "left" },
-  { prefecture: "kumamoto", prefectureName: "熊本県", title: "蛍火の杜へ", x: 20, y: 830, targetX: 270, targetY: 865, side: "left" },
-  { prefecture: "kagoshima", prefectureName: "鹿児島県", title: "秒速5センチメートル", x: 290, y: 935, targetX: 235, targetY: 930, side: "left" },
+  { prefecture: "hokkaido", prefectureName: "北海道", title: "ゴールデンカムイ", animeSlug: "golden-kamuy", x: 1005, y: 100, targetX: 925, targetY: 185, side: "right" },
+  { prefecture: "aomori", prefectureName: "青森県", title: "ふらいんぐうぃっち", animeSlug: "flying-witch", x: 880, y: 310, targetX: 790, targetY: 350, side: "right" },
+  { prefecture: "miyagi", prefectureName: "宮城県", title: "ハイキュー!!", animeSlug: "haikyu", x: 880, y: 430, targetX: 775, targetY: 485, side: "right" },
+  { prefecture: "ibaraki", prefectureName: "茨城県", title: "ガールズ＆パンツァー", animeSlug: "girls-und-panzer", x: 860, y: 545, targetX: 772, targetY: 620, side: "right" },
+  { prefecture: "saitama", prefectureName: "埼玉県", title: "らき☆すた", animeSlug: "lucky-star", x: 900, y: 625, targetX: 720, targetY: 650, side: "right" },
+  { prefecture: "tokyo", prefectureName: "東京都", title: "ラブライブ！", animeSlug: "lovelive", x: 880, y: 690, targetX: 722, targetY: 672, side: "right" },
+  { prefecture: "kanagawa", prefectureName: "神奈川県", title: "SLAM DUNK", animeSlug: "slam-dunk", x: 855, y: 755, targetX: 725, targetY: 695, side: "right" },
+  { prefecture: "shizuoka", prefectureName: "静岡県", title: "ちびまる子ちゃん", animeSlug: "chibi-maruko-chan", x: 760, y: 835, targetX: 635, targetY: 720, side: "right" },
+  { prefecture: "okinawa", prefectureName: "沖縄県", title: "白い砂のアクアトープ", animeSlug: "aquatope", x: 20, y: 130, targetX: 365, targetY: 260, side: "left" },
+  { prefecture: "tottori", prefectureName: "鳥取県", title: "Free!", animeSlug: "free", x: 190, y: 570, targetX: 405, targetY: 715, side: "left" },
+  { prefecture: "hiroshima", prefectureName: "広島県", title: "この世界の片隅に", animeSlug: "kono-sekai-no-katasumi-ni", x: 55, y: 655, targetX: 345, targetY: 755, side: "left" },
+  { prefecture: "kyoto", prefectureName: "京都府", title: "響け！ユーフォニアム", animeSlug: "hibike-euphonium", x: 360, y: 525, targetX: 520, targetY: 705, side: "left" },
+  { prefecture: "kagawa", prefectureName: "香川県", title: "うどんの国の金色毛鞠", animeSlug: "udon-no-kuni", x: 430, y: 865, targetX: 405, targetY: 810, side: "left" },
+  { prefecture: "fukuoka", prefectureName: "福岡県", title: "博多豚骨ラーメンズ", animeSlug: "hakata-tonkotsu-ramens", x: 10, y: 740, targetX: 300, targetY: 795, side: "left" },
+  { prefecture: "kumamoto", prefectureName: "熊本県", title: "蛍火の杜へ", animeSlug: "hotarubi-no-mori-e", x: 20, y: 830, targetX: 270, targetY: 865, side: "left" },
+  { prefecture: "kagoshima", prefectureName: "鹿児島県", title: "秒速5センチメートル", animeSlug: "byousoku-5cm", x: 290, y: 935, targetX: 235, targetY: 930, side: "left" },
 ];
 
 const mobileAnimeCallouts: AnimeCallout[] = [
-  { prefecture: "hokkaido", prefectureName: "北海道", title: "ゴールデンカムイ", x: 950, y: 80, targetX: 925, targetY: 185, side: "right" },
-  { prefecture: "miyagi", prefectureName: "宮城県", title: "ハイキュー!!", x: 945, y: 335, targetX: 775, targetY: 485, side: "right" },
-  { prefecture: "ibaraki", prefectureName: "茨城県", title: "ガールズ＆パンツァー", x: 950, y: 530, targetX: 772, targetY: 620, side: "right" },
-  { prefecture: "tokyo", prefectureName: "東京都", title: "ラブライブ！", x: 950, y: 660, targetX: 722, targetY: 672, side: "right" },
-  { prefecture: "shizuoka", prefectureName: "静岡県", title: "ちびまる子ちゃん", x: 850, y: 830, targetX: 635, targetY: 720, side: "right" },
-  { prefecture: "okinawa", prefectureName: "沖縄県", title: "はるかなレシーブ", x: 10, y: 110, targetX: 365, targetY: 260, side: "left" },
-  { prefecture: "kyoto", prefectureName: "京都府", title: "響け！ユーフォニアム", x: 300, y: 500, targetX: 520, targetY: 705, side: "left" },
-  { prefecture: "fukuoka", prefectureName: "福岡県", title: "博多豚骨ラーメンズ", x: 5, y: 650, targetX: 300, targetY: 795, side: "left" },
-  { prefecture: "kagoshima", prefectureName: "鹿児島県", title: "秒速5センチメートル", x: 320, y: 915, targetX: 235, targetY: 930, side: "left" },
+  { prefecture: "hokkaido", prefectureName: "北海道", title: "ゴールデンカムイ", animeSlug: "golden-kamuy", x: 950, y: 80, targetX: 925, targetY: 185, side: "right" },
+  { prefecture: "miyagi", prefectureName: "宮城県", title: "ハイキュー!!", animeSlug: "haikyu", x: 945, y: 335, targetX: 775, targetY: 485, side: "right" },
+  { prefecture: "ibaraki", prefectureName: "茨城県", title: "ガールズ＆パンツァー", animeSlug: "girls-und-panzer", x: 950, y: 530, targetX: 772, targetY: 620, side: "right" },
+  { prefecture: "tokyo", prefectureName: "東京都", title: "ラブライブ！", animeSlug: "lovelive", x: 950, y: 660, targetX: 722, targetY: 672, side: "right" },
+  { prefecture: "shizuoka", prefectureName: "静岡県", title: "ちびまる子ちゃん", animeSlug: "chibi-maruko-chan", x: 850, y: 830, targetX: 635, targetY: 720, side: "right" },
+  { prefecture: "okinawa", prefectureName: "沖縄県", title: "はるかなレシーブ", animeSlug: "harukana-receive", x: 10, y: 110, targetX: 365, targetY: 260, side: "left" },
+  { prefecture: "kyoto", prefectureName: "京都府", title: "響け！ユーフォニアム", animeSlug: "hibike-euphonium", x: 300, y: 500, targetX: 520, targetY: 705, side: "left" },
+  { prefecture: "fukuoka", prefectureName: "福岡県", title: "博多豚骨ラーメンズ", animeSlug: "hakata-tonkotsu-ramens", x: 5, y: 650, targetX: 300, targetY: 795, side: "left" },
+  { prefecture: "kagoshima", prefectureName: "鹿児島県", title: "秒速5センチメートル", animeSlug: "byousoku-5cm", x: 320, y: 915, targetX: 235, targetY: 930, side: "left" },
 ];
 
 export default function JapanMap({ animeCounts }: JapanMapProps) {
@@ -57,6 +58,10 @@ export default function JapanMap({ animeCounts }: JapanMapProps) {
 
   const handlePrefectureClick = (slug: string) => {
     router.push(`/prefecture/${slug}`);
+  };
+
+  const handleAnimeClick = (prefecture: string, animeSlug: string) => {
+    router.push(`/prefecture/${prefecture}/anime/${animeSlug}`);
   };
 
   const handleMouseEnter = (slug: string) => {
@@ -904,11 +909,11 @@ export default function JapanMap({ animeCounts }: JapanMapProps) {
               role="link"
               tabIndex={0}
               aria-label={`${callout.prefectureName}の代表アニメ、${callout.title}`}
-              onClick={() => handlePrefectureClick(callout.prefecture)}
+              onClick={() => handleAnimeClick(callout.prefecture, callout.animeSlug)}
               onKeyDown={(event) => {
                 if (event.key === "Enter" || event.key === " ") {
                   event.preventDefault();
-                  handlePrefectureClick(callout.prefecture);
+                  handleAnimeClick(callout.prefecture, callout.animeSlug);
                 }
               }}
               className="group cursor-pointer outline-none"
@@ -947,11 +952,11 @@ export default function JapanMap({ animeCounts }: JapanMapProps) {
               role="link"
               tabIndex={0}
               aria-label={`${callout.prefectureName}の代表アニメ、${callout.title}`}
-              onClick={() => handlePrefectureClick(callout.prefecture)}
+              onClick={() => handleAnimeClick(callout.prefecture, callout.animeSlug)}
               onKeyDown={(event) => {
                 if (event.key === "Enter" || event.key === " ") {
                   event.preventDefault();
-                  handlePrefectureClick(callout.prefecture);
+                  handleAnimeClick(callout.prefecture, callout.animeSlug);
                 }
               }}
               className="group cursor-pointer outline-none"

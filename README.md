@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js](https://nextjs.org) application deployed to Cloudflare Workers with OpenNext.
 
 ## Getting Started
 
@@ -29,8 +29,13 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Pushing to `master` runs `.github/workflows/deploy.yml`, which builds the OpenNext worker and deploys it to Cloudflare Workers.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Add these GitHub Actions repository secrets before the first deployment:
+
+- `CLOUDFLARE_API_TOKEN`: a Cloudflare API token with Workers edit permission
+- `CLOUDFLARE_ACCOUNT_ID`: the Cloudflare account ID that owns the worker
+
+The workflow can also be started manually from the repository's Actions page.
