@@ -30,3 +30,19 @@ export function buildGoogleMapsUrls(location: MapLocationInput) {
     openUrl: `https://www.google.com/maps/search/?api=1&query=${encodedQuery}`,
   };
 }
+
+export function buildGoogleMapsDirectionsUrl(locations: MapLocationInput[]) {
+  if (locations.length === 0) return "https://www.google.com/maps";
+  if (locations.length === 1) return buildGoogleMapsUrls(locations[0]).openUrl;
+
+  const params = new URLSearchParams({
+    api: "1",
+    origin: buildMapQuery(locations[0]),
+    destination: buildMapQuery(locations[locations.length - 1]),
+    travelmode: "walking",
+  });
+  const waypoints = locations.slice(1, -1).map(buildMapQuery);
+  if (waypoints.length > 0) params.set("waypoints", waypoints.join("|"));
+
+  return `https://www.google.com/maps/dir/?${params.toString()}`;
+}
