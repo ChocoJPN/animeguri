@@ -8,7 +8,19 @@ interface SceneEvidenceProps {
   evidence?: SceneEvidenceData[];
 }
 
-function EvidencePhoto({ image }: { image: EvidenceImage }) {
+interface EvidencePhotoProps {
+  image: EvidenceImage;
+  attributionLabel?: string;
+  fit?: "cover" | "contain";
+}
+
+function EvidencePhoto({
+  image,
+  attributionLabel = "撮影・提供",
+  fit = "cover",
+}: EvidencePhotoProps) {
+  const hasAttribution = image.credit || image.license;
+
   return (
     <figure>
       <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 dark:bg-gray-800">
@@ -16,30 +28,40 @@ function EvidencePhoto({ image }: { image: EvidenceImage }) {
           src={image.src}
           alt={image.alt}
           fill
-          className="object-cover"
+          className={fit === "contain" ? "object-contain" : "object-cover"}
           sizes="(max-width: 640px) 100vw, 50vw"
         />
       </div>
-      <figcaption className="mt-2 text-xs leading-relaxed text-gray-500 dark:text-gray-400">
-        撮影・提供：
-        <a
-          href={image.sourceUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline decoration-gray-300 underline-offset-2 hover:text-primary"
-        >
-          {image.credit}
-        </a>
-        {" / "}
-        <a
-          href={image.licenseUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline decoration-gray-300 underline-offset-2 hover:text-primary"
-        >
-          {image.license}
-        </a>
-      </figcaption>
+      {hasAttribution && (
+        <figcaption className="mt-2 text-xs leading-relaxed text-gray-500 dark:text-gray-400">
+          {attributionLabel}：
+          {image.credit && image.sourceUrl ? (
+            <a
+              href={image.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-gray-300 underline-offset-2 hover:text-primary"
+            >
+              {image.credit}
+            </a>
+          ) : (
+            image.credit
+          )}
+          {image.credit && image.license ? " / " : ""}
+          {image.license && image.licenseUrl ? (
+            <a
+              href={image.licenseUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-gray-300 underline-offset-2 hover:text-primary"
+            >
+              {image.license}
+            </a>
+          ) : (
+            image.license
+          )}
+        </figcaption>
+      )}
     </figure>
   );
 }
@@ -116,7 +138,11 @@ export default function SceneEvidence({ evidence }: SceneEvidenceProps) {
                   作中シーン
                 </h3>
                 {item.animeImage ? (
-                  <EvidencePhoto image={item.animeImage} />
+                  <EvidencePhoto
+                    image={item.animeImage}
+                    attributionLabel="画像提供"
+                    fit="contain"
+                  />
                 ) : (
                   <div className="flex aspect-[4/3] items-center justify-center border border-dashed border-gray-300 bg-gray-50 px-6 text-center dark:border-gray-700 dark:bg-gray-900">
                     <div>

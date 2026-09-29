@@ -6,10 +6,10 @@ export interface EvidenceSource {
 export interface EvidenceImage {
   src: string;
   alt: string;
-  credit: string;
-  sourceUrl: string;
-  license: string;
-  licenseUrl: string;
+  credit?: string;
+  sourceUrl?: string;
+  license?: string;
+  licenseUrl?: string;
 }
 
 export interface SceneEvidence {
@@ -52,6 +52,11 @@ const detailsByAnimeAndLocation: Record<string, LocationDetail> = {
             url: "https://kanko-shinjuku.jp/special/-/article_3578.html",
           },
         ],
+        animeImage: {
+          src: "/images/locations/kimi-no-na-wa-suga-stairs-ending.jpg",
+          alt: "『君の名は。』終盤に登場する須賀神社脇の階段",
+          credit: "サイト管理者提供",
+        },
         realImage: {
           src: "/images/locations/suga-shrine-stairs.jpg",
           alt: "須賀神社脇の赤い手すりがある階段",
@@ -109,6 +114,11 @@ const detailsByAnimeAndLocation: Record<string, LocationDetail> = {
             url: "https://www.animepilgrimage.com/ja/maps/anime/g2gEzS0je4xmz8DFES7D/bocchi-the-rock",
           },
         ],
+        animeImage: {
+          src: "/images/locations/bocchi-the-rock-shelter-ep01.jpg",
+          alt: "『ぼっち・ざ・ろっく！』第1話に登場するSTARRY入口",
+          credit: "サイト管理者提供",
+        },
         realImage: {
           src: "/images/locations/shimokitazawa-shelter.jpg",
           alt: "下北沢SHELTERの地下入口へ続く階段",
@@ -157,6 +167,11 @@ const detailsByAnimeAndLocation: Record<string, LocationDetail> = {
             url: "https://www.animepilgrimage.com/ja/maps/anime/VYoUbJBIkUiLX3HPYQGl/steins-gate",
           },
         ],
+        animeImage: {
+          src: "/images/locations/steins-gate-radio-kaikan-ep01.png",
+          alt: "『STEINS;GATE』第1話に登場する秋葉原ラジオ会館",
+          credit: "サイト管理者提供",
+        },
         realImage: {
           src: "/images/locations/akihabara-radio-kaikan.jpg",
           alt: "2010年当時の秋葉原ラジオ会館",

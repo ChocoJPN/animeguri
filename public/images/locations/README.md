@@ -1,7 +1,7 @@
 # Location photo licenses
 
-These files are real-world reference photos used in the scene evidence section.
-No anime frames are included in this directory.
+This directory contains real-world reference photos and anime scene images used
+in the scene evidence section.
 
 | File | Creator | Source | License |
 | --- | --- | --- | --- |
@@ -10,3 +10,12 @@ No anime frames are included in this directory.
 | `akihabara-radio-kaikan.jpg` | street viewer | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Akihabara_Radio_Kaikan,_2010-03-06.jpg) | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) |
 
 The images were resized by Wikimedia Commons. No other modifications were made.
+
+## Anime scene images
+
+The following images were supplied by the site administrator. Their publication
+rights and source records are managed by the administrator.
+
+- `kimi-no-na-wa-suga-stairs-ending.jpg`
+- `bocchi-the-rock-shelter-ep01.jpg`
+- `steins-gate-radio-kaikan-ep01.png`
