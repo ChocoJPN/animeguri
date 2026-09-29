@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import SceneEvidence from "@/app/components/SceneEvidence";
 import { getAreaLabel } from "@/lib/areas";
 import { getDB } from "@/lib/db";
 import { getLocationDetail } from "@/lib/location-details";
@@ -56,9 +57,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!location) return { title: "見つかりません" };
 
+  const detail = getLocationDetail(location.animeSlug, location.name);
+  const hasEvidence = Boolean(detail?.evidence?.length);
+
   return {
     title: `${location.name} - ${location.animeTitle}の聖地 | Animeguri`,
-    description: `${location.name}は${location.animeTitle}に登場する${getAreaLabel(location.prefecture)}の聖地です。`,
+    description: hasEvidence
+      ? `${location.name}は${location.animeTitle}に登場する${getAreaLabel(location.prefecture)}の聖地です。登場場面と確認元を掲載しています。`
+      : `${location.name}は${location.animeTitle}の${getAreaLabel(location.prefecture)}にある聖地候補です。作中登場の確認資料を募集中です。`,
   };
 }
 
@@ -68,6 +74,7 @@ export default async function LocationPage({ params }: Props) {
   if (!location) notFound();
 
   const detail = getLocationDetail(location.animeSlug, location.name);
+  const hasEvidence = Boolean(detail?.evidence?.length);
   const { embedUrl, openUrl, query } = buildGoogleMapsUrls(location);
   const areaLabel = getAreaLabel(location.prefecture);
 
@@ -137,8 +144,9 @@ export default async function LocationPage({ params }: Props) {
           </p>
 
           <p className="mt-5 leading-relaxed text-gray-700 dark:text-gray-300">
-            {detail?.scene ||
-              `${location.name}は「${location.animeTitle}」に登場する${areaLabel}の聖地です。作中のどの場面で登場するか、住所、撮影メモなどの詳細は順次追加していきます。`}
+            {hasEvidence
+              ? detail?.scene
+              : `${location.name}は「${location.animeTitle}」の聖地候補として登録されています。Animeguriでは作中登場を確認できる資料がまだ登録されていないため、確認が完了するまでは候補地として扱います。`}
           </p>
 
           <div className="mt-5 flex flex-wrap gap-3">
@@ -161,14 +169,17 @@ export default async function LocationPage({ params }: Props) {
         </div>
       </section>
 
+      <SceneEvidence evidence={detail?.evidence} />
+
       <section className="grid gap-4 md:grid-cols-3">
         <div className="rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-900">
           <h2 className="font-semibold text-gray-900 dark:text-gray-100">
-            登場シーン
+            確認状況
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-            {detail?.scene ||
-              "作品内での具体的な話数・シーン情報は未登録です。"}
+            {hasEvidence
+              ? "作中の登場場面と確認元を照合済みです。上の記録から参照できます。"
+              : "作品内での具体的な話数・場面を確認できる資料は未登録です。"}
           </p>
         </div>
         <div className="rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-900">
