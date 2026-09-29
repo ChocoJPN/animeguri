@@ -1,4 +1,5 @@
 import { getDB } from "@/lib/db";
+import Link from "next/link";
 import type { PrefectureAnimeCount } from "@/lib/types";
 import JapanMap from "./components/JapanMap";
 import PrefectureList from "./components/PrefectureList";
@@ -27,6 +28,12 @@ export default async function Home() {
         <p className="mt-3 text-gray-600 dark:text-gray-400">
           都道府県をクリックして、アニメの聖地巡礼スポットを見つけよう
         </p>
+        <Link
+          href="/map"
+          className="mt-5 inline-flex rounded-md bg-primary px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90"
+        >
+          全国聖地マップを開く
+        </Link>
       </section>
 
       <section className="mb-12">

@@ -7,12 +7,18 @@ export default function Header() {
         <Link href="/" className="text-xl font-bold text-primary">
           Animeguri
         </Link>
-        <nav className="flex items-center gap-4 text-sm">
+        <nav className="flex items-center gap-2 text-sm sm:gap-4">
           <Link
             href="/"
-            className="text-gray-600 transition-colors hover:text-primary dark:text-gray-400 dark:hover:text-primary"
+            className="hidden text-gray-600 transition-colors hover:text-primary dark:text-gray-400 dark:hover:text-primary sm:inline"
           >
             ホーム
+          </Link>
+          <Link
+            href="/map"
+            className="text-gray-600 transition-colors hover:text-primary dark:text-gray-400 dark:hover:text-primary"
+          >
+            地図
           </Link>
           <Link
             href="/search"
