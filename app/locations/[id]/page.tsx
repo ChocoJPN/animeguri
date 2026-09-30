@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import SceneEvidence from "@/app/components/SceneEvidence";
+import LocationVerificationBadge from "@/app/components/LocationVerificationBadge";
 import { getAreaLabel } from "@/lib/areas";
 import { getDB } from "@/lib/db";
 import { getLocationDetail } from "@/lib/location-details";
@@ -135,9 +136,12 @@ export default async function LocationPage({ params }: Props) {
             {location.animeTitle}
             {location.animeYear ? ` / ${location.animeYear}年` : ""}
           </p>
-          <h1 className="mt-2 text-2xl font-bold text-gray-900 dark:text-gray-100 sm:text-3xl">
-            {location.name}
-          </h1>
+          <div className="mt-2 flex flex-wrap items-center gap-3">
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 sm:text-3xl">
+              {location.name}
+            </h1>
+            <LocationVerificationBadge verified={hasEvidence} />
+          </div>
           <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
             {areaLabel}
             {detail?.address ? ` / ${detail.address}` : ""}

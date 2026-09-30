@@ -8,6 +8,8 @@ import type { Anime, Location } from "@/lib/types";
 import SacredPlaceMap, {
   type SacredPlaceMapLocation,
 } from "@/app/components/SacredPlaceMap";
+import LocationVerificationBadge from "@/app/components/LocationVerificationBadge";
+import { isLocationVerified } from "@/lib/location-details";
 
 interface Props {
   params: Promise<{ prefecture: string; slug: string }>;
@@ -70,10 +72,16 @@ export default async function PrefectureAnimeMapPage({ params }: Props) {
   const locations = locationRows.results;
   if (locations.length === 0) notFound();
 
+  const verifiedLocationIds = new Set(
+    locations
+      .filter((location) => isLocationVerified(anime.slug, location.name))
+      .map((location) => location.id)
+  );
   const mapLocations: SacredPlaceMapLocation[] = locations.map((location) => ({
     id: location.id,
     name: location.name,
     prefecture: location.prefecture,
+    isVerified: verifiedLocationIds.has(location.id),
   }));
   const initial = anime.title.charAt(0);
 
@@ -145,9 +153,13 @@ export default async function PrefectureAnimeMapPage({ params }: Props) {
             >
               <Link
                 href={`/locations/${location.id}`}
-                className="block px-3 py-2 text-gray-700 transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-primary"
+                className="flex items-center justify-between gap-3 px-3 py-2 text-gray-700 transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-primary"
               >
-                {location.name}
+                <span className="min-w-0">{location.name}</span>
+                <LocationVerificationBadge
+                  verified={verifiedLocationIds.has(location.id)}
+                  compact
+                />
               </Link>
             </li>
           ))}

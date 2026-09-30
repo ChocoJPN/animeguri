@@ -4,6 +4,7 @@ import type { Anime, Location } from "@/lib/types";
 
 export interface PrefectureAnime extends Anime {
   locations: Location[];
+  verifiedLocationCount: number;
 }
 
 export default function PrefectureAnimeSelector({
@@ -64,9 +65,20 @@ export default function PrefectureAnimeSelector({
                 <h3 className="truncate font-semibold text-gray-900 group-hover:text-primary dark:text-gray-100">
                   {anime.title}
                 </h3>
-                <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
-                  {anime.locations.length}件の聖地マップを開く
-                </p>
+                <div className="mt-2 flex flex-wrap items-center gap-2 text-xs">
+                  <span className="text-gray-500 dark:text-gray-400">
+                    {anime.locations.length}件の聖地
+                  </span>
+                  <span
+                    className={`rounded-full px-2 py-0.5 font-semibold ${
+                      anime.verifiedLocationCount > 0
+                        ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300"
+                        : "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300"
+                    }`}
+                  >
+                    確認済み {anime.verifiedLocationCount}件
+                  </span>
+                </div>
               </div>
             </Link>
           );

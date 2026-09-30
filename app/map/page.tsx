@@ -3,6 +3,7 @@ import NationwideMap, {
   type NationwideMapLocation,
 } from "@/app/components/NationwideMap";
 import { getDB } from "@/lib/db";
+import { isLocationVerified } from "@/lib/location-details";
 
 export const dynamic = "force-dynamic";
 
@@ -25,7 +26,12 @@ export default async function MapPage() {
        JOIN anime a ON a.id = l.anime_id
        ORDER BY l.prefecture, a.title, l.name`
     )
-    .all<NationwideMapLocation>();
+    .all<Omit<NationwideMapLocation, "isVerified">>();
+
+  const locations: NationwideMapLocation[] = rows.results.map((location) => ({
+    ...location,
+    isVerified: isLocationVerified(location.animeSlug, location.name),
+  }));
 
   return (
     <div>
@@ -39,7 +45,7 @@ export default async function MapPage() {
         </p>
       </div>
 
-      <NationwideMap locations={rows.results} />
+      <NationwideMap locations={locations} />
     </div>
   );
 }

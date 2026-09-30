@@ -1,11 +1,13 @@
 import { getAreaLabel } from "@/lib/areas";
 import Link from "next/link";
 import { buildGoogleMapsUrls } from "@/lib/location-map";
+import LocationVerificationBadge from "@/app/components/LocationVerificationBadge";
 
 export interface SacredPlaceMapLocation {
   id: number;
   name: string;
   prefecture: string;
+  isVerified: boolean;
 }
 
 export default function SacredPlaceMap({
@@ -49,9 +51,15 @@ export default function SacredPlaceMap({
                 />
               </div>
               <div className="p-4">
-                <p className="mb-1 text-xs font-medium text-gray-500 dark:text-gray-400">
-                  {getAreaLabel(location.prefecture)}
-                </p>
+                <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+                  <p className="text-xs font-medium text-gray-500 dark:text-gray-400">
+                    {getAreaLabel(location.prefecture)}
+                  </p>
+                  <LocationVerificationBadge
+                    verified={location.isVerified}
+                    compact
+                  />
+                </div>
                 <Link
                   href={`/locations/${location.id}`}
                   className="block font-semibold text-gray-900 transition-colors hover:text-primary dark:text-gray-100"

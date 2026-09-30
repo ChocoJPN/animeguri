@@ -7,6 +7,7 @@ import type { Anime, Location } from "@/lib/types";
 import PrefectureAnimeSelector, {
   type PrefectureAnime,
 } from "@/app/components/PrefectureAnimeSelector";
+import { isLocationVerified } from "@/lib/location-details";
 
 interface Props {
   params: Promise<{ prefecture: string }>;
@@ -64,10 +65,17 @@ export default async function PrefecturePage({ params }: Props) {
       locationsByAnimeId.set(location.anime_id, existing);
     }
 
-    animeListWithLocations = animeList.map((anime) => ({
-      ...anime,
-      locations: locationsByAnimeId.get(anime.id) || [],
-    }));
+    animeListWithLocations = animeList.map((anime) => {
+      const locations = locationsByAnimeId.get(anime.id) || [];
+
+      return {
+        ...anime,
+        locations,
+        verifiedLocationCount: locations.filter((location) =>
+          isLocationVerified(anime.slug, location.name)
+        ).length,
+      };
+    });
   }
 
   return (

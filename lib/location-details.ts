@@ -189,3 +189,9 @@ const detailsByAnimeAndLocation: Record<string, LocationDetail> = {
 export function getLocationDetail(animeSlug: string, locationName: string) {
   return detailsByAnimeAndLocation[`${animeSlug}::${locationName}`] || null;
 }
+
+export function isLocationVerified(animeSlug: string, locationName: string) {
+  return Boolean(
+    getLocationDetail(animeSlug, locationName)?.evidence?.length
+  );
+}

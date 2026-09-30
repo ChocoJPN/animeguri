@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { getAreaLabel } from "@/lib/areas";
 import { buildGoogleMapsUrls } from "@/lib/location-map";
+import LocationVerificationBadge from "@/app/components/LocationVerificationBadge";
 
 export interface NationwideMapLocation {
   id: number;
@@ -11,6 +12,7 @@ export interface NationwideMapLocation {
   prefecture: string;
   animeTitle: string;
   animeSlug: string;
+  isVerified: boolean;
 }
 
 interface NationwideMapProps {
@@ -23,6 +25,7 @@ export default function NationwideMap({ locations }: NationwideMapProps) {
   const [query, setQuery] = useState("");
   const [area, setArea] = useState("");
   const [animeSlug, setAnimeSlug] = useState("");
+  const [verifiedOnly, setVerifiedOnly] = useState(false);
   const [visibleLimit, setVisibleLimit] = useState(PAGE_SIZE);
   const [selectedId, setSelectedId] = useState<number | null>(
     locations[0]?.id ?? null
@@ -56,6 +59,7 @@ export default function NationwideMap({ locations }: NationwideMapProps) {
     return locations.filter((location) => {
       if (area && location.prefecture !== area) return false;
       if (animeSlug && location.animeSlug !== animeSlug) return false;
+      if (verifiedOnly && !location.isVerified) return false;
       if (!normalizedQuery) return true;
 
       const target = `${location.name} ${location.animeTitle} ${getAreaLabel(
@@ -63,7 +67,7 @@ export default function NationwideMap({ locations }: NationwideMapProps) {
       )}`.toLocaleLowerCase("ja");
       return target.includes(normalizedQuery);
     });
-  }, [animeSlug, area, locations, query]);
+  }, [animeSlug, area, locations, query, verifiedOnly]);
 
   const selectedLocation =
     filteredLocations.find((location) => location.id === selectedId) ??
@@ -78,6 +82,7 @@ export default function NationwideMap({ locations }: NationwideMapProps) {
     setQuery("");
     setArea("");
     setAnimeSlug("");
+    setVerifiedOnly(false);
     setVisibleLimit(PAGE_SIZE);
   };
 
@@ -87,7 +92,7 @@ export default function NationwideMap({ locations }: NationwideMapProps) {
         aria-label="地図の検索条件"
         className="border-y border-gray-200 py-4 dark:border-gray-800"
       >
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_auto]">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_auto_auto]">
           <label className="block">
             <span className="mb-1 block text-xs font-medium text-gray-600 dark:text-gray-400">
               スポット・作品名
@@ -137,10 +142,23 @@ export default function NationwideMap({ locations }: NationwideMapProps) {
             </select>
           </label>
 
+          <label className="flex h-10 cursor-pointer items-center gap-2 self-end rounded-md border border-gray-300 bg-white px-3 text-sm font-medium text-gray-700 transition-colors hover:border-emerald-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300">
+            <input
+              type="checkbox"
+              checked={verifiedOnly}
+              onChange={(event) => {
+                setVerifiedOnly(event.target.checked);
+                setVisibleLimit(PAGE_SIZE);
+              }}
+              className="h-4 w-4 accent-emerald-600"
+            />
+            <span className="whitespace-nowrap">確認済みのみ</span>
+          </label>
+
           <button
             type="button"
             onClick={resetFilters}
-            disabled={!query && !area && !animeSlug}
+            disabled={!query && !area && !animeSlug && !verifiedOnly}
             className="h-10 self-end rounded-md border border-gray-300 px-4 text-sm font-medium text-gray-700 transition-colors hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:opacity-40 dark:border-gray-700 dark:text-gray-300"
           >
             条件をクリア
@@ -183,12 +201,22 @@ export default function NationwideMap({ locations }: NationwideMapProps) {
                       <span
                         aria-hidden="true"
                         className={`mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full ${
-                          selected ? "bg-primary" : "bg-gray-300 dark:bg-gray-600"
+                          location.isVerified
+                            ? "bg-emerald-500"
+                            : selected
+                              ? "bg-primary"
+                              : "bg-gray-300 dark:bg-gray-600"
                         }`}
                       />
-                      <span className="min-w-0">
-                        <span className="block font-medium text-gray-900 dark:text-gray-100">
-                          {location.name}
+                      <span className="min-w-0 flex-1">
+                        <span className="flex items-start justify-between gap-2">
+                          <span className="font-medium text-gray-900 dark:text-gray-100">
+                            {location.name}
+                          </span>
+                          <LocationVerificationBadge
+                            verified={location.isVerified}
+                            compact
+                          />
                         </span>
                         <span className="mt-1 block text-xs leading-relaxed text-gray-500 dark:text-gray-400">
                           {getAreaLabel(location.prefecture)} / {location.animeTitle}
@@ -235,9 +263,15 @@ export default function NationwideMap({ locations }: NationwideMapProps) {
                   <p className="text-xs font-medium text-primary">
                     {getAreaLabel(selectedLocation.prefecture)} / {selectedLocation.animeTitle}
                   </p>
-                  <h2 className="mt-1 font-bold text-gray-900 dark:text-gray-100">
-                    {selectedLocation.name}
-                  </h2>
+                  <div className="mt-1 flex flex-wrap items-center gap-2">
+                    <h2 className="font-bold text-gray-900 dark:text-gray-100">
+                      {selectedLocation.name}
+                    </h2>
+                    <LocationVerificationBadge
+                      verified={selectedLocation.isVerified}
+                      compact
+                    />
+                  </div>
                 </div>
                 <div className="flex shrink-0 items-center gap-3 text-sm font-medium">
                   <Link

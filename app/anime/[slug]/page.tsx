@@ -8,6 +8,8 @@ import type { Anime, Location } from "@/lib/types";
 import SacredPlaceMap, {
   type SacredPlaceMapLocation,
 } from "@/app/components/SacredPlaceMap";
+import LocationVerificationBadge from "@/app/components/LocationVerificationBadge";
+import { isLocationVerified } from "@/lib/location-details";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -46,10 +48,16 @@ export default async function AnimePage({ params }: Props) {
     .all<Location>();
 
   const locations = locationRows.results;
+  const verifiedLocationIds = new Set(
+    locations
+      .filter((location) => isLocationVerified(anime.slug, location.name))
+      .map((location) => location.id)
+  );
   const mapLocations: SacredPlaceMapLocation[] = locations.map((loc) => ({
     id: loc.id,
     name: loc.name,
     prefecture: loc.prefecture,
+    isVerified: verifiedLocationIds.has(loc.id),
   }));
 
   const locationsByPrefecture = new Map<string, Location[]>();
@@ -178,14 +186,18 @@ export default async function AnimePage({ params }: Props) {
                     {locs.map((loc) => (
                       <li
                         key={loc.id}
-                        className="text-gray-700 dark:text-gray-300"
+                        className="flex items-center justify-between gap-3 py-1 text-gray-700 dark:text-gray-300"
                       >
                         <Link
                           href={`/locations/${loc.id}`}
-                          className="transition-colors hover:text-primary"
+                          className="min-w-0 transition-colors hover:text-primary"
                         >
                           {loc.name}
                         </Link>
+                        <LocationVerificationBadge
+                          verified={verifiedLocationIds.has(loc.id)}
+                          compact
+                        />
                       </li>
                     ))}
                   </ul>
