@@ -12,7 +12,9 @@ interface AnimeCallout {
   prefecture: string;
   prefectureName: string;
   title: string;
+  displayTitle?: string;
   animeSlug: string;
+  image: string;
   x: number;
   y: number;
   targetX: number;
@@ -21,35 +23,59 @@ interface AnimeCallout {
 }
 
 const animeCallouts: AnimeCallout[] = [
-  { prefecture: "hokkaido", prefectureName: "北海道", title: "ゴールデンカムイ", animeSlug: "golden-kamuy", x: 1005, y: 100, targetX: 925, targetY: 185, side: "right" },
-  { prefecture: "aomori", prefectureName: "青森県", title: "ふらいんぐうぃっち", animeSlug: "flying-witch", x: 880, y: 310, targetX: 790, targetY: 350, side: "right" },
-  { prefecture: "miyagi", prefectureName: "宮城県", title: "ハイキュー!!", animeSlug: "haikyu", x: 880, y: 430, targetX: 775, targetY: 485, side: "right" },
-  { prefecture: "ibaraki", prefectureName: "茨城県", title: "ガールズ＆パンツァー", animeSlug: "girls-und-panzer", x: 860, y: 545, targetX: 772, targetY: 620, side: "right" },
-  { prefecture: "saitama", prefectureName: "埼玉県", title: "らき☆すた", animeSlug: "lucky-star", x: 900, y: 625, targetX: 720, targetY: 650, side: "right" },
-  { prefecture: "tokyo", prefectureName: "東京都", title: "ラブライブ！", animeSlug: "lovelive", x: 880, y: 690, targetX: 722, targetY: 672, side: "right" },
-  { prefecture: "kanagawa", prefectureName: "神奈川県", title: "SLAM DUNK", animeSlug: "slam-dunk", x: 855, y: 755, targetX: 725, targetY: 695, side: "right" },
-  { prefecture: "shizuoka", prefectureName: "静岡県", title: "ちびまる子ちゃん", animeSlug: "chibi-maruko-chan", x: 760, y: 835, targetX: 635, targetY: 720, side: "right" },
-  { prefecture: "okinawa", prefectureName: "沖縄県", title: "白い砂のアクアトープ", animeSlug: "aquatope", x: 20, y: 130, targetX: 365, targetY: 260, side: "left" },
-  { prefecture: "tottori", prefectureName: "鳥取県", title: "Free!", animeSlug: "free", x: 190, y: 570, targetX: 405, targetY: 715, side: "left" },
-  { prefecture: "hiroshima", prefectureName: "広島県", title: "この世界の片隅に", animeSlug: "kono-sekai-no-katasumi-ni", x: 55, y: 655, targetX: 345, targetY: 755, side: "left" },
-  { prefecture: "kyoto", prefectureName: "京都府", title: "響け！ユーフォニアム", animeSlug: "hibike-euphonium", x: 360, y: 525, targetX: 520, targetY: 705, side: "left" },
-  { prefecture: "kagawa", prefectureName: "香川県", title: "うどんの国の金色毛鞠", animeSlug: "udon-no-kuni", x: 430, y: 865, targetX: 405, targetY: 810, side: "left" },
-  { prefecture: "fukuoka", prefectureName: "福岡県", title: "博多豚骨ラーメンズ", animeSlug: "hakata-tonkotsu-ramens", x: 10, y: 740, targetX: 300, targetY: 795, side: "left" },
-  { prefecture: "kumamoto", prefectureName: "熊本県", title: "蛍火の杜へ", animeSlug: "hotarubi-no-mori-e", x: 20, y: 830, targetX: 270, targetY: 865, side: "left" },
-  { prefecture: "kagoshima", prefectureName: "鹿児島県", title: "秒速5センチメートル", animeSlug: "byousoku-5cm", x: 290, y: 935, targetX: 235, targetY: 930, side: "left" },
+  { prefecture: "hokkaido", prefectureName: "北海道", title: "ゴールデンカムイ", animeSlug: "golden-kamuy", image: "/images/golden-kamuy.jpg", x: 430, y: 95, targetX: 833, targetY: 162, side: "left" },
+  { prefecture: "aomori", prefectureName: "青森県", title: "ふらいんぐうぃっち", animeSlug: "flying-witch", image: "/images/flying-witch.jpg", x: 865, y: 330, targetX: 745, targetY: 327, side: "right" },
+  { prefecture: "miyagi", prefectureName: "宮城県", title: "ハイキュー!!", animeSlug: "haikyu", image: "/images/haikyu.jpg", x: 900, y: 430, targetX: 760, targetY: 488, side: "right" },
+  { prefecture: "ibaraki", prefectureName: "茨城県", title: "ガールズ＆パンツァー", displayTitle: "ガルパン", animeSlug: "girls-und-panzer", image: "/images/girls-und-panzer.png", x: 845, y: 535, targetX: 729, targetY: 619, side: "right" },
+  { prefecture: "saitama", prefectureName: "埼玉県", title: "らき☆すた", animeSlug: "lucky-star", image: "/images/lucky-star.jpg", x: 930, y: 620, targetX: 679, targetY: 642, side: "right" },
+  { prefecture: "tokyo", prefectureName: "東京都", title: "ラブライブ！", animeSlug: "lovelive", image: "/images/lovelive.jpg", x: 860, y: 705, targetX: 686, targetY: 663, side: "right" },
+  { prefecture: "kanagawa", prefectureName: "神奈川県", title: "SLAM DUNK", animeSlug: "slam-dunk", image: "/images/slam-dunk.jpg", x: 940, y: 790, targetX: 682, targetY: 682, side: "right" },
+  { prefecture: "shizuoka", prefectureName: "静岡県", title: "ちびまる子ちゃん", displayTitle: "ちびまる子", animeSlug: "chibi-maruko-chan", image: "/images/chibi-maruko-chan.jpg", x: 790, y: 885, targetX: 628, targetY: 701, side: "right" },
+  { prefecture: "okinawa", prefectureName: "沖縄県", title: "白い砂のアクアトープ", displayTitle: "アクアトープ", animeSlug: "aquatope", image: "/images/aquatope.jpg", x: 35, y: 75, targetX: 410, targetY: 212, side: "left" },
+  { prefecture: "tottori", prefectureName: "鳥取県", title: "Free!", animeSlug: "free", image: "/images/free.jpg", x: 80, y: 535, targetX: 391, targetY: 684, side: "left" },
+  { prefecture: "hiroshima", prefectureName: "広島県", title: "この世界の片隅に", displayTitle: "この世界の片隅に", animeSlug: "kono-sekai-no-katasumi-ni", image: "/images/kono-sekai-no-katasumi-ni.jpg", x: 35, y: 630, targetX: 333, targetY: 725, side: "left" },
+  { prefecture: "kyoto", prefectureName: "京都府", title: "響け！ユーフォニアム", displayTitle: "響け！ユーフォ", animeSlug: "hibike-euphonium", image: "/images/hibike-euphonium.jpg", x: 500, y: 510, targetX: 477, targetY: 692, side: "right" },
+  { prefecture: "kagawa", prefectureName: "香川県", title: "うどんの国の金色毛鞠", displayTitle: "うどんの国", animeSlug: "udon-no-kuni", image: "/images/udon-no-kuni.jpg", x: 535, y: 860, targetX: 399, targetY: 756, side: "right" },
+  { prefecture: "fukuoka", prefectureName: "福岡県", title: "博多豚骨ラーメンズ", displayTitle: "博多豚骨", animeSlug: "hakata-tonkotsu-ramens", image: "/images/hakata-tonkotsu-ramens.jpg", x: 735, y: 795, targetX: 216, targetY: 793, side: "right" },
+  { prefecture: "kumamoto", prefectureName: "熊本県", title: "蛍火の杜へ", animeSlug: "hotarubi-no-mori-e", image: "/images/hotarubi-no-mori-e.jpg", x: 35, y: 890, targetX: 224, targetY: 847, side: "left" },
+  { prefecture: "kagoshima", prefectureName: "鹿児島県", title: "秒速5センチメートル", displayTitle: "秒速5センチ", animeSlug: "byousoku-5cm", image: "/images/byousoku-5cm.jpg", x: 290, y: 905, targetX: 210, targetY: 914, side: "left" },
 ];
 
 const mobileAnimeCallouts: AnimeCallout[] = [
-  { prefecture: "hokkaido", prefectureName: "北海道", title: "ゴールデンカムイ", animeSlug: "golden-kamuy", x: 950, y: 80, targetX: 925, targetY: 185, side: "right" },
-  { prefecture: "miyagi", prefectureName: "宮城県", title: "ハイキュー!!", animeSlug: "haikyu", x: 945, y: 335, targetX: 775, targetY: 485, side: "right" },
-  { prefecture: "ibaraki", prefectureName: "茨城県", title: "ガールズ＆パンツァー", animeSlug: "girls-und-panzer", x: 950, y: 530, targetX: 772, targetY: 620, side: "right" },
-  { prefecture: "tokyo", prefectureName: "東京都", title: "ラブライブ！", animeSlug: "lovelive", x: 950, y: 660, targetX: 722, targetY: 672, side: "right" },
-  { prefecture: "shizuoka", prefectureName: "静岡県", title: "ちびまる子ちゃん", animeSlug: "chibi-maruko-chan", x: 850, y: 830, targetX: 635, targetY: 720, side: "right" },
-  { prefecture: "okinawa", prefectureName: "沖縄県", title: "はるかなレシーブ", animeSlug: "harukana-receive", x: 10, y: 110, targetX: 365, targetY: 260, side: "left" },
-  { prefecture: "kyoto", prefectureName: "京都府", title: "響け！ユーフォニアム", animeSlug: "hibike-euphonium", x: 300, y: 500, targetX: 520, targetY: 705, side: "left" },
-  { prefecture: "fukuoka", prefectureName: "福岡県", title: "博多豚骨ラーメンズ", animeSlug: "hakata-tonkotsu-ramens", x: 5, y: 650, targetX: 300, targetY: 795, side: "left" },
-  { prefecture: "kagoshima", prefectureName: "鹿児島県", title: "秒速5センチメートル", animeSlug: "byousoku-5cm", x: 320, y: 915, targetX: 235, targetY: 930, side: "left" },
+  { prefecture: "hokkaido", prefectureName: "北海道", title: "ゴールデンカムイ", animeSlug: "golden-kamuy", image: "/images/golden-kamuy.jpg", x: 420, y: 70, targetX: 833, targetY: 162, side: "left" },
+  { prefecture: "miyagi", prefectureName: "宮城県", title: "ハイキュー!!", animeSlug: "haikyu", image: "/images/haikyu.jpg", x: 930, y: 330, targetX: 760, targetY: 488, side: "right" },
+  { prefecture: "ibaraki", prefectureName: "茨城県", title: "ガールズ＆パンツァー", displayTitle: "ガルパン", animeSlug: "girls-und-panzer", image: "/images/girls-und-panzer.png", x: 885, y: 455, targetX: 729, targetY: 619, side: "right" },
+  { prefecture: "tokyo", prefectureName: "東京都", title: "ラブライブ！", animeSlug: "lovelive", image: "/images/lovelive.jpg", x: 935, y: 580, targetX: 686, targetY: 663, side: "right" },
+  { prefecture: "shizuoka", prefectureName: "静岡県", title: "ちびまる子ちゃん", displayTitle: "ちびまる子", animeSlug: "chibi-maruko-chan", image: "/images/chibi-maruko-chan.jpg", x: 845, y: 715, targetX: 628, targetY: 701, side: "right" },
+  { prefecture: "okinawa", prefectureName: "沖縄県", title: "はるかなレシーブ", displayTitle: "はるかな", animeSlug: "harukana-receive", image: "/images/harukana-receive.png", x: 10, y: 50, targetX: 410, targetY: 212, side: "left" },
+  { prefecture: "kyoto", prefectureName: "京都府", title: "響け！ユーフォニアム", displayTitle: "響け！ユーフォ", animeSlug: "hibike-euphonium", image: "/images/hibike-euphonium.jpg", x: 15, y: 420, targetX: 477, targetY: 692, side: "left" },
+  { prefecture: "fukuoka", prefectureName: "福岡県", title: "博多豚骨ラーメンズ", displayTitle: "博多豚骨", animeSlug: "hakata-tonkotsu-ramens", image: "/images/hakata-tonkotsu-ramens.jpg", x: 260, y: 745, targetX: 216, targetY: 793, side: "left" },
+  { prefecture: "kagoshima", prefectureName: "鹿児島県", title: "秒速5センチメートル", displayTitle: "秒速5センチ", animeSlug: "byousoku-5cm", image: "/images/byousoku-5cm.jpg", x: 510, y: 855, targetX: 210, targetY: 914, side: "right" },
 ];
+
+const desktopCalloutCard = {
+  width: 192,
+  height: 82,
+  imageWidth: 54,
+  imageHeight: 70,
+  padding: 6,
+} as const;
+
+const mobileCalloutCard = {
+  width: 245,
+  height: 96,
+  imageWidth: 68,
+  imageHeight: 84,
+  padding: 6,
+} as const;
+
+function getLineStartX(callout: AnimeCallout, cardWidth: number) {
+  return callout.side === "left" ? callout.x + cardWidth : callout.x;
+}
+
+function getLineStartY(callout: AnimeCallout, cardHeight: number) {
+  return callout.y + cardHeight / 2;
+}
 
 export default function JapanMap({ animeCounts }: JapanMapProps) {
   const router = useRouter();
@@ -118,56 +144,6 @@ export default function JapanMap({ animeCounts }: JapanMapProps) {
             />
           </marker>
         </defs>
-
-        <g aria-hidden="true" className="hidden sm:inline">
-          {animeCallouts.map((callout) => (
-            <g
-              key={`line-${callout.prefecture}`}
-            >
-              <path
-                d={`M ${callout.side === "left" ? callout.x + 180 : callout.x} ${callout.y + 24} L ${callout.targetX} ${callout.targetY}`}
-                fill="none"
-                stroke="#111827"
-                strokeWidth="5"
-                strokeLinecap="round"
-                opacity="0.9"
-              />
-              <path
-                d={`M ${callout.side === "left" ? callout.x + 180 : callout.x} ${callout.y + 24} L ${callout.targetX} ${callout.targetY}`}
-                fill="none"
-                stroke="#fbbf24"
-                strokeWidth="2.25"
-                strokeLinecap="round"
-                markerEnd="url(#anime-callout-arrow)"
-              />
-            </g>
-          ))}
-        </g>
-
-        <g aria-hidden="true" className="sm:hidden">
-          {mobileAnimeCallouts.map((callout) => (
-            <g
-              key={`mobile-line-${callout.prefecture}`}
-            >
-              <path
-                d={`M ${callout.side === "left" ? callout.x + 245 : callout.x} ${callout.y + 36} L ${callout.targetX} ${callout.targetY}`}
-                fill="none"
-                stroke="#111827"
-                strokeWidth="8"
-                strokeLinecap="round"
-                opacity="0.9"
-              />
-              <path
-                d={`M ${callout.side === "left" ? callout.x + 245 : callout.x} ${callout.y + 36} L ${callout.targetX} ${callout.targetY}`}
-                fill="none"
-                stroke="#fbbf24"
-                strokeWidth="4"
-                strokeLinecap="round"
-                markerEnd="url(#anime-callout-arrow)"
-              />
-            </g>
-          ))}
-        </g>
 
         <g transform="translate(100 0)">
         <g transform="matrix(1.028807, 0, 0, 1.028807, -47.544239, -28.806583)">
@@ -902,6 +878,56 @@ export default function JapanMap({ animeCounts }: JapanMapProps) {
         </g>
         </g>
 
+        <g aria-hidden="true" className="pointer-events-none hidden sm:inline">
+          {animeCallouts.map((callout) => (
+            <g
+              key={`visible-line-${callout.prefecture}`}
+            >
+              <path
+                d={`M ${getLineStartX(callout, desktopCalloutCard.width)} ${getLineStartY(callout, desktopCalloutCard.height)} L ${callout.targetX} ${callout.targetY}`}
+                fill="none"
+                stroke="#111827"
+                strokeWidth="5"
+                strokeLinecap="round"
+                opacity="0.9"
+              />
+              <path
+                d={`M ${getLineStartX(callout, desktopCalloutCard.width)} ${getLineStartY(callout, desktopCalloutCard.height)} L ${callout.targetX} ${callout.targetY}`}
+                fill="none"
+                stroke="#fbbf24"
+                strokeWidth="2.25"
+                strokeLinecap="round"
+                markerEnd="url(#anime-callout-arrow)"
+              />
+            </g>
+          ))}
+        </g>
+
+        <g aria-hidden="true" className="pointer-events-none sm:hidden">
+          {mobileAnimeCallouts.map((callout) => (
+            <g
+              key={`visible-mobile-line-${callout.prefecture}`}
+            >
+              <path
+                d={`M ${getLineStartX(callout, mobileCalloutCard.width)} ${getLineStartY(callout, mobileCalloutCard.height)} L ${callout.targetX} ${callout.targetY}`}
+                fill="none"
+                stroke="#111827"
+                strokeWidth="8"
+                strokeLinecap="round"
+                opacity="0.9"
+              />
+              <path
+                d={`M ${getLineStartX(callout, mobileCalloutCard.width)} ${getLineStartY(callout, mobileCalloutCard.height)} L ${callout.targetX} ${callout.targetY}`}
+                fill="none"
+                stroke="#fbbf24"
+                strokeWidth="4"
+                strokeLinecap="round"
+                markerEnd="url(#anime-callout-arrow)"
+              />
+            </g>
+          ))}
+        </g>
+
         <g aria-label="都道府県の代表アニメ" className="hidden sm:inline">
           {animeCallouts.map((callout) => (
             <g
@@ -921,25 +947,60 @@ export default function JapanMap({ animeCounts }: JapanMapProps) {
               <rect
                 x={callout.x}
                 y={callout.y}
-                width="180"
-                height="48"
+                width={desktopCalloutCard.width}
+                height={desktopCalloutCard.height}
                 rx="6"
                 className="fill-white stroke-amber-400 transition-colors group-hover:fill-amber-50 group-focus:fill-amber-50 dark:fill-gray-900 dark:stroke-amber-400 dark:group-hover:fill-gray-800 dark:group-focus:fill-gray-800"
                 strokeWidth="1.5"
               />
+              <clipPath id={`callout-image-${callout.prefecture}`}>
+                <rect
+                  x={callout.x + desktopCalloutCard.padding}
+                  y={callout.y + desktopCalloutCard.padding}
+                  width={desktopCalloutCard.imageWidth}
+                  height={desktopCalloutCard.imageHeight}
+                  rx="4"
+                />
+              </clipPath>
+              <image
+                href={callout.image}
+                x={callout.x + desktopCalloutCard.padding}
+                y={callout.y + desktopCalloutCard.padding}
+                width={desktopCalloutCard.imageWidth}
+                height={desktopCalloutCard.imageHeight}
+                preserveAspectRatio="xMidYMid slice"
+                clipPath={`url(#callout-image-${callout.prefecture})`}
+              />
+              <rect
+                x={callout.x + desktopCalloutCard.padding}
+                y={callout.y + desktopCalloutCard.padding}
+                width={desktopCalloutCard.imageWidth}
+                height={desktopCalloutCard.imageHeight}
+                rx="4"
+                fill="none"
+                className="stroke-gray-200 dark:stroke-gray-700"
+                strokeWidth="1"
+              />
               <text
-                x={callout.x + 12}
-                y={callout.y + 17}
+                x={callout.x + desktopCalloutCard.imageWidth + 18}
+                y={callout.y + 22}
                 className="fill-gray-500 text-[11px] font-semibold dark:fill-gray-400"
               >
                 {callout.prefectureName}
               </text>
               <text
-                x={callout.x + 12}
-                y={callout.y + 37}
-                className="fill-gray-900 text-[14px] font-bold dark:fill-gray-100"
+                x={callout.x + desktopCalloutCard.imageWidth + 18}
+                y={callout.y + 47}
+                className="fill-gray-900 text-[13px] font-bold dark:fill-gray-100"
               >
-                {callout.title}
+                {callout.displayTitle || callout.title}
+              </text>
+              <text
+                x={callout.x + desktopCalloutCard.imageWidth + 18}
+                y={callout.y + 68}
+                className="fill-amber-600 text-[10px] font-semibold dark:fill-amber-300"
+              >
+                代表作
               </text>
             </g>
           ))}
@@ -964,25 +1025,60 @@ export default function JapanMap({ animeCounts }: JapanMapProps) {
               <rect
                 x={callout.x}
                 y={callout.y}
-                width="245"
-                height="72"
+                width={mobileCalloutCard.width}
+                height={mobileCalloutCard.height}
                 rx="8"
                 className="fill-white stroke-amber-400 transition-colors group-hover:fill-amber-50 group-focus:fill-amber-50 dark:fill-gray-900 dark:stroke-amber-400 dark:group-hover:fill-gray-800 dark:group-focus:fill-gray-800"
                 strokeWidth="3"
               />
+              <clipPath id={`mobile-callout-image-${callout.prefecture}`}>
+                <rect
+                  x={callout.x + mobileCalloutCard.padding}
+                  y={callout.y + mobileCalloutCard.padding}
+                  width={mobileCalloutCard.imageWidth}
+                  height={mobileCalloutCard.imageHeight}
+                  rx="6"
+                />
+              </clipPath>
+              <image
+                href={callout.image}
+                x={callout.x + mobileCalloutCard.padding}
+                y={callout.y + mobileCalloutCard.padding}
+                width={mobileCalloutCard.imageWidth}
+                height={mobileCalloutCard.imageHeight}
+                preserveAspectRatio="xMidYMid slice"
+                clipPath={`url(#mobile-callout-image-${callout.prefecture})`}
+              />
+              <rect
+                x={callout.x + mobileCalloutCard.padding}
+                y={callout.y + mobileCalloutCard.padding}
+                width={mobileCalloutCard.imageWidth}
+                height={mobileCalloutCard.imageHeight}
+                rx="6"
+                fill="none"
+                className="stroke-gray-200 dark:stroke-gray-700"
+                strokeWidth="1.5"
+              />
               <text
-                x={callout.x + 16}
-                y={callout.y + 24}
-                className="fill-gray-500 text-[17px] font-semibold dark:fill-gray-400"
+                x={callout.x + mobileCalloutCard.imageWidth + 18}
+                y={callout.y + 29}
+                className="fill-gray-500 text-[16px] font-semibold dark:fill-gray-400"
               >
                 {callout.prefectureName}
               </text>
               <text
-                x={callout.x + 16}
-                y={callout.y + 55}
-                className="fill-gray-900 text-[22px] font-bold dark:fill-gray-100"
+                x={callout.x + mobileCalloutCard.imageWidth + 18}
+                y={callout.y + 61}
+                className="fill-gray-900 text-[20px] font-bold dark:fill-gray-100"
               >
-                {callout.title}
+                {callout.displayTitle || callout.title}
+              </text>
+              <text
+                x={callout.x + mobileCalloutCard.imageWidth + 18}
+                y={callout.y + 84}
+                className="fill-amber-600 text-[13px] font-semibold dark:fill-amber-300"
+              >
+                代表作
               </text>
             </g>
           ))}

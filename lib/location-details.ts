@@ -184,6 +184,146 @@ const detailsByAnimeAndLocation: Record<string, LocationDetail> = {
       },
     ],
   },
+  "lucky-star::鷲宮神社": {
+    address: "埼玉県久喜市鷲宮1丁目6-1",
+    scene:
+      "オープニング映像で鷲宮神社の鳥居前と同じ風景が背景として登場し、主要キャラクターの柊姉妹ゆかりの地としても扱われています。",
+    visitTip:
+      "現在も参拝客や地域の方が多い場所です。境内や鳥居前で撮影するときは、参拝動線をふさがないよう短時間で楽しみましょう。",
+    accessHint: "東武伊勢崎線 鷲宮駅から徒歩圏内です。",
+    evidence: [
+      {
+        episode: "TVアニメ オープニング",
+        description:
+          "鷲宮神社の鳥居前の風景がオープニング背景として登場し、放送後にファンが舞台地として訪れるきっかけになった場所です。",
+        verification: "verified",
+        verificationNote:
+          "外務省の地域事例紹介が、オープニングに鷲宮神社と同じ光景が映ったことを記録しています。作品公式も鷲宮神社での公式参拝イベントを案内しています。",
+        sources: [
+          {
+            label: "外務省・久喜市鷲宮と「らき☆すた」の取り組み",
+            url: "https://www.mofa.go.jp/mofaj/gaiko/local/page24_002273.html",
+          },
+          {
+            label: "「らき☆すた」公式・公式参拝in鷲宮",
+            url: "https://www.lucky-ch.com/info/info_washinomiya.html",
+          },
+        ],
+      },
+    ],
+  },
+  "tenki-no-ko::田端駅周辺": {
+    address: "東京都北区東田端1丁目周辺",
+    scene:
+      "帆高が陽菜の家へ向かう場面や、物語終盤の再会につながる田端駅南口付近の坂道として知られる場所です。",
+    visitTip:
+      "田端駅南口付近は生活道路です。坂道や改札付近で立ち止まる場合は、通行の妨げにならない位置を選んでください。",
+    accessHint: "JR田端駅南口からすぐの崖沿いの道周辺です。",
+    evidence: [
+      {
+        episode: "劇場版・田端周辺の場面",
+        description:
+          "田端駅南口を出たところにある崖沿いの道が、陽菜の住まい周辺や物語上の重要な場面の舞台として使われています。",
+        verification: "verified",
+        verificationNote:
+          "北区立図書館の地域資料が、田端駅南口付近の崖沿いの道を『天気の子』の重要なシーンの舞台として紹介しています。",
+        sources: [
+          {
+            label: "北区立図書館・北区の部屋だより 第123号",
+            url: "https://www.library.city.kita.tokyo.jp/manage/contents/upload/5e043d585b06e.pdf",
+          },
+          {
+            label: "Anime Pilgrimage・田端駅",
+            url: "https://www.animepilgrimage.com/ja/maps/place/b710b717-1688-44b5-a423-d3c2a65285eb?ctx=anime%2CNpEZnChVAaNhV5wOpnTr%2Cweathering-with-you",
+          },
+        ],
+      },
+    ],
+  },
+  "koe-no-katachi::大垣市・美登鯉橋": {
+    address: "岐阜県大垣市西外側町2丁目46 周辺",
+    scene:
+      "将也や硝子たちが集まる大切な場所として描かれ、映画のキービジュアルにも使われた大垣市の代表的な聖地です。",
+    visitTip:
+      "水門川沿いの遊歩道にある橋です。橋上や川沿いで撮影するときは、散策する人の通行を優先してください。",
+    accessHint: "JR大垣駅南口から徒歩圏内、水門川沿いの四季の広場周辺です。",
+    evidence: [
+      {
+        episode: "劇場版・美登鯉橋の場面",
+        description:
+          "美登鯉橋は、将也や硝子、友人たちが集まる重要な場所として描かれます。作品の象徴的な風景として、桜の時期の橋も印象的に扱われています。",
+        verification: "verified",
+        verificationNote:
+          "岐阜県観光公式サイトが、美登鯉橋を『聲の形』で将也や硝子たちが集まる大切な場所として紹介しています。Anime Tourism DBにも同地点が登録されています。",
+        sources: [
+          {
+            label: "岐阜県観光公式サイト・大垣市周辺ロケ地紹介",
+            url: "https://www.kankou-gifu.jp/blog/detail_132.html",
+          },
+          {
+            label: "Anime Tourism 聖地巡礼DB・聲の形",
+            url: "https://anime-tourism.jp/t/195//",
+          },
+        ],
+      },
+    ],
+  },
+  "hibike-euphonium::宇治橋": {
+    address: "京都府宇治市宇治",
+    scene:
+      "宇治の街並みを象徴する橋として、通学・移動・会話の場面などで繰り返し登場するスポットです。",
+    visitTip:
+      "観光客と地元の通行が多い橋です。歩道上での長時間撮影や夜間の会話は控えめにしましょう。",
+    accessHint: "京阪宇治駅、JR宇治駅から徒歩圏内です。",
+    evidence: [
+      {
+        episode: "TVアニメシリーズ・宇治市内の場面",
+        description:
+          "宇治橋は、宇治市内の登場スポットとして扱われており、宇治の風景と登場人物たちの日常をつなぐ場所です。",
+        verification: "verified",
+        verificationNote:
+          "京阪電車の公式コラボページが、作品に登場した宇治のまちのスポットを巡る舞台探訪MAPを案内し、宇治橋をスポットに含めています。KITASUIも宇治橋を登場スポットとして掲載しています。",
+        sources: [
+          {
+            label: "京阪電車×響け！ユーフォニアム 舞台探訪MAP",
+            url: "https://www.keihan.co.jp/euphonium/",
+          },
+          {
+            label: "KITASUI・響け！ユーフォニアム 宇治 登場スポット",
+            url: "https://kitasuiuji.com/media/videos/eupho/area/uji/",
+          },
+        ],
+      },
+    ],
+  },
+  "girls-und-panzer::大洗磯前神社": {
+    address: "茨城県東茨城郡大洗町磯浜町6890",
+    scene:
+      "大洗町内の戦車道シーンや劇場版のエキシビション戦で印象的に扱われる、大洗を代表する聖地のひとつです。",
+    visitTip:
+      "参拝者の多い神社です。境内や階段での撮影は参拝を優先し、階段や参道をふさがないようにしましょう。",
+    accessHint: "鹿島臨海鉄道 大洗駅からバスまたは徒歩でアクセスできます。",
+    evidence: [
+      {
+        episode: "劇場版・エキシビション戦",
+        description:
+          "劇場版の冒頭エキシビション戦で、あんこうチームが神社境内から階段を下りる一連の場面として知られています。",
+        verification: "reported",
+        verificationNote:
+          "茨城県のフィルムコミッション資料が大洗磯前神社をロケ地として紹介し、複数の聖地巡礼記録でも劇場版の登場場面として照合されています。",
+        sources: [
+          {
+            label: "いばらきフィルムコミッション・ガールズ&パンツァー ロケ地資料",
+            url: "https://www.ibarakiguide.jp/ibaraki-fc/data/doc/1758081388_doc_2_0.pdf",
+          },
+          {
+            label: "舞台探訪アーカイブ・大洗磯前神社",
+            url: "https://animepilgrimage.blog.fc2.com/blog-entry-163.html",
+          },
+        ],
+      },
+    ],
+  },
 };
 
 export function getLocationDetail(animeSlug: string, locationName: string) {

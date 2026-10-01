@@ -38,6 +38,7 @@ yarn-error.log*
 
 # open-next (cloudflare)
 .open-next
+.open-next-stale-*
 
 # wrangler (cloudflare local state)
 .wrangler

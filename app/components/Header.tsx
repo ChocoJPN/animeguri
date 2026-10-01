@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   return (
@@ -7,7 +8,7 @@ export default function Header() {
         <Link href="/" className="text-xl font-bold text-primary">
           Animeguri
         </Link>
-        <nav className="flex items-center gap-2 text-sm sm:gap-4">
+        <nav className="flex items-center gap-2 text-sm sm:gap-3">
           <Link
             href="/"
             className="hidden text-gray-600 transition-colors hover:text-primary dark:text-gray-400 dark:hover:text-primary sm:inline"
@@ -38,6 +39,7 @@ export default function Header() {
           >
             ご意見等
           </Link>
+          <ThemeToggle />
         </nav>
       </div>
     </header>
